@@ -10,7 +10,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 WORKDIR /workspaces/ROS-2-URC
 COPY . .
-RUN source /opt/ros/jazzy/setup.bash && colcon build --symlink-install
+RUN source /opt/ros/jazzy/setup.bash && colcon build --symlink-install \
+    && source install/setup.bash && python3 tools/ros_construct.py
 ENV ROS_DOMAIN_ID=27
 ENV LIBGL_ALWAYS_SOFTWARE=1
 CMD ["bash"]

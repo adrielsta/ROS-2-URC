@@ -49,7 +49,7 @@ class Mission(Node):
         self.tf_listener = TransformListener(self.tf, self)
         self.state, self.detail = 'idle', 'Call /mission/start when ready'
         self.index, self.epoch = 0, 0
-        self.handle = None
+        self.goal_handle = None
         self.last_odom = -math.inf
         self.is_stopped = False
         self.deadline = math.inf
@@ -142,7 +142,7 @@ class Mission(Node):
             if not handle.accepted:
                 self.abort('Nav2 rejected goal')
                 return
-            self.handle = handle
+            self.goal_handle = handle
             handle.get_result_async().add_done_callback(lambda f: self.finished(f, epoch))
         except Exception as exc:
             if epoch == self.epoch:
@@ -153,7 +153,7 @@ class Mission(Node):
             return
         try:
             result = future.result()
-            self.handle = None
+            self.goal_handle = None
             if result.status != GoalStatus.STATUS_SUCCEEDED:
                 self.abort(f'Nav2 status {result.status}')
                 return
@@ -166,9 +166,9 @@ class Mission(Node):
     def abort(self, reason, state='failed'):
         self.epoch += 1
         self.state, self.detail = state, reason
-        if self.handle is not None:
-            self.handle.cancel_goal_async()
-            self.handle = None
+        if self.goal_handle is not None:
+            self.goal_handle.cancel_goal_async()
+            self.goal_handle = None
         if self.stop_client.service_is_ready():
             self.stop_client.call_async(Trigger.Request())
         self.arrival_pub.publish(Bool(data=False))

@@ -14,10 +14,13 @@ def inflate(cost, radius_cells):
     """Conservative disk dilation of blocked cells with blocked map boundaries."""
     bad = ~np.isfinite(cost)
     result = bad.copy()
-    radius = math.ceil(radius_cells)
+    if not math.isfinite(radius_cells) or radius_cells < 0:
+        raise ValueError('Footprint radius must be finite and nonnegative')
+    # A blocked pixel represents its entire square, not only its center.
+    radius = math.ceil(radius_cells + 0.5)
     for dy in range(-radius, radius+1):
         for dx in range(-radius, radius+1):
-            if math.hypot(dx, dy) <= radius_cells:
+            if math.hypot(max(abs(dx)-0.5, 0), max(abs(dy)-0.5, 0)) <= radius_cells:
                 result |= np.roll(bad, (dy, dx), (0, 1))
     if radius:
         result[:radius] = result[-radius:] = True

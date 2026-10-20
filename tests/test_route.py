@@ -30,3 +30,9 @@ def test_footprint_closes_narrow_passage():
     cost[:,5] = np.inf
     result = inflate(cost,1)
     assert np.isinf(result[:,4]).all()
+
+
+def test_subpixel_radius_accounts_for_blocked_cell_area():
+    cost = np.ones((10,10))
+    cost[5,5] = np.inf
+    assert np.isinf(inflate(cost,0.6)[5,6])
