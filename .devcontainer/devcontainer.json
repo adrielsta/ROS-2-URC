@@ -1,0 +1,11 @@
+{
+  "name": "URC ROS 2 Jazzy",
+  "build": {"dockerfile": "../Dockerfile", "context": ".."},
+  "workspaceFolder": "/workspaces/ROS-2-URC",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/ROS-2-URC,type=bind",
+  "containerEnv": {"ROS_DOMAIN_ID": "27", "LIBGL_ALWAYS_SOFTWARE": "1"},
+  "postCreateCommand": "bash -lc 'source /opt/ros/jazzy/setup.bash && colcon build --symlink-install'",
+  "customizations": {"vscode": {"extensions": ["ms-python.python", "ms-vscode.cpptools"]}},
+  "forwardPorts": [8765],
+  "portsAttributes": {"8765": {"label": "Foxglove (keep private)"}}
+}

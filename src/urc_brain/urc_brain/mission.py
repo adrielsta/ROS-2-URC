@@ -1,0 +1,202 @@
+"""Sequential Nav2 goals with explicit start/cancel and observed arrival checks.
+
+No gesture recognition or manipulation is claimed by this route demonstrator.
+"""
+import json
+import math
+import time
+import yaml
+
+import rclpy
+from rclpy.action import ActionClient
+from rclpy.node import Node
+from rclpy.qos import qos_profile_sensor_data
+from action_msgs.msg import GoalStatus
+from nav2_msgs.action import NavigateToPose
+from nav_msgs.msg import Odometry
+from std_msgs.msg import Bool, String
+from std_srvs.srv import Trigger
+from tf2_ros import Buffer, TransformListener, TransformException
+
+from urc_brain.mission_plan import validate_plan
+
+
+class Mission(Node):
+    def __init__(self):
+        super().__init__('mission')
+        path = self.declare_parameter('mission_file', '').value
+        with open(path, encoding='utf-8') as f:
+            self.targets = validate_plan(yaml.safe_load(f))
+        self.tolerance = self.declare_parameter('arrival_tolerance', 0.75).value
+        self.timeout = self.declare_parameter('target_timeout', 180.0).value
+        if not 0 < self.tolerance <= 1.0 or self.timeout <= 0:
+            raise ValueError('Invalid arrival tolerance or target timeout')
+        self.nav = ActionClient(self, NavigateToPose, '/navigate_to_pose')
+        self.arm = self.create_client(Trigger, '/safety/arm_autonomy')
+        self.stop_client = self.create_client(Trigger, '/safety/stop')
+        self.create_service(Trigger, '/mission/start', self.start)
+        self.create_service(Trigger, '/mission/cancel', self.cancel)
+        self.status_pub = self.create_publisher(String, '/mission/status', 1)
+        self.arrival_pub = self.create_publisher(Bool, '/mission/arrival', 1)
+        self.create_subscription(Odometry, '/odom', self.odom, qos_profile_sensor_data)
+        self.create_subscription(String, '/rover/status', self.rover_status, 1)
+        self.tf = Buffer()
+        self.tf_listener = TransformListener(self.tf, self)
+        self.state, self.detail = 'idle', 'Call /mission/start when ready'
+        self.index, self.epoch = 0, 0
+        self.handle = None
+        self.last_odom = -math.inf
+        self.is_stopped = False
+        self.deadline = math.inf
+        self.verify_since = None
+        self.create_timer(0.1, self.tick)
+
+    def odom(self, msg):
+        v = msg.twist.twist
+        self.is_stopped = math.hypot(v.linear.x, v.linear.y) < 0.03 and abs(v.angular.z) < 0.05
+        self.last_odom = time.monotonic()
+
+    def rover_status(self, msg):
+        try:
+            status = json.loads(msg.data)
+        except (ValueError, TypeError):
+            return
+        if self.state in ('navigating', 'verifying') and status.get('mode') != 'autonomy':
+            self.abort('Supervisor disarmed: ' + str(status.get('reason')))
+
+    def start(self, _, response):
+        if self.state not in ('idle', 'complete', 'canceled', 'failed'):
+            response.success, response.message = False, 'Mission already active'
+            return response
+        if not self.nav.server_is_ready() or not self.arm.service_is_ready():
+            response.success, response.message = False, 'Nav2 or supervisor is not ready'
+            return response
+        self.epoch += 1
+        self.index, self.state = 0, 'arming'
+        self.deadline = time.monotonic() + 10.0
+        self.arrival_pub.publish(Bool(data=False))
+        epoch = self.epoch
+        self.arm.call_async(Trigger.Request()).add_done_callback(lambda f: self.armed(f, epoch))
+        response.success, response.message = True, 'Start accepted; watch /mission/status'
+        return response
+
+    def armed(self, future, epoch):
+        if epoch != self.epoch:
+            # A late arm response after cancellation must not leave the gate open.
+            if self.stop_client.service_is_ready():
+                self.stop_client.call_async(Trigger.Request())
+            return
+        try:
+            response = future.result()
+            if not response.success:
+                self.abort(response.message)
+                return
+            self.send_goal()
+        except Exception as exc:
+            self.abort(str(exc))
+
+    def send_goal(self):
+        target = self.targets[self.index]
+        goal = NavigateToPose.Goal()
+        goal.pose.header.frame_id = 'map'
+        goal.pose.header.stamp = self.get_clock().now().to_msg()
+        goal.pose.pose.position.x, goal.pose.pose.position.y = target['x'], target['y']
+        goal.pose.pose.orientation.z = math.sin(target['yaw'] / 2)
+        goal.pose.pose.orientation.w = math.cos(target['yaw'] / 2)
+        self.state, self.detail = 'navigating', f'Target {self.index + 1}'
+        self.deadline = time.monotonic() + self.timeout
+        epoch = self.epoch
+        self.nav.send_goal_async(goal).add_done_callback(lambda f: self.accepted(f, epoch))
+
+    def accepted(self, future, epoch):
+        try:
+            handle = future.result()
+            if epoch != self.epoch:
+                if handle.accepted:
+                    handle.cancel_goal_async()
+                return
+            if not handle.accepted:
+                self.abort('Nav2 rejected goal')
+                return
+            self.handle = handle
+            handle.get_result_async().add_done_callback(lambda f: self.finished(f, epoch))
+        except Exception as exc:
+            if epoch == self.epoch:
+                self.abort(str(exc))
+
+    def finished(self, future, epoch):
+        if epoch != self.epoch:
+            return
+        try:
+            result = future.result()
+            self.handle = None
+            if result.status != GoalStatus.STATUS_SUCCEEDED:
+                self.abort(f'Nav2 status {result.status}')
+                return
+            self.state, self.detail = 'verifying', 'Checking measured stop and target distance'
+            self.deadline = time.monotonic() + 10.0
+            self.verify_since = None
+        except Exception as exc:
+            self.abort(str(exc))
+
+    def abort(self, reason, state='failed'):
+        self.epoch += 1
+        self.state, self.detail = state, reason
+        if self.handle is not None:
+            self.handle.cancel_goal_async()
+            self.handle = None
+        if self.stop_client.service_is_ready():
+            self.stop_client.call_async(Trigger.Request())
+        self.arrival_pub.publish(Bool(data=False))
+
+    def cancel(self, _, response):
+        self.abort('Operator canceled', 'canceled')
+        response.success, response.message = True, 'Stopped and cancellation requested'
+        return response
+
+    def tick(self):
+        now = time.monotonic()
+        if self.state in ('arming', 'navigating', 'verifying') and now > self.deadline:
+            self.abort('Mission step timed out')
+        if self.state == 'verifying':
+            try:
+                transform = self.tf.lookup_transform('map', 'base_link', rclpy.time.Time())
+                p = transform.transform.translation
+                target = self.targets[self.index]
+                distance = math.hypot(p.x - target['x'], p.y - target['y'])
+                age = (self.get_clock().now().nanoseconds -
+                       rclpy.time.Time.from_msg(transform.header.stamp).nanoseconds) / 1e9
+                good = (distance <= self.tolerance and self.is_stopped
+                        and now - self.last_odom < 1.0 and 0 <= age < 1.0)
+                if good:
+                    if self.verify_since is None:
+                        self.verify_since = now
+                    if now - self.verify_since >= 0.5:
+                        self.index += 1
+                        if self.index == len(self.targets):
+                            self.state, self.detail = 'complete', 'All demo targets reached and stopped'
+                        else:
+                            self.send_goal()
+                else:
+                    self.verify_since = None
+            except TransformException:
+                self.verify_since = None
+        self.arrival_pub.publish(Bool(data=self.state == 'complete'))
+        self.status_pub.publish(String(data=json.dumps({
+            'state': self.state, 'detail': self.detail,
+            'completed_targets': self.index, 'total_targets': len(self.targets),
+        })))
+
+
+def main(args=None):
+    rclpy.init(args=args)
+    node = Mission()
+    try:
+        rclpy.spin(node)
+    except KeyboardInterrupt:
+        pass
+    finally:
+        node.abort('Mission process exiting', 'canceled')
+        node.destroy_node()
+        if rclpy.ok():
+            rclpy.shutdown()

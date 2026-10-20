@@ -1,0 +1,1166 @@
+{
+  "queried_at_utc": "2026-10-20T22:34:31.332329+00:00",
+  "bbox_wgs84": [
+    -110.786,
+    38.411,
+    -110.768,
+    38.425
+  ],
+  "aoi_source": "URC 2027 rule 1.e.xiii; approximate envelope, NOT a legal geofence",
+  "sources": {
+    "usgs_3dep_1m": {
+      "endpoint": "https://tnmaccess.nationalmap.gov/api/v1/products",
+      "items": [
+        {
+          "title": "USGS 1 Meter 12 x51y426 UT_StatewideSouth_2020_A20",
+          "moreInfo": "This is a tile of the standard one-meter resolution digital elevation model (DEM) produced through the 3D Elevation Program (3DEP) . The elevations in this DEM represent the topographic bare-earth surface. USGS standard one-meter DEMs are produced exclusively from high resolution light detection and ranging (lidar) source data of one-meter or higher resolution. One-meter DEM surfaces are seamless within collection projects, but, not necessarily seamless across projects. The spatial reference used for tiles of the one-meter DEM within the conterminous United States (CONUS) is Universal Transverse Mercator (UTM) in units of meters, and in conformance with the North American Datum of 1983 (NAD83). All bare earth elevation values are in [...]",
+          "sourceId": "61caa869d34e0fd3e7b21aad",
+          "sourceName": "ScienceBase",
+          "sourceOriginId": null,
+          "sourceOriginName": "gda",
+          "metaUrl": "https://www.sciencebase.gov/catalog/item/61caa869d34e0fd3e7b21aad",
+          "vendorMetaUrl": "https://prd-tnm.s3.amazonaws.com/index.html?prefix=StagedProducts/Elevation/metadata/UT_StatewideSouth_2020_A20/UT_StatewideSouth_3_2020",
+          "publicationDate": "2021-12-17",
+          "lastUpdated": "2021-12-27T23:02:21.527-07:00",
+          "dateCreated": "2021-12-27T23:02:17.770-07:00",
+          "sizeInBytes": 285961785,
+          "extent": "10000 x 10000 meter",
+          "format": "GeoTIFF",
+          "downloadURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/UT_StatewideSouth_2020_A20/TIFF/USGS_1M_12_x51y426_UT_StatewideSouth_2020_A20.tif",
+          "downloadURLRaster": null,
+          "previewGraphicURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/UT_StatewideSouth_2020_A20/browse/USGS_1M_12_x51y426_UT_StatewideSouth_2020_A20.jpg",
+          "downloadLazURL": null,
+          "urls": {
+            "TIFF": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/UT_StatewideSouth_2020_A20/TIFF/USGS_1M_12_x51y426_UT_StatewideSouth_2020_A20.tif"
+          },
+          "datasets": [],
+          "boundingBox": {
+            "minX": -110.88547938,
+            "maxX": -110.77067441199995,
+            "minY": 38.39799751000004,
+            "maxY": 38.48828733500005
+          },
+          "bestFitIndex": 0.0,
+          "body": "This is a tile of the standard one-meter resolution digital elevation model (DEM) produced through the 3D Elevation Program (3DEP) .  The elevations in this DEM represent the topographic bare-earth surface.  USGS standard one-meter DEMs are produced exclusively from high resolution light detection and ranging (lidar) source data of one-meter or higher resolution.  One-meter DEM surfaces are seamless within collection projects, but, not necessarily seamless across projects.  The spatial reference used for tiles of the one-meter DEM  within the conterminous United States (CONUS) is Universal Transverse Mercator (UTM) in units of meters, and in conformance with the North American Datum of 1983 (NAD83).  All bare earth elevation values are in meters and are referenced to the North American Vertical Datum of 1988 (NAVD88).  Each tile is distributed in the UTM Zone in which it lies.  If a tile crosses two UTM zones, it is delivered in both zones.  The one-meter DEM is the highest resolution standard DEM offered in the 3DEP product suite.  Other 3DEP products are nationally seamless DEMs in resolutions of 1/3, 1, and 2 arc seconds.  These seamless DEMs were referred to as the National Elevation Dataset (NED) from about 2000 through 2015 at which time they became the seamless DEM layers under the 3DEP program and lost the NED branding.  Other 3DEP products include five-meter DEMs in Alaska as well as various source datasets including the lidar point cloud and interferometric synthetic aperture radar (Ifsar) digital surface models and intensity images. All 3DEP products are public domain.",
+          "processingUrl": "processingUrl",
+          "modificationInfo": "2021-12-28"
+        },
+        {
+          "title": "USGS 1 Meter 12 x52y426 UT_StatewideSouth_2020_A20",
+          "moreInfo": "This is a tile of the standard one-meter resolution digital elevation model (DEM) produced through the 3D Elevation Program (3DEP) . The elevations in this DEM represent the topographic bare-earth surface. USGS standard one-meter DEMs are produced exclusively from high resolution light detection and ranging (lidar) source data of one-meter or higher resolution. One-meter DEM surfaces are seamless within collection projects, but, not necessarily seamless across projects. The spatial reference used for tiles of the one-meter DEM within the conterminous United States (CONUS) is Universal Transverse Mercator (UTM) in units of meters, and in conformance with the North American Datum of 1983 (NAD83). All bare earth elevation values are in [...]",
+          "sourceId": "61caa864d34e0fd3e7b21a97",
+          "sourceName": "ScienceBase",
+          "sourceOriginId": null,
+          "sourceOriginName": "gda",
+          "metaUrl": "https://www.sciencebase.gov/catalog/item/61caa864d34e0fd3e7b21a97",
+          "vendorMetaUrl": "https://prd-tnm.s3.amazonaws.com/index.html?prefix=StagedProducts/Elevation/metadata/UT_StatewideSouth_2020_A20/UT_StatewideSouth_3_2020",
+          "publicationDate": "2021-12-17",
+          "lastUpdated": "2021-12-27T23:02:20.406-07:00",
+          "dateCreated": "2021-12-27T23:02:12.607-07:00",
+          "sizeInBytes": 27292031,
+          "extent": "10000 x 10000 meter",
+          "format": "GeoTIFF",
+          "downloadURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/UT_StatewideSouth_2020_A20/TIFF/USGS_1M_12_x52y426_UT_StatewideSouth_2020_A20.tif",
+          "downloadURLRaster": null,
+          "previewGraphicURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/UT_StatewideSouth_2020_A20/browse/USGS_1M_12_x52y426_UT_StatewideSouth_2020_A20.jpg",
+          "downloadLazURL": null,
+          "urls": {
+            "TIFF": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/UT_StatewideSouth_2020_A20/TIFF/USGS_1M_12_x52y426_UT_StatewideSouth_2020_A20.tif"
+          },
+          "datasets": [],
+          "boundingBox": {
+            "minX": -110.77095939499998,
+            "maxX": -110.65601321399998,
+            "minY": 38.397717801000056,
+            "maxY": 38.48811896800004
+          },
+          "bestFitIndex": 0.0,
+          "body": "This is a tile of the standard one-meter resolution digital elevation model (DEM) produced through the 3D Elevation Program (3DEP) .  The elevations in this DEM represent the topographic bare-earth surface.  USGS standard one-meter DEMs are produced exclusively from high resolution light detection and ranging (lidar) source data of one-meter or higher resolution.  One-meter DEM surfaces are seamless within collection projects, but, not necessarily seamless across projects.  The spatial reference used for tiles of the one-meter DEM  within the conterminous United States (CONUS) is Universal Transverse Mercator (UTM) in units of meters, and in conformance with the North American Datum of 1983 (NAD83).  All bare earth elevation values are in meters and are referenced to the North American Vertical Datum of 1988 (NAVD88).  Each tile is distributed in the UTM Zone in which it lies.  If a tile crosses two UTM zones, it is delivered in both zones.  The one-meter DEM is the highest resolution standard DEM offered in the 3DEP product suite.  Other 3DEP products are nationally seamless DEMs in resolutions of 1/3, 1, and 2 arc seconds.  These seamless DEMs were referred to as the National Elevation Dataset (NED) from about 2000 through 2015 at which time they became the seamless DEM layers under the 3DEP program and lost the NED branding.  Other 3DEP products include five-meter DEMs in Alaska as well as various source datasets including the lidar point cloud and interferometric synthetic aperture radar (Ifsar) digital surface models and intensity images. All 3DEP products are public domain.",
+          "processingUrl": "processingUrl",
+          "modificationInfo": "2021-12-28"
+        },
+        {
+          "title": "USGS 1 Meter 12 x52y426 UT_WestEast_B22",
+          "moreInfo": "This is a tile of the standard one-meter resolution digital elevation model (DEM) produced through the 3D Elevation Program (3DEP) . The elevations in this DEM represent the topographic bare-earth surface. USGS standard one-meter DEMs are produced exclusively from high resolution light detection and ranging (lidar) source data of one-meter or higher resolution. One-meter DEM surfaces are seamless within collection projects, but, not necessarily seamless across projects. The spatial reference used for tiles of the one-meter DEM within the conterminous United States (CONUS) is Universal Transverse Mercator (UTM) in units of meters, and in conformance with the North American Datum of 1983 (NAD83). All bare earth elevation values are in [...]",
+          "sourceId": "67244070d34e4f57573eaae0",
+          "sourceName": "ScienceBase",
+          "sourceOriginId": null,
+          "sourceOriginName": "gda",
+          "metaUrl": "https://www.sciencebase.gov/catalog/item/67244070d34e4f57573eaae0",
+          "vendorMetaUrl": "https://prd-tnm.s3.amazonaws.com/index.html?prefix=StagedProducts/Elevation/metadata/UT_WestEast_B22/UT_WestEast_9_B22",
+          "publicationDate": "2024-10-30",
+          "lastUpdated": "2024-10-31T20:44:02.074-06:00",
+          "dateCreated": "2024-10-31T20:44:00.425-06:00",
+          "sizeInBytes": 189929193,
+          "extent": "10000 x 10000 meter",
+          "format": "GeoTIFF",
+          "downloadURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/UT_WestEast_B22/TIFF/USGS_1M_12_x52y426_UT_WestEast_B22.tif",
+          "downloadURLRaster": null,
+          "previewGraphicURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/UT_WestEast_B22/browse/USGS_1M_12_x52y426_UT_WestEast_B22.jpg",
+          "downloadLazURL": null,
+          "urls": {
+            "TIFF": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/UT_WestEast_B22/TIFF/USGS_1M_12_x52y426_UT_WestEast_B22.tif"
+          },
+          "datasets": [],
+          "boundingBox": {
+            "minX": -110.77095939499998,
+            "maxX": -110.65601321399998,
+            "minY": 38.397717801000056,
+            "maxY": 38.48811896800004
+          },
+          "bestFitIndex": 0.0,
+          "body": "This is a tile of the standard one-meter resolution digital elevation model (DEM) produced through the 3D Elevation Program (3DEP) . The elevations in this DEM represent the topographic bare-earth surface. USGS standard one-meter DEMs are produced exclusively from high resolution light detection and ranging (lidar) source data of one-meter or higher resolution. One-meter DEM surfaces are seamless within collection projects, but, not necessarily seamless across projects. The spatial reference used for tiles of the one-meter DEM within the conterminous United States (CONUS) is Universal Transverse Mercator (UTM) in units of meters, and in conformance with the North American Datum of 1983 (NAD83). All bare earth elevation values are in meters and are referenced to the North American Vertical Datum of 1988 (NAVD88). Each tile is distributed in the UTM Zone in which it lies. If a tile crosses two UTM zones, it is delivered in both zones. The one-meter DEM is the highest resolution standard DEM offered in the 3DEP product suite. Other 3DEP products are nationally seamless DEMs in resolutions of 1/3, 1, and 2 arc seconds. These seamless DEMs were referred to as the National Elevation Dataset (NED) from about 2000 through 2015 at which time they became the seamless DEM layers under the 3DEP program and lost the NED branding. Other 3DEP products include five-meter DEMs in Alaska as well as various source datasets including the lidar point cloud and interferometric synthetic aperture radar (Ifsar) digital surface models and intensity images. All 3DEP products are public domain.",
+          "processingUrl": "processingUrl",
+          "modificationInfo": "2024-10-31"
+        },
+        {
+          "title": "USGS one meter x51y426 UT Southern QL1 2018",
+          "moreInfo": "This is a tile of the standard one-meter resolution digital elevation model (DEM) produced through the 3D Elevation Program (3DEP). The elevations in this DEM represent the topographic bare-earth surface. USGS standard one-meter DEMs are produced exclusively from high resolution light detection and ranging (lidar) source data of one-meter or higher resolution. One-meter DEM surfaces are seamless within collection projects, but, not necessarily seamless across projects. The spatial reference used for tiles of the one-meter DEM within the conterminous United States (CONUS) is Universal Transverse Mercator (UTM) in units of meters, and in conformance with the North American Datum of 1983 (NAD83). All bare earth elevation values are in [...]",
+          "sourceId": "5eacf8ed82cefae35a24f808",
+          "sourceName": "ScienceBase",
+          "sourceOriginId": null,
+          "sourceOriginName": "gda",
+          "metaUrl": "https://www.sciencebase.gov/catalog/item/5eacf8ed82cefae35a24f808",
+          "vendorMetaUrl": "http://nationalmap.gov/3DEP/3dep_prodmetadata.html",
+          "publicationDate": "2020-03-30",
+          "lastUpdated": "2020-11-17T19:40:25.619-07:00",
+          "dateCreated": "2020-05-01T22:37:01.632-06:00",
+          "sizeInBytes": 65703772,
+          "extent": "10000 x 10000 meter",
+          "format": "GeoTIFF",
+          "downloadURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/UT_Southern_QL1_2018/TIFF/USGS_one_meter_x51y426_UT_Southern_QL1_2018.tif",
+          "downloadURLRaster": null,
+          "previewGraphicURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/UT_Southern_QL1_2018/browse/USGS_one_meter_x51y426_UT_Southern_QL1_2018_thumb.jpg",
+          "downloadLazURL": null,
+          "urls": {
+            "TIFF": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/UT_Southern_QL1_2018/TIFF/USGS_one_meter_x51y426_UT_Southern_QL1_2018.tif"
+          },
+          "datasets": [],
+          "boundingBox": {
+            "minX": -110.885405599,
+            "maxX": -110.770890854,
+            "minY": 38.3979433027,
+            "maxY": 38.4883414751
+          },
+          "bestFitIndex": 0.0,
+          "body": "This is a tile of the standard one-meter resolution digital elevation model (DEM) produced through the 3D Elevation Program (3DEP). The elevations in this DEM represent the topographic bare-earth surface. USGS standard one-meter DEMs are produced exclusively from high resolution light detection and ranging (lidar) source data of one-meter or higher resolution. One-meter DEM surfaces are seamless within collection projects, but, not necessarily seamless across projects. The spatial reference used for tiles of the one-meter DEM within the conterminous United States (CONUS) is Universal Transverse Mercator (UTM) in units of meters, and in conformance with the North American Datum of 1983 (NAD83). All bare earth elevation values are in meters and are referenced to the North American Vertical Datum of 1988 (NAVD88). Each tile is distributed in the UTM Zone in which it lies. If a tile crosses two UTM zones, it is delivered in both zones. The one-meter DEM is the highest resolution standard DEM offered in the 3DEP product suite. Other 3DEP products are nationally seamless DEMs in resolutions of 1/3, 1, and 2 arc seconds. These seamless DEMs were referred to as the National Elevation Dataset (NED) from about 2000 through 2015 at which time they became the seamless DEM layers under the 3DEP program and lost the NED branding. Other 3DEP products include five-meter DEMs in Alaska as well as various source datasets including the lidar point cloud and interferometric synthetic aperture radar (Ifsar) digital surface models and intensity images. All 3DEP products are public domain.",
+          "processingUrl": "processingUrl",
+          "modificationInfo": "2020-11-17"
+        },
+        {
+          "title": "USGS one meter x52y426 UT Southern QL1 2018",
+          "moreInfo": "This is a tile of the standard one-meter resolution digital elevation model (DEM) produced through the 3D Elevation Program (3DEP). The elevations in this DEM represent the topographic bare-earth surface. USGS standard one-meter DEMs are produced exclusively from high resolution light detection and ranging (lidar) source data of one-meter or higher resolution. One-meter DEM surfaces are seamless within collection projects, but, not necessarily seamless across projects. The spatial reference used for tiles of the one-meter DEM within the conterminous United States (CONUS) is Universal Transverse Mercator (UTM) in units of meters, and in conformance with the North American Datum of 1983 (NAD83). All bare earth elevation values are in [...]",
+          "sourceId": "5eacf97182cefae35a24fb42",
+          "sourceName": "ScienceBase",
+          "sourceOriginId": null,
+          "sourceOriginName": "gda",
+          "metaUrl": "https://www.sciencebase.gov/catalog/item/5eacf97182cefae35a24fb42",
+          "vendorMetaUrl": "http://nationalmap.gov/3DEP/3dep_prodmetadata.html",
+          "publicationDate": "2020-03-30",
+          "lastUpdated": "2020-11-17T19:40:27.060-07:00",
+          "dateCreated": "2020-05-01T22:39:13.409-06:00",
+          "sizeInBytes": 135801078,
+          "extent": "10000 x 10000 meter",
+          "format": "GeoTIFF",
+          "downloadURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/UT_Southern_QL1_2018/TIFF/USGS_one_meter_x52y426_UT_Southern_QL1_2018.tif",
+          "downloadURLRaster": null,
+          "previewGraphicURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/UT_Southern_QL1_2018/browse/USGS_one_meter_x52y426_UT_Southern_QL1_2018_thumb.jpg",
+          "downloadLazURL": null,
+          "urls": {
+            "TIFF": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/UT_Southern_QL1_2018/TIFF/USGS_one_meter_x52y426_UT_Southern_QL1_2018.tif"
+          },
+          "datasets": [],
+          "boundingBox": {
+            "minX": -110.770754504,
+            "maxX": -110.656360773,
+            "minY": 38.3976634935,
+            "maxY": 38.4881731978
+          },
+          "bestFitIndex": 0.0,
+          "body": "This is a tile of the standard one-meter resolution digital elevation model (DEM) produced through the 3D Elevation Program (3DEP). The elevations in this DEM represent the topographic bare-earth surface. USGS standard one-meter DEMs are produced exclusively from high resolution light detection and ranging (lidar) source data of one-meter or higher resolution. One-meter DEM surfaces are seamless within collection projects, but, not necessarily seamless across projects. The spatial reference used for tiles of the one-meter DEM within the conterminous United States (CONUS) is Universal Transverse Mercator (UTM) in units of meters, and in conformance with the North American Datum of 1983 (NAD83). All bare earth elevation values are in meters and are referenced to the North American Vertical Datum of 1988 (NAVD88). Each tile is distributed in the UTM Zone in which it lies. If a tile crosses two UTM zones, it is delivered in both zones. The one-meter DEM is the highest resolution standard DEM offered in the 3DEP product suite. Other 3DEP products are nationally seamless DEMs in resolutions of 1/3, 1, and 2 arc seconds. These seamless DEMs were referred to as the National Elevation Dataset (NED) from about 2000 through 2015 at which time they became the seamless DEM layers under the 3DEP program and lost the NED branding. Other 3DEP products include five-meter DEMs in Alaska as well as various source datasets including the lidar point cloud and interferometric synthetic aperture radar (Ifsar) digital surface models and intensity images. All 3DEP products are public domain.",
+          "processingUrl": "processingUrl",
+          "modificationInfo": "2020-11-17"
+        }
+      ],
+      "note": "Check tile metadata for acquisition year and vertical datum. Publication is not capture date."
+    },
+    "naip": {
+      "endpoint": "https://apps.geo.fpac.usda.gov/geo-imagery/rest/services/naip/conus_naip/ImageServer",
+      "catalog": {
+        "features": [
+          {
+            "attributes": {
+              "OBJECTID": 195156,
+              "Name": "m_3811034_se_12_060_20240706",
+              "Category": 1,
+              "year_ts": 2024,
+              "ST": "UT",
+              "QQNAME": "3811034SE060",
+              "QQDATE": 1720224000000,
+              "iDate_ts": 1749744257170
+            }
+          }
+        ],
+        "exceededTransferLimit": false
+      },
+      "note": "Utah UGRC lists 2024 at 0.6m; verify tile AcquisitionDate, do not assume service-wide date."
+    },
+    "sentinel2_recent": {
+      "endpoint": "https://earth-search.aws.element84.com/v1/search",
+      "items": [
+        {
+          "id": "S2C_12SWH_20261018_0_L2A",
+          "properties": {
+            "created": "2026-10-18T22:43:09.037Z",
+            "platform": "sentinel-2c",
+            "constellation": "sentinel-2",
+            "instruments": [
+              "msi"
+            ],
+            "eo:cloud_cover": 99.386317,
+            "proj:epsg": 32612,
+            "proj:centroid": {
+              "lat": 38.37462,
+              "lon": -110.42463
+            },
+            "mgrs:utm_zone": 12,
+            "mgrs:latitude_band": "S",
+            "mgrs:grid_square": "WH",
+            "grid:code": "MGRS-12SWH",
+            "view:azimuth": 284.91554946591015,
+            "view:incidence_angle": 7.820608036935201,
+            "view:sun_azimuth": 165.941458733312,
+            "view:sun_elevation": 40.7871517045291,
+            "s2:tile_id": "S2C_OPER_MSI_L2A_TL_2CPS_20261018T212402_A011065_T12SWH_N05.13",
+            "s2:degraded_msi_data_percentage": 0.0205,
+            "s2:nodata_pixel_percentage": 8.9214,
+            "s2:saturated_defective_pixel_percentage": 0,
+            "s2:cloud_shadow_percentage": 0.603304,
+            "s2:vegetation_percentage": 0,
+            "s2:not_vegetated_percentage": 0.006145,
+            "s2:water_percentage": 0.000233,
+            "s2:unclassified_percentage": 0,
+            "s2:medium_proba_clouds_percentage": 21.900888,
+            "s2:high_proba_clouds_percentage": 75.885844,
+            "s2:thin_cirrus_percentage": 1.599578,
+            "s2:snow_ice_percentage": 0.000444,
+            "s2:product_type": "S2MSI2A",
+            "s2:processing_baseline": "05.13",
+            "s2:product_uri": "S2C_MSIL2A_20261018T181351_N0513_R084_T12SWH_20261018T212402.SAFE",
+            "s2:generation_time": "2026-10-18T21:24:02.000000Z",
+            "s2:datatake_id": "GS2C_20261018T181351_011065_N05.13",
+            "s2:datatake_type": "INS-NOBS",
+            "s2:datastrip_id": "S2C_OPER_MSI_L2A_DS_2CPS_20261018T212402_S20261018T181548_N05.13",
+            "s2:reflectance_conversion_factor": 1.00596396872647,
+            "datetime": "2026-10-18T18:23:32.098000Z",
+            "s2:sequence": "0",
+            "earthsearch:s3_path": "s3://sentinel-cogs/sentinel-s2-l2a-cogs/12/S/WH/2026/10/S2C_12SWH_20261018_0_L2A",
+            "earthsearch:payload_id": "roda-sentinel2/workflow-sentinel2-to-stac/2233429935615322a76a917aed245f9c",
+            "earthsearch:boa_offset_applied": true,
+            "processing:software": {
+              "sentinel2-to-stac": "2026.08.16"
+            },
+            "updated": "2026-10-18T22:43:09.037Z"
+          },
+          "links": [
+            {
+              "rel": "self",
+              "type": "application/geo+json",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2C_12SWH_20261018_0_L2A"
+            },
+            {
+              "rel": "canonical",
+              "href": "s3://sentinel-cogs/sentinel-s2-l2a-cogs/12/S/WH/2026/10/S2C_12SWH_20261018_0_L2A/S2C_12SWH_20261018_0_L2A.json",
+              "type": "application/json"
+            },
+            {
+              "rel": "license",
+              "href": "https://sentinel.esa.int/documents/247904/690755/Sentinel_Data_Legal_Notice"
+            },
+            {
+              "rel": "derived_from",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l1c/items/S2C_12SWH_20261018_0_L1C",
+              "type": "application/geo+json"
+            },
+            {
+              "rel": "parent",
+              "type": "application/json",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a"
+            },
+            {
+              "rel": "collection",
+              "type": "application/json",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a"
+            },
+            {
+              "rel": "root",
+              "type": "application/json",
+              "href": "https://earth-search.aws.element84.com/v1"
+            },
+            {
+              "rel": "thumbnail",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2C_12SWH_20261018_0_L2A/thumbnail"
+            }
+          ]
+        },
+        {
+          "id": "S2A_12SWH_20261017_0_L2A",
+          "properties": {
+            "created": "2026-10-18T03:43:46.679Z",
+            "platform": "sentinel-2a",
+            "constellation": "sentinel-2",
+            "instruments": [
+              "msi"
+            ],
+            "eo:cloud_cover": 0.016997,
+            "proj:epsg": 32612,
+            "proj:centroid": {
+              "lat": 38.3294,
+              "lon": -110.26974
+            },
+            "mgrs:utm_zone": 12,
+            "mgrs:latitude_band": "S",
+            "mgrs:grid_square": "WH",
+            "grid:code": "MGRS-12SWH",
+            "view:azimuth": 103.21587650243754,
+            "view:incidence_angle": 8.24259322608651,
+            "view:sun_azimuth": 162.664679813297,
+            "view:sun_elevation": 40.6142276609228,
+            "s2:tile_id": "S2A_OPER_MSI_L2A_TL_2APS_20261018T022010_A059126_T12SWH_N05.13",
+            "s2:degraded_msi_data_percentage": 0.0133,
+            "s2:nodata_pixel_percentage": 16.627291,
+            "s2:saturated_defective_pixel_percentage": 0,
+            "s2:cloud_shadow_percentage": 0.006534,
+            "s2:vegetation_percentage": 0.761407,
+            "s2:not_vegetated_percentage": 96.260273,
+            "s2:water_percentage": 0.144111,
+            "s2:unclassified_percentage": 0.021485,
+            "s2:medium_proba_clouds_percentage": 0.014239,
+            "s2:high_proba_clouds_percentage": 0.002658,
+            "s2:thin_cirrus_percentage": 9.9e-05,
+            "s2:snow_ice_percentage": 0.240196,
+            "s2:product_type": "S2MSI2A",
+            "s2:processing_baseline": "05.13",
+            "s2:product_uri": "S2A_MSIL2A_20261017T180751_N0513_R041_T12SWH_20261018T022010.SAFE",
+            "s2:generation_time": "2026-10-18T02:20:10.000000Z",
+            "s2:datatake_id": "GS2A_20261017T180751_059126_N05.13",
+            "s2:datatake_type": "INS-NOBS",
+            "s2:datastrip_id": "S2A_OPER_MSI_L2A_DS_2APS_20261018T022010_S20261017T181021_N05.13",
+            "s2:reflectance_conversion_factor": 1.00538951580406,
+            "datetime": "2026-10-17T18:13:46.043000Z",
+            "s2:sequence": "0",
+            "earthsearch:s3_path": "s3://sentinel-cogs/sentinel-s2-l2a-cogs/12/S/WH/2026/10/S2A_12SWH_20261017_0_L2A",
+            "earthsearch:payload_id": "roda-sentinel2/workflow-sentinel2-to-stac/931069517fae85ed2389ceb283f11b16",
+            "earthsearch:boa_offset_applied": true,
+            "processing:software": {
+              "sentinel2-to-stac": "2026.08.16"
+            },
+            "updated": "2026-10-18T03:43:46.679Z"
+          },
+          "links": [
+            {
+              "rel": "self",
+              "type": "application/geo+json",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_12SWH_20261017_0_L2A"
+            },
+            {
+              "rel": "canonical",
+              "href": "s3://sentinel-cogs/sentinel-s2-l2a-cogs/12/S/WH/2026/10/S2A_12SWH_20261017_0_L2A/S2A_12SWH_20261017_0_L2A.json",
+              "type": "application/json"
+            },
+            {
+              "rel": "license",
+              "href": "https://sentinel.esa.int/documents/247904/690755/Sentinel_Data_Legal_Notice"
+            },
+            {
+              "rel": "derived_from",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l1c/items/S2A_12SWH_20261017_0_L1C",
+              "type": "application/geo+json"
+            },
+            {
+              "rel": "parent",
+              "type": "application/json",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a"
+            },
+            {
+              "rel": "collection",
+              "type": "application/json",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a"
+            },
+            {
+              "rel": "root",
+              "type": "application/json",
+              "href": "https://earth-search.aws.element84.com/v1"
+            },
+            {
+              "rel": "thumbnail",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_12SWH_20261017_0_L2A/thumbnail"
+            }
+          ]
+        },
+        {
+          "id": "S2C_12SWH_20261015_1_L2A",
+          "properties": {
+            "created": "2026-10-15T22:41:26.182Z",
+            "platform": "sentinel-2c",
+            "constellation": "sentinel-2",
+            "instruments": [
+              "msi"
+            ],
+            "eo:cloud_cover": 16.892296,
+            "proj:epsg": 32612,
+            "proj:centroid": {
+              "lat": 38.43796,
+              "lon": -110.23089
+            },
+            "mgrs:utm_zone": 12,
+            "mgrs:latitude_band": "S",
+            "mgrs:grid_square": "WH",
+            "grid:code": "MGRS-12SWH",
+            "view:azimuth": 103.08382894145515,
+            "view:incidence_angle": 8.246108702339118,
+            "view:sun_azimuth": 162.250311089859,
+            "view:sun_elevation": 41.2923536426621,
+            "s2:tile_id": "S2C_OPER_MSI_L2A_TL_2CPS_20261015T211606_A011022_T12SWH_N05.13",
+            "s2:degraded_msi_data_percentage": 0.0137,
+            "s2:nodata_pixel_percentage": 35.934031,
+            "s2:saturated_defective_pixel_percentage": 0,
+            "s2:cloud_shadow_percentage": 10.48196,
+            "s2:vegetation_percentage": 0.13758,
+            "s2:not_vegetated_percentage": 70.012599,
+            "s2:water_percentage": 0.087444,
+            "s2:unclassified_percentage": 1.205331,
+            "s2:medium_proba_clouds_percentage": 7.508151,
+            "s2:high_proba_clouds_percentage": 9.377723,
+            "s2:thin_cirrus_percentage": 0.006422,
+            "s2:snow_ice_percentage": 0.000104,
+            "s2:product_type": "S2MSI2A",
+            "s2:processing_baseline": "05.13",
+            "s2:product_uri": "S2C_MSIL2A_20261015T180321_N0513_R041_T12SWH_20261015T211606.SAFE",
+            "s2:generation_time": "2026-10-15T21:16:06.000000Z",
+            "s2:datatake_id": "GS2C_20261015T180321_011022_N05.13",
+            "s2:datatake_type": "INS-NOBS",
+            "s2:datastrip_id": "S2C_OPER_MSI_L2A_DS_2CPS_20261015T211606_S20261015T180436_N05.13",
+            "s2:reflectance_conversion_factor": 1.00424041473579,
+            "datetime": "2026-10-15T18:13:34.864000Z",
+            "s2:sequence": "1",
+            "earthsearch:s3_path": "s3://sentinel-cogs/sentinel-s2-l2a-cogs/12/S/WH/2026/10/S2C_12SWH_20261015_1_L2A",
+            "earthsearch:payload_id": "roda-sentinel2/workflow-sentinel2-to-stac/99574c0916341032a9b083c0bdee2667",
+            "earthsearch:boa_offset_applied": true,
+            "processing:software": {
+              "sentinel2-to-stac": "2026.08.16"
+            },
+            "updated": "2026-10-15T22:41:26.182Z"
+          },
+          "links": [
+            {
+              "rel": "self",
+              "type": "application/geo+json",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2C_12SWH_20261015_1_L2A"
+            },
+            {
+              "rel": "canonical",
+              "href": "s3://sentinel-cogs/sentinel-s2-l2a-cogs/12/S/WH/2026/10/S2C_12SWH_20261015_1_L2A/S2C_12SWH_20261015_1_L2A.json",
+              "type": "application/json"
+            },
+            {
+              "rel": "license",
+              "href": "https://sentinel.esa.int/documents/247904/690755/Sentinel_Data_Legal_Notice"
+            },
+            {
+              "rel": "derived_from",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l1c/items/S2C_12SWH_20261015_1_L1C",
+              "type": "application/geo+json"
+            },
+            {
+              "rel": "parent",
+              "type": "application/json",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a"
+            },
+            {
+              "rel": "collection",
+              "type": "application/json",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a"
+            },
+            {
+              "rel": "root",
+              "type": "application/json",
+              "href": "https://earth-search.aws.element84.com/v1"
+            },
+            {
+              "rel": "thumbnail",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2C_12SWH_20261015_1_L2A/thumbnail"
+            }
+          ]
+        },
+        {
+          "id": "S2B_12SWH_20261013_0_L2A",
+          "properties": {
+            "created": "2026-10-13T23:02:17.700Z",
+            "platform": "sentinel-2b",
+            "constellation": "sentinel-2",
+            "instruments": [
+              "msi"
+            ],
+            "eo:cloud_cover": 96.953529,
+            "proj:epsg": 32612,
+            "proj:centroid": {
+              "lat": 38.37409,
+              "lon": -110.42188
+            },
+            "mgrs:utm_zone": 12,
+            "mgrs:latitude_band": "S",
+            "mgrs:grid_square": "WH",
+            "grid:code": "MGRS-12SWH",
+            "view:azimuth": 283.7850916514217,
+            "view:incidence_angle": 7.8679839900141095,
+            "view:sun_azimuth": 165.098399845208,
+            "view:sun_elevation": 42.5350213596636,
+            "s2:tile_id": "S2B_OPER_MSI_L2A_TL_2BPS_20261013T215231_A050160_T12SWH_N05.13",
+            "s2:degraded_msi_data_percentage": 0.0215,
+            "s2:nodata_pixel_percentage": 8.455808,
+            "s2:saturated_defective_pixel_percentage": 0,
+            "s2:cloud_shadow_percentage": 1.724345,
+            "s2:vegetation_percentage": 0,
+            "s2:not_vegetated_percentage": 1.135715,
+            "s2:water_percentage": 0.000913,
+            "s2:unclassified_percentage": 0.152069,
+            "s2:medium_proba_clouds_percentage": 37.76769,
+            "s2:high_proba_clouds_percentage": 58.189785,
+            "s2:thin_cirrus_percentage": 0.996053,
+            "s2:snow_ice_percentage": 0.008745,
+            "s2:product_type": "S2MSI2A",
+            "s2:processing_baseline": "05.13",
+            "s2:product_uri": "S2B_MSIL2A_20261013T181309_N0513_R084_T12SWH_20261013T215231.SAFE",
+            "s2:generation_time": "2026-10-13T21:52:31.000000Z",
+            "s2:datatake_id": "GS2B_20261013T181309_050160_N05.13",
+            "s2:datatake_type": "INS-NOBS",
+            "s2:datastrip_id": "S2B_OPER_MSI_L2A_DS_2BPS_20261013T215231_S20261013T182209_N05.13",
+            "s2:reflectance_conversion_factor": 1.00309395933508,
+            "datetime": "2026-10-13T18:23:30.487000Z",
+            "s2:sequence": "0",
+            "earthsearch:s3_path": "s3://sentinel-cogs/sentinel-s2-l2a-cogs/12/S/WH/2026/10/S2B_12SWH_20261013_0_L2A",
+            "earthsearch:payload_id": "roda-sentinel2/workflow-sentinel2-to-stac/0afbe2134fba8f6c705b35beb480ee82",
+            "earthsearch:boa_offset_applied": true,
+            "processing:software": {
+              "sentinel2-to-stac": "2026.08.16"
+            },
+            "updated": "2026-10-13T23:02:17.700Z"
+          },
+          "links": [
+            {
+              "rel": "self",
+              "type": "application/geo+json",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_12SWH_20261013_0_L2A"
+            },
+            {
+              "rel": "canonical",
+              "href": "s3://sentinel-cogs/sentinel-s2-l2a-cogs/12/S/WH/2026/10/S2B_12SWH_20261013_0_L2A/S2B_12SWH_20261013_0_L2A.json",
+              "type": "application/json"
+            },
+            {
+              "rel": "license",
+              "href": "https://sentinel.esa.int/documents/247904/690755/Sentinel_Data_Legal_Notice"
+            },
+            {
+              "rel": "derived_from",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l1c/items/S2B_12SWH_20261013_0_L1C",
+              "type": "application/geo+json"
+            },
+            {
+              "rel": "parent",
+              "type": "application/json",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a"
+            },
+            {
+              "rel": "collection",
+              "type": "application/json",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a"
+            },
+            {
+              "rel": "root",
+              "type": "application/json",
+              "href": "https://earth-search.aws.element84.com/v1"
+            },
+            {
+              "rel": "thumbnail",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_12SWH_20261013_0_L2A/thumbnail"
+            }
+          ]
+        },
+        {
+          "id": "S2A_12SWH_20261010_1_L2A",
+          "properties": {
+            "created": "2026-10-11T03:28:20.838Z",
+            "platform": "sentinel-2a",
+            "constellation": "sentinel-2",
+            "instruments": [
+              "msi"
+            ],
+            "eo:cloud_cover": 69.125086,
+            "proj:epsg": 32612,
+            "proj:centroid": {
+              "lat": 38.37448,
+              "lon": -110.42391
+            },
+            "mgrs:utm_zone": 12,
+            "mgrs:latitude_band": "S",
+            "mgrs:grid_square": "WH",
+            "grid:code": "MGRS-12SWH",
+            "view:azimuth": 284.77221390538176,
+            "view:incidence_angle": 7.865488363619661,
+            "view:sun_azimuth": 164.605288820464,
+            "view:sun_elevation": 43.6098682058563,
+            "s2:tile_id": "S2A_OPER_MSI_L2A_TL_2APS_20261011T020904_A059026_T12SWH_N05.13",
+            "s2:degraded_msi_data_percentage": 0.0239,
+            "s2:nodata_pixel_percentage": 8.793156,
+            "s2:saturated_defective_pixel_percentage": 0,
+            "s2:cloud_shadow_percentage": 4.308837,
+            "s2:vegetation_percentage": 0.005304,
+            "s2:not_vegetated_percentage": 25.027695,
+            "s2:water_percentage": 0.003725,
+            "s2:unclassified_percentage": 1.433999,
+            "s2:medium_proba_clouds_percentage": 15.765275,
+            "s2:high_proba_clouds_percentage": 51.489496,
+            "s2:thin_cirrus_percentage": 1.870313,
+            "s2:snow_ice_percentage": 0,
+            "s2:product_type": "S2MSI2A",
+            "s2:processing_baseline": "05.13",
+            "s2:product_uri": "S2A_MSIL2A_20261010T181801_N0513_R084_T12SWH_20261011T020904.SAFE",
+            "s2:generation_time": "2026-10-11T02:09:04.000000Z",
+            "s2:datatake_id": "GS2A_20261010T181801_059026_N05.13",
+            "s2:datatake_type": "INS-NOBS",
+            "s2:datastrip_id": "S2A_OPER_MSI_L2A_DS_2APS_20261011T020904_S20261010T182326_N05.13",
+            "s2:reflectance_conversion_factor": 1.00136762397551,
+            "datetime": "2026-10-10T18:23:43.763000Z",
+            "s2:sequence": "1",
+            "earthsearch:s3_path": "s3://sentinel-cogs/sentinel-s2-l2a-cogs/12/S/WH/2026/10/S2A_12SWH_20261010_1_L2A",
+            "earthsearch:payload_id": "roda-sentinel2/workflow-sentinel2-to-stac/6ab600945728cc41efbe0f0a07c1fb33",
+            "earthsearch:boa_offset_applied": true,
+            "processing:software": {
+              "sentinel2-to-stac": "2026.08.16"
+            },
+            "updated": "2026-10-11T03:28:20.838Z"
+          },
+          "links": [
+            {
+              "rel": "self",
+              "type": "application/geo+json",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_12SWH_20261010_1_L2A"
+            },
+            {
+              "rel": "canonical",
+              "href": "s3://sentinel-cogs/sentinel-s2-l2a-cogs/12/S/WH/2026/10/S2A_12SWH_20261010_1_L2A/S2A_12SWH_20261010_1_L2A.json",
+              "type": "application/json"
+            },
+            {
+              "rel": "license",
+              "href": "https://sentinel.esa.int/documents/247904/690755/Sentinel_Data_Legal_Notice"
+            },
+            {
+              "rel": "derived_from",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l1c/items/S2A_12SWH_20261010_1_L1C",
+              "type": "application/geo+json"
+            },
+            {
+              "rel": "parent",
+              "type": "application/json",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a"
+            },
+            {
+              "rel": "collection",
+              "type": "application/json",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a"
+            },
+            {
+              "rel": "root",
+              "type": "application/json",
+              "href": "https://earth-search.aws.element84.com/v1"
+            },
+            {
+              "rel": "thumbnail",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_12SWH_20261010_1_L2A/thumbnail"
+            }
+          ]
+        },
+        {
+          "id": "S2C_12SWH_20261008_0_L2A",
+          "properties": {
+            "created": "2026-10-08T22:45:26.049Z",
+            "platform": "sentinel-2c",
+            "constellation": "sentinel-2",
+            "instruments": [
+              "msi"
+            ],
+            "eo:cloud_cover": 0.502094,
+            "proj:epsg": 32612,
+            "proj:centroid": {
+              "lat": 38.37485,
+              "lon": -110.42563
+            },
+            "mgrs:utm_zone": 12,
+            "mgrs:latitude_band": "S",
+            "mgrs:grid_square": "WH",
+            "grid:code": "MGRS-12SWH",
+            "view:azimuth": 284.8915057254077,
+            "view:incidence_angle": 7.849023169796957,
+            "view:sun_azimuth": 164.139786519263,
+            "view:sun_elevation": 44.3134105472973,
+            "s2:tile_id": "S2C_OPER_MSI_L2A_TL_2CPS_20261008T212504_A010922_T12SWH_N05.13",
+            "s2:degraded_msi_data_percentage": 0.0188,
+            "s2:nodata_pixel_percentage": 9.091745,
+            "s2:saturated_defective_pixel_percentage": 0,
+            "s2:cloud_shadow_percentage": 0.699187,
+            "s2:vegetation_percentage": 0.424203,
+            "s2:not_vegetated_percentage": 96.801978,
+            "s2:water_percentage": 0.141574,
+            "s2:unclassified_percentage": 0.010865,
+            "s2:medium_proba_clouds_percentage": 0.20537,
+            "s2:high_proba_clouds_percentage": 0.2966,
+            "s2:thin_cirrus_percentage": 0.000124,
+            "s2:snow_ice_percentage": 0,
+            "s2:product_type": "S2MSI2A",
+            "s2:processing_baseline": "05.13",
+            "s2:product_uri": "S2C_MSIL2A_20261008T181241_N0513_R084_T12SWH_20261008T212504.SAFE",
+            "s2:generation_time": "2026-10-08T21:25:04.000000Z",
+            "s2:datatake_id": "GS2C_20261008T181241_010922_N05.13",
+            "s2:datatake_type": "INS-NOBS",
+            "s2:datastrip_id": "S2C_OPER_MSI_L2A_DS_2CPS_20261008T212504_S20261008T181511_N05.13",
+            "s2:reflectance_conversion_factor": 1.00021347989906,
+            "datetime": "2026-10-08T18:23:33.138000Z",
+            "s2:sequence": "0",
+            "earthsearch:s3_path": "s3://sentinel-cogs/sentinel-s2-l2a-cogs/12/S/WH/2026/10/S2C_12SWH_20261008_0_L2A",
+            "earthsearch:payload_id": "roda-sentinel2/workflow-sentinel2-to-stac/aababf2d97c2632364f7d6ecbd7ab169",
+            "earthsearch:boa_offset_applied": true,
+            "processing:software": {
+              "sentinel2-to-stac": "2026.08.16"
+            },
+            "updated": "2026-10-08T22:45:26.049Z"
+          },
+          "links": [
+            {
+              "rel": "self",
+              "type": "application/geo+json",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2C_12SWH_20261008_0_L2A"
+            },
+            {
+              "rel": "canonical",
+              "href": "s3://sentinel-cogs/sentinel-s2-l2a-cogs/12/S/WH/2026/10/S2C_12SWH_20261008_0_L2A/S2C_12SWH_20261008_0_L2A.json",
+              "type": "application/json"
+            },
+            {
+              "rel": "license",
+              "href": "https://sentinel.esa.int/documents/247904/690755/Sentinel_Data_Legal_Notice"
+            },
+            {
+              "rel": "derived_from",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l1c/items/S2C_12SWH_20261008_0_L1C",
+              "type": "application/geo+json"
+            },
+            {
+              "rel": "parent",
+              "type": "application/json",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a"
+            },
+            {
+              "rel": "collection",
+              "type": "application/json",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a"
+            },
+            {
+              "rel": "root",
+              "type": "application/json",
+              "href": "https://earth-search.aws.element84.com/v1"
+            },
+            {
+              "rel": "thumbnail",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2C_12SWH_20261008_0_L2A/thumbnail"
+            }
+          ]
+        },
+        {
+          "id": "S2C_12SWH_20261005_0_L2A",
+          "properties": {
+            "created": "2026-10-05T22:16:41.188Z",
+            "platform": "sentinel-2c",
+            "constellation": "sentinel-2",
+            "instruments": [
+              "msi"
+            ],
+            "eo:cloud_cover": 0.221599,
+            "proj:epsg": 32612,
+            "proj:centroid": {
+              "lat": 38.32936,
+              "lon": -110.27105
+            },
+            "mgrs:utm_zone": 12,
+            "mgrs:latitude_band": "S",
+            "mgrs:grid_square": "WH",
+            "grid:code": "MGRS-12SWH",
+            "view:azimuth": 103.12551819046178,
+            "view:incidence_angle": 8.266370838952184,
+            "view:sun_azimuth": 160.08127532118,
+            "view:sun_elevation": 44.7777927828687,
+            "s2:tile_id": "S2C_OPER_MSI_L2A_TL_2CPS_20261005T205711_A010879_T12SWH_N05.13",
+            "s2:degraded_msi_data_percentage": 0.0127,
+            "s2:nodata_pixel_percentage": 16.429286,
+            "s2:saturated_defective_pixel_percentage": 0,
+            "s2:cloud_shadow_percentage": 0.106557,
+            "s2:vegetation_percentage": 0.746601,
+            "s2:not_vegetated_percentage": 97.247547,
+            "s2:water_percentage": 0.157609,
+            "s2:unclassified_percentage": 0.011073,
+            "s2:medium_proba_clouds_percentage": 0.028386,
+            "s2:high_proba_clouds_percentage": 0.00927,
+            "s2:thin_cirrus_percentage": 0.183943,
+            "s2:snow_ice_percentage": 0,
+            "s2:product_type": "S2MSI2A",
+            "s2:processing_baseline": "05.13",
+            "s2:product_uri": "S2C_MSIL2A_20261005T180221_N0513_R041_T12SWH_20261005T205711.SAFE",
+            "s2:generation_time": "2026-10-05T20:57:11.000000Z",
+            "s2:datatake_id": "GS2C_20261005T180221_010879_N05.13",
+            "s2:datatake_type": "INS-NOBS",
+            "s2:datastrip_id": "S2C_OPER_MSI_L2A_DS_2CPS_20261005T205711_S20261005T181247_N05.13",
+            "s2:reflectance_conversion_factor": 0.998485024751922,
+            "datetime": "2026-10-05T18:13:37.278000Z",
+            "s2:sequence": "0",
+            "earthsearch:s3_path": "s3://sentinel-cogs/sentinel-s2-l2a-cogs/12/S/WH/2026/10/S2C_12SWH_20261005_0_L2A",
+            "earthsearch:payload_id": "roda-sentinel2/workflow-sentinel2-to-stac/8c9fca37c36f96f21a3a5ea6363d4c59",
+            "earthsearch:boa_offset_applied": true,
+            "processing:software": {
+              "sentinel2-to-stac": "2026.08.16"
+            },
+            "updated": "2026-10-05T22:16:41.188Z"
+          },
+          "links": [
+            {
+              "rel": "self",
+              "type": "application/geo+json",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2C_12SWH_20261005_0_L2A"
+            },
+            {
+              "rel": "canonical",
+              "href": "s3://sentinel-cogs/sentinel-s2-l2a-cogs/12/S/WH/2026/10/S2C_12SWH_20261005_0_L2A/S2C_12SWH_20261005_0_L2A.json",
+              "type": "application/json"
+            },
+            {
+              "rel": "license",
+              "href": "https://sentinel.esa.int/documents/247904/690755/Sentinel_Data_Legal_Notice"
+            },
+            {
+              "rel": "derived_from",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l1c/items/S2C_12SWH_20261005_0_L1C",
+              "type": "application/geo+json"
+            },
+            {
+              "rel": "parent",
+              "type": "application/json",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a"
+            },
+            {
+              "rel": "collection",
+              "type": "application/json",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a"
+            },
+            {
+              "rel": "root",
+              "type": "application/json",
+              "href": "https://earth-search.aws.element84.com/v1"
+            },
+            {
+              "rel": "thumbnail",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2C_12SWH_20261005_0_L2A/thumbnail"
+            }
+          ]
+        },
+        {
+          "id": "S2B_12SWH_20261003_1_L2A",
+          "properties": {
+            "created": "2026-10-03T23:11:25.524Z",
+            "platform": "sentinel-2b",
+            "constellation": "sentinel-2",
+            "instruments": [
+              "msi"
+            ],
+            "eo:cloud_cover": 1.485109,
+            "proj:epsg": 32612,
+            "proj:centroid": {
+              "lat": 38.30288,
+              "lon": -110.47229
+            },
+            "mgrs:utm_zone": 12,
+            "mgrs:latitude_band": "S",
+            "mgrs:grid_square": "WH",
+            "grid:code": "MGRS-12SWH",
+            "view:azimuth": 283.5429501445319,
+            "view:incidence_angle": 7.691159682775227,
+            "view:sun_azimuth": 163.016330433773,
+            "view:sun_elevation": 46.1000063738778,
+            "s2:tile_id": "S2B_OPER_MSI_L2A_TL_2BPS_20261003T220116_A050017_T12SWH_N05.13",
+            "s2:degraded_msi_data_percentage": 0.0211,
+            "s2:nodata_pixel_percentage": 22.669205,
+            "s2:saturated_defective_pixel_percentage": 0,
+            "s2:cloud_shadow_percentage": 0.142692,
+            "s2:vegetation_percentage": 0.597089,
+            "s2:not_vegetated_percentage": 94.470072,
+            "s2:water_percentage": 0.063958,
+            "s2:unclassified_percentage": 0.010061,
+            "s2:medium_proba_clouds_percentage": 0.004574,
+            "s2:high_proba_clouds_percentage": 0.000459,
+            "s2:thin_cirrus_percentage": 1.480076,
+            "s2:snow_ice_percentage": 0,
+            "s2:product_type": "S2MSI2A",
+            "s2:processing_baseline": "05.13",
+            "s2:product_uri": "S2B_MSIL2A_20261003T181159_N0513_R084_T12SWH_20261003T220116.SAFE",
+            "s2:generation_time": "2026-10-03T22:01:16.000000Z",
+            "s2:datatake_id": "GS2B_20261003T181159_050017_N05.13",
+            "s2:datatake_type": "INS-NOBS",
+            "s2:datastrip_id": "S2B_OPER_MSI_L2A_DS_2BPS_20261003T220116_S20261003T182321_N05.13",
+            "s2:reflectance_conversion_factor": 0.997343725829279,
+            "datetime": "2026-10-03T18:23:32.590000Z",
+            "s2:sequence": "1",
+            "earthsearch:s3_path": "s3://sentinel-cogs/sentinel-s2-l2a-cogs/12/S/WH/2026/10/S2B_12SWH_20261003_1_L2A",
+            "earthsearch:payload_id": "roda-sentinel2/workflow-sentinel2-to-stac/63c5e66693ed59f9983724f6f0cd0cca",
+            "earthsearch:boa_offset_applied": true,
+            "processing:software": {
+              "sentinel2-to-stac": "2026.08.16"
+            },
+            "updated": "2026-10-03T23:11:25.524Z"
+          },
+          "links": [
+            {
+              "rel": "self",
+              "type": "application/geo+json",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_12SWH_20261003_1_L2A"
+            },
+            {
+              "rel": "canonical",
+              "href": "s3://sentinel-cogs/sentinel-s2-l2a-cogs/12/S/WH/2026/10/S2B_12SWH_20261003_1_L2A/S2B_12SWH_20261003_1_L2A.json",
+              "type": "application/json"
+            },
+            {
+              "rel": "license",
+              "href": "https://sentinel.esa.int/documents/247904/690755/Sentinel_Data_Legal_Notice"
+            },
+            {
+              "rel": "derived_from",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l1c/items/S2B_12SWH_20261003_1_L1C",
+              "type": "application/geo+json"
+            },
+            {
+              "rel": "parent",
+              "type": "application/json",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a"
+            },
+            {
+              "rel": "collection",
+              "type": "application/json",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a"
+            },
+            {
+              "rel": "root",
+              "type": "application/json",
+              "href": "https://earth-search.aws.element84.com/v1"
+            },
+            {
+              "rel": "thumbnail",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_12SWH_20261003_1_L2A/thumbnail"
+            }
+          ]
+        },
+        {
+          "id": "S2C_12SWH_20260928_0_L2A",
+          "properties": {
+            "created": "2026-09-28T22:48:34.283Z",
+            "platform": "sentinel-2c",
+            "constellation": "sentinel-2",
+            "instruments": [
+              "msi"
+            ],
+            "eo:cloud_cover": 97.042662,
+            "proj:epsg": 32612,
+            "proj:centroid": {
+              "lat": 38.37473,
+              "lon": -110.42525
+            },
+            "mgrs:utm_zone": 12,
+            "mgrs:latitude_band": "S",
+            "mgrs:grid_square": "WH",
+            "grid:code": "MGRS-12SWH",
+            "view:azimuth": 284.9288752944243,
+            "view:incidence_angle": 7.838807782192492,
+            "view:sun_azimuth": 161.774076077799,
+            "view:sun_elevation": 47.8876728716928,
+            "s2:tile_id": "S2C_OPER_MSI_L2A_TL_2CPS_20260928T211911_A010779_T12SWH_N05.13",
+            "s2:degraded_msi_data_percentage": 0.0264,
+            "s2:nodata_pixel_percentage": 9.033165,
+            "s2:saturated_defective_pixel_percentage": 0,
+            "s2:cloud_shadow_percentage": 0.039063,
+            "s2:vegetation_percentage": 0.005657,
+            "s2:not_vegetated_percentage": 2.614301,
+            "s2:water_percentage": 0.000146,
+            "s2:unclassified_percentage": 0.223828,
+            "s2:medium_proba_clouds_percentage": 45.403016,
+            "s2:high_proba_clouds_percentage": 51.356691,
+            "s2:thin_cirrus_percentage": 0.282958,
+            "s2:snow_ice_percentage": 0.010504,
+            "s2:product_type": "S2MSI2A",
+            "s2:processing_baseline": "05.13",
+            "s2:product_uri": "S2C_MSIL2A_20260928T181131_N0513_R084_T12SWH_20260928T211911.SAFE",
+            "s2:generation_time": "2026-09-28T21:19:11.000000Z",
+            "s2:datatake_id": "GS2C_20260928T181131_010779_N05.13",
+            "s2:datatake_type": "INS-NOBS",
+            "s2:datastrip_id": "S2C_OPER_MSI_L2A_DS_2CPS_20260928T211911_S20260928T182045_N05.13",
+            "s2:reflectance_conversion_factor": 0.994505910392653,
+            "datetime": "2026-09-28T18:23:32.735000Z",
+            "s2:sequence": "0",
+            "earthsearch:s3_path": "s3://sentinel-cogs/sentinel-s2-l2a-cogs/12/S/WH/2026/9/S2C_12SWH_20260928_0_L2A",
+            "earthsearch:payload_id": "roda-sentinel2/workflow-sentinel2-to-stac/6eae9f983fb75b56effd6b34d8c95d61",
+            "earthsearch:boa_offset_applied": true,
+            "processing:software": {
+              "sentinel2-to-stac": "2026.08.16"
+            },
+            "updated": "2026-09-28T22:48:34.283Z"
+          },
+          "links": [
+            {
+              "rel": "self",
+              "type": "application/geo+json",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2C_12SWH_20260928_0_L2A"
+            },
+            {
+              "rel": "canonical",
+              "href": "s3://sentinel-cogs/sentinel-s2-l2a-cogs/12/S/WH/2026/9/S2C_12SWH_20260928_0_L2A/S2C_12SWH_20260928_0_L2A.json",
+              "type": "application/json"
+            },
+            {
+              "rel": "license",
+              "href": "https://sentinel.esa.int/documents/247904/690755/Sentinel_Data_Legal_Notice"
+            },
+            {
+              "rel": "derived_from",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l1c/items/S2C_12SWH_20260928_0_L1C",
+              "type": "application/geo+json"
+            },
+            {
+              "rel": "parent",
+              "type": "application/json",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a"
+            },
+            {
+              "rel": "collection",
+              "type": "application/json",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a"
+            },
+            {
+              "rel": "root",
+              "type": "application/json",
+              "href": "https://earth-search.aws.element84.com/v1"
+            },
+            {
+              "rel": "thumbnail",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2C_12SWH_20260928_0_L2A/thumbnail"
+            }
+          ]
+        },
+        {
+          "id": "S2A_12SWH_20260927_0_L2A",
+          "properties": {
+            "created": "2026-09-28T04:08:38.100Z",
+            "platform": "sentinel-2a",
+            "constellation": "sentinel-2",
+            "instruments": [
+              "msi"
+            ],
+            "eo:cloud_cover": 48.131716,
+            "proj:epsg": 32612,
+            "proj:centroid": {
+              "lat": 38.32931,
+              "lon": -110.27011
+            },
+            "mgrs:utm_zone": 12,
+            "mgrs:latitude_band": "S",
+            "mgrs:grid_square": "WH",
+            "grid:code": "MGRS-12SWH",
+            "view:azimuth": 103.26259198147054,
+            "view:incidence_angle": 8.245718687944267,
+            "view:sun_azimuth": 158.005769808363,
+            "view:sun_elevation": 47.5841566276395,
+            "s2:tile_id": "S2A_OPER_MSI_L2A_TL_2APS_20260928T022108_A058840_T12SWH_N05.13",
+            "s2:degraded_msi_data_percentage": 0.0181,
+            "s2:nodata_pixel_percentage": 16.554219,
+            "s2:saturated_defective_pixel_percentage": 0,
+            "s2:cloud_shadow_percentage": 1.686999,
+            "s2:vegetation_percentage": 0.290724,
+            "s2:not_vegetated_percentage": 47.10615,
+            "s2:water_percentage": 0.06778,
+            "s2:unclassified_percentage": 2.098078,
+            "s2:medium_proba_clouds_percentage": 13.898513,
+            "s2:high_proba_clouds_percentage": 27.758723,
+            "s2:thin_cirrus_percentage": 6.474483,
+            "s2:snow_ice_percentage": 0,
+            "s2:product_type": "S2MSI2A",
+            "s2:processing_baseline": "05.13",
+            "s2:product_uri": "S2A_MSIL2A_20260927T180751_N0513_R041_T12SWH_20260928T022108.SAFE",
+            "s2:generation_time": "2026-09-28T02:21:08.000000Z",
+            "s2:datatake_id": "GS2A_20260927T180751_058840_N05.13",
+            "s2:datatake_type": "INS-NOBS",
+            "s2:datastrip_id": "S2A_OPER_MSI_L2A_DS_2APS_20260928T022108_S20260927T180749_N05.13",
+            "s2:reflectance_conversion_factor": 0.993942593792071,
+            "datetime": "2026-09-27T18:13:49.278000Z",
+            "s2:sequence": "0",
+            "earthsearch:s3_path": "s3://sentinel-cogs/sentinel-s2-l2a-cogs/12/S/WH/2026/9/S2A_12SWH_20260927_0_L2A",
+            "earthsearch:payload_id": "roda-sentinel2/workflow-sentinel2-to-stac/8a3de63506143e90bb2f81c163406eda",
+            "earthsearch:boa_offset_applied": true,
+            "processing:software": {
+              "sentinel2-to-stac": "2026.08.16"
+            },
+            "updated": "2026-09-28T04:08:38.100Z"
+          },
+          "links": [
+            {
+              "rel": "self",
+              "type": "application/geo+json",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_12SWH_20260927_0_L2A"
+            },
+            {
+              "rel": "canonical",
+              "href": "s3://sentinel-cogs/sentinel-s2-l2a-cogs/12/S/WH/2026/9/S2A_12SWH_20260927_0_L2A/S2A_12SWH_20260927_0_L2A.json",
+              "type": "application/json"
+            },
+            {
+              "rel": "license",
+              "href": "https://sentinel.esa.int/documents/247904/690755/Sentinel_Data_Legal_Notice"
+            },
+            {
+              "rel": "derived_from",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l1c/items/S2A_12SWH_20260927_0_L1C",
+              "type": "application/geo+json"
+            },
+            {
+              "rel": "parent",
+              "type": "application/json",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a"
+            },
+            {
+              "rel": "collection",
+              "type": "application/json",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a"
+            },
+            {
+              "rel": "root",
+              "type": "application/json",
+              "href": "https://earth-search.aws.element84.com/v1"
+            },
+            {
+              "rel": "thumbnail",
+              "href": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_12SWH_20260927_0_L2A/thumbnail"
+            }
+          ]
+        }
+      ],
+      "note": "Ten recent scene candidates, not all imagery. 10m visible bands cannot resolve rover obstacles. Check clouds."
+    }
+  },
+  "errors": {}
+}

@@ -1,0 +1,35 @@
+name: Rover checks
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  unit:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements-dev.txt
+      - run: python -m pytest -q
+      - run: python -m compileall -q src tools
+      - run: python tools/generate_training.py && git diff --exit-code src/urc_bringup
+  ros-simulation:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Jazzy and Harmonic environment
+        run: docker build -t urc-brain .
+      - name: Run real Gazebo and Nav2 integration test
+        run: |
+          mkdir -p artifacts
+          docker run --rm --shm-size=1g -v "$PWD/artifacts:/workspaces/ROS-2-URC/artifacts" urc-brain bash scripts/integration.sh
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ros-simulation-logs
+          path: artifacts/
