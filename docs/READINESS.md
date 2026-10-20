@@ -2,14 +2,16 @@
 
 Version 0.1 is a runnable development foundation, not a completed competition brain.
 
+**Verified October 20, 2026:** [GitHub Actions run 39511218743](https://github.com/adrielsta/ROS-2-URC/actions/runs/39511218743) passed both the unit job and the real Gazebo/Nav2 integration job at commit `44dc8c500664a21fc1df5bbfab6fe385acf36332`. The local test suite contains 29 passing tests. Integration verified disarmed startup with live simulated sensors, completion of both navigation targets, stopped arrival with the green LED state, and a latched software emergency stop that blocks re-arming. These checks apply to the small synthetic obstacle course, not the Utah heightfield or real hardware. See [verification record](evidence/verification.json).
+
 | Capability | Implemented | Verified evidence / remaining gate |
 |---|---|---|
 | Pure command arbitration | Yes | Unit tests for invalid/stale inputs, mode switches, e-stop and link loss |
 | Mission input validation | Yes | Unit tests reject wrong frames and invalid coordinates |
-| ROS mission and command nodes | Yes | Full ROS behavior requires the integration job |
-| Small Gazebo/Nav2 route | Yes | Inspect GitHub Actions `ros-simulation` result and its uploaded logs |
+| ROS mission and command nodes | Yes | ROS construction and live full-stack integration passed in the linked run |
+| Small Gazebo/Nav2 route | Yes | Two-target completion, stopped arrival and latched e-stop passed in the linked run |
 | Utah live catalog | Yes | Timestamped catalog; per-source failures remain visible |
-| Georeferenced DEM conversion | Yes | Synthetic raster orientation/scale tests; actual source-run report when available |
+| Georeferenced DEM conversion | Yes | Synthetic raster orientation/scale tests and [actual source-run evidence](evidence/README.md); surveyed coordinate checks remain |
 | Full Utah driving trial | No | Spawn/model calibration, frame alignment, outdoor localization and collision-map validation |
 | GNSS/IMU/encoder fusion | No | Sensor drivers, extrinsics, covariance and dropout trials |
 | ArUco target refinement | No | Calibrated RGB/depth detector and measured target stop accuracy |

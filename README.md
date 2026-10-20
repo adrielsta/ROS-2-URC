@@ -4,6 +4,8 @@ ROS 2 autonomy foundation for [adrielsta](https://github.com/adrielsta)'s Univer
 
 The first milestone is a repeatable chain: simulated sensors → Nav2 path planning/control → supervised drive commands → verified arrival. Real Utah data is a separate, reproducible terrain pipeline. Neither a successful simulation nor an overhead map proves a real rover can climb a slope.
 
+**Verified baseline:** [real Gazebo + Nav2 integration and unit checks passed](https://github.com/adrielsta/ROS-2-URC/actions/runs/39511218743) on October 20, 2026. See [readiness and exact scope](docs/READINESS.md) and the [Utah data preview](docs/evidence/README.md).
+
 ## What is implemented
 
 - ROS 2 Jazzy / Ubuntu 24.04 / Gazebo Harmonic workspace and cloud devcontainer.

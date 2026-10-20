@@ -1,0 +1,28 @@
+{
+  "verified_on": "2026-10-20",
+  "repository": "https://github.com/adrielsta/ROS-2-URC",
+  "code_commit": "44dc8c500664a21fc1df5bbfab6fe385acf36332",
+  "workflow_run_url": "https://github.com/adrielsta/ROS-2-URC/actions/runs/39511218743",
+  "unit_job": "passed",
+  "local_pytest_count": 29,
+  "ros_simulation_job": "passed",
+  "integration_assertions": [
+    "Fresh simulated sensors and disarmed zero-command startup",
+    "Nav2 mission completes both targets in synthetic obstacle course",
+    "Zero output and flashing_green arrival indication",
+    "Software emergency stop latches zero output",
+    "Autonomy re-arm rejected while emergency stop is latched"
+  ],
+  "log_excerpt": [
+    "2026-10-20T22:55:14.1892277Z #10 4.881 PASS: both ROS nodes construct successfully",
+    "2026-10-20T22:55:37.3464920Z PASS: Sensors active, rover starts disarmed at zero speed",
+    "2026-10-20T22:56:12.5024429Z PASS: Mission terminates",
+    "2026-10-20T22:56:12.5962096Z PASS: Stopped arrival and LED indication",
+    "2026-10-20T22:56:12.8470281Z PASS: Emergency stop latches zero output"
+  ],
+  "limits": [
+    "Synthetic flat obstacle course with placeholder chassis",
+    "Utah terrain export and offline slope-cost planning are separate from the ROS integration test",
+    "No validated outdoor GNSS/IMU fusion, physical rover, radio link, astronaut assistance or manipulation"
+  ]
+}
