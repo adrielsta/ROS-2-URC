@@ -25,6 +25,7 @@ jobs:
       - name: Build Jazzy and Harmonic environment
         run: docker build -t urc-brain .
       - name: Run real Gazebo and Nav2 integration test
+        timeout-minutes: 9
         run: |
           mkdir -p artifacts
           docker run --rm --shm-size=1g -v "$PWD/artifacts:/workspaces/ROS-2-URC/artifacts" urc-brain bash scripts/integration.sh

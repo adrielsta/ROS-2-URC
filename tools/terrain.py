@@ -9,6 +9,8 @@ from datetime import datetime, timezone
 import hashlib
 import json
 import math
+import os
+import ssl
 from pathlib import Path
 import xml.etree.ElementTree as ET
 
@@ -23,6 +25,12 @@ AOI = [-110.786, 38.411, -110.768, 38.425]  # west, south, east, north; rule 1.e
 TNM = 'https://tnmaccess.nationalmap.gov/api/v1/products'
 NAIP = 'https://apps.geo.fpac.usda.gov/geo-imagery/rest/services/naip/conus_naip/ImageServer'
 STAC = 'https://earth-search.aws.element84.com/v1/search'
+
+# GDAL reads this environment setting when its HTTP driver is initialized.
+# Preserve a caller-supplied bundle; otherwise use the Python/system trust store.
+_system_ca = ssl.get_default_verify_paths().cafile
+if _system_ca:
+    os.environ.setdefault('GDAL_CURL_CA_BUNDLE', _system_ca)
 
 
 def http():
@@ -127,7 +135,11 @@ def fetch_dem(args):
         if not url or not url.lower().endswith(('.tif', '.tiff')):
             continue
         print('Reading window:', item['title'], flush=True)
-        with rasterio.Env(GDAL_DISABLE_READDIR_ON_OPEN='EMPTY_DIR',
+        # Respect the host trust store (including an enterprise proxy CA) without
+        # disabling certificate verification. Rasterio wheels may ship a different CA set.
+        ca = os.environ.get('GDAL_CURL_CA_BUNDLE') or ssl.get_default_verify_paths().cafile
+        tls = {'GDAL_CURL_CA_BUNDLE': ca} if ca else {}
+        with rasterio.Env(**tls, GDAL_DISABLE_READDIR_ON_OPEN='EMPTY_DIR',
                           CPL_VSIL_CURL_ALLOWED_EXTENSIONS='.tif,.tiff', GDAL_HTTP_TIMEOUT='60'):
             with rasterio.open(url) as src:
                 crop_bounds = transform_bounds(crs, src.crs, west, south, east, north, densify_pts=21)
@@ -162,6 +174,115 @@ def fetch_dem(args):
                 'note': 'Derived clipped raster. The catalog may update independently of acquisition.'}
     args.output.with_suffix('.source.json').write_text(json.dumps(manifest, indent=2) + '\n')
     print(json.dumps({'file': str(args.output), 'shape': shape, 'min_m': float(dem.min()), 'max_m': float(dem.max()), 'sources': len(used)}, indent=2))
+
+
+def fetch_imagery(args):
+    """Retrieve a bounded NAIP RGB GeoTIFF, locked to dated primary source rasters."""
+    import rasterio
+    from rasterio.warp import transform_bounds
+    if not math.isfinite(args.resolution) or args.resolution <= 0:
+        raise ValueError('Imagery export resolution must be finite and positive')
+    cat = json.loads(args.catalog.read_text())
+    features = cat['sources']['naip']['catalog'].get('features', [])
+    dated = [f['attributes'] for f in features if f['attributes'].get('QQDATE')]
+    if not dated:
+        raise ValueError('No dated primary imagery in the catalog')
+    latest_year = max(f['year_ts'] for f in dated)
+    selected = [f for f in dated if f['year_ts'] == latest_year]
+    bounds = transform_bounds('EPSG:4326', 'EPSG:26912', *cat['bbox_wgs84'], densify_pts=21)
+    width = min(4096, math.ceil((bounds[2]-bounds[0])/args.resolution))
+    height = min(4096, math.ceil((bounds[3]-bounds[1])/args.resolution))
+    export_params = {
+        'f': 'image', 'bbox': ','.join(map(str, bounds)), 'bboxSR': 26912,
+        'imageSR': 26912, 'size': f'{width},{height}', 'format': 'tiff',
+        'pixelType': 'U8', 'bandIds': '0,1,2', 'interpolation': 'RSP_BilinearInterpolation',
+        'adjustAspectRatio': 'false', 'noDataInterpretation': 'esriNoDataMatchAll',
+        'mosaicRule': json.dumps({'mosaicMethod': 'esriMosaicLockRaster',
+                                 'lockRasterIds': [f['OBJECTID'] for f in selected],
+                                 'mosaicOperation': 'MT_FIRST'}),
+    }
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    download = http().get(NAIP+'/exportImage', params=export_params, timeout=120)
+    download.raise_for_status()
+    args.output.write_bytes(download.content)
+    with rasterio.open(args.output) as image:
+        if image.count < 3 or not image.crs or image.width < 10 or image.height < 10:
+            raise ValueError('Imagery response is not a georeferenced RGB raster')
+        # Preview remains separate from the exact GeoTIFF.
+        rgb = image.read([1, 2, 3], out_shape=(3, 900, 900)).transpose(1, 2, 0)
+        Image.fromarray(rgb).save(args.output.with_suffix('.preview.png'))
+        info = {'source_endpoint': NAIP, 'source_tiles': selected,
+                'retrieved_at_utc': datetime.now(timezone.utc).isoformat(),
+                'crs': str(image.crs), 'resolution_m': list(image.res),
+                'bounds': list(image.bounds), 'sha256': sha256(args.output),
+                'note': 'NAIP aerial imagery. Resampled export, not new acquisition. Check actual coverage/nodata before use.'}
+    args.output.with_suffix('.source.json').write_text(json.dumps(info, indent=2)+'\n')
+    print(json.dumps(info, indent=2))
+
+
+def fetch_satellite(args):
+    """Clip the latest low-scene-cloud Sentinel-2 visual and scene-classification rasters."""
+    import rasterio
+    from rasterio.warp import transform_bounds
+    from rasterio.windows import from_bounds
+    cat = json.loads(args.catalog.read_text())
+    candidates = cat['sources']['sentinel2_recent']['items']
+    acceptable = [f for f in candidates if f['properties'].get('eo:cloud_cover', 100) <= args.max_cloud]
+    if not acceptable:
+        raise ValueError('No recent scene meets the cloud threshold; expand catalog range explicitly')
+    acceptable.sort(key=lambda f: f['properties']['datetime'], reverse=True)
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    ca = os.environ.get('GDAL_CURL_CA_BUNDLE') or ssl.get_default_verify_paths().cafile
+    tls = {'GDAL_CURL_CA_BUNDLE': ca} if ca else {}
+    rejections = []
+    outputs = {}
+    selected = None
+
+    def clip(url):
+        with rasterio.open(url) as src:
+            bounds = transform_bounds('EPSG:4326', src.crs, *cat['bbox_wgs84'], densify_pts=21)
+            window = from_bounds(*bounds, src.transform).round_offsets().round_lengths()
+            values = src.read(window=window)
+            profile = src.profile.copy()
+            profile.update(width=values.shape[2], height=values.shape[1],
+                           transform=src.window_transform(window), compress='deflate')
+            return values, profile, list(src.res)
+
+    with rasterio.Env(**tls, GDAL_DISABLE_READDIR_ON_OPEN='EMPTY_DIR',
+                      CPL_VSIL_CURL_ALLOWED_EXTENSIONS='.tif,.tiff', GDAL_HTTP_TIMEOUT='60'):
+        for candidate in acceptable:
+            source_url = next(x['href'] for x in candidate['links'] if x['rel'] == 'self')
+            item = request_json(source_url, {})
+            scl, scl_profile, scl_res = clip(item['assets']['scl']['href'])
+            invalid = np.isin(scl, [0, 1, 3, 8, 9, 10, 11])
+            flagged = float(invalid.mean())
+            counts = {str(k): int(v) for k, v in zip(*np.unique(scl, return_counts=True))}
+            if flagged > args.max_aoi_flagged:
+                rejections.append({'item': candidate['id'], 'aoi_flagged_fraction': flagged,
+                                   'scl_class_counts': counts})
+                continue
+            selected = candidate
+            visual, visual_profile, visual_res = clip(item['assets']['visual']['href'])
+            for key, values, profile, res in [('visual', visual, visual_profile, visual_res),
+                                              ('scl', scl, scl_profile, scl_res)]:
+                target = args.output if key == 'visual' else args.output.with_name(args.output.stem+'_scl.tif')
+                with rasterio.open(target, 'w', **profile) as dst:
+                    dst.write(values)
+                outputs[key] = {'url': item['assets'][key]['href'], 'sha256': sha256(target),
+                                'native_pixel_size_m': res}
+                if key == 'scl':
+                    outputs[key].update(aoi_flagged_fraction=flagged, scl_class_counts=counts)
+            break
+    if selected is None:
+        raise ValueError('No recent scene passes the AOI coverage/cloud check: ' + json.dumps(rejections))
+    manifest = {'item': selected['id'], 'acquired_at_utc': selected['properties']['datetime'],
+                'scene_cloud_percent': selected['properties'].get('eo:cloud_cover'),
+                'retrieved_at_utc': datetime.now(timezone.utc).isoformat(), 'assets': outputs,
+                'rejected_newer_candidates': rejections,
+                'note': 'RGB at native 10m resolution for context/change review only; SCL flags require interpretation. No wheel-scale hazard claims.'}
+    args.output.with_suffix('.source.json').write_text(json.dumps(manifest, indent=2)+'\n')
+    print(json.dumps(manifest, indent=2))
+
 
 
 def traversability(dem, resolution, max_slope=20.0):
@@ -274,6 +395,17 @@ def main():
     f.add_argument('--catalog', type=Path, default=Path('data/catalog.json'))
     f.add_argument('--output', type=Path, default=Path('data/raw/urc_dem.tif'))
     f.set_defaults(func=fetch_dem)
+    i = sub.add_parser('fetch-imagery')
+    i.add_argument('--catalog', type=Path, default=Path('data/catalog.json'))
+    i.add_argument('--output', type=Path, default=Path('data/raw/urc_naip.tif'))
+    i.add_argument('--resolution', type=float, default=0.6)
+    i.set_defaults(func=fetch_imagery)
+    s = sub.add_parser('fetch-satellite')
+    s.add_argument('--catalog', type=Path, default=Path('data/catalog.json'))
+    s.add_argument('--output', type=Path, default=Path('data/raw/urc_sentinel2.tif'))
+    s.add_argument('--max-cloud', type=float, default=20.0)
+    s.add_argument('--max-aoi-flagged', type=float, default=0.1)
+    s.set_defaults(func=fetch_satellite)
     e = sub.add_parser('export')
     e.add_argument('--dem', type=Path, required=True)
     e.add_argument('--output', type=Path, default=Path('data/processed/utah'))

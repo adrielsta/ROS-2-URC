@@ -1,0 +1,97 @@
+{
+  "generated_at_utc": "2026-10-20T22:35:22.257522+00:00",
+  "sources": [
+    {
+      "title": "USGS 1 Meter 12 x51y426 UT_StatewideSouth_2020_A20",
+      "download_url": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/UT_StatewideSouth_2020_A20/TIFF/USGS_1M_12_x51y426_UT_StatewideSouth_2020_A20.tif",
+      "metadata_url": "https://www.sciencebase.gov/catalog/item/61caa869d34e0fd3e7b21aad",
+      "publication_date": "2021-12-17",
+      "source_crs": "EPSG:26912",
+      "source_resolution": [
+        1.0,
+        1.0
+      ],
+      "source_bounds": [
+        509993.9999767296,
+        4249993.999999459,
+        520005.9999767296,
+        4260005.999999459
+      ],
+      "source_tags": {
+        "AREA_OR_POINT": "Area"
+      }
+    },
+    {
+      "title": "USGS 1 Meter 12 x52y426 UT_StatewideSouth_2020_A20",
+      "download_url": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/UT_StatewideSouth_2020_A20/TIFF/USGS_1M_12_x52y426_UT_StatewideSouth_2020_A20.tif",
+      "metadata_url": "https://www.sciencebase.gov/catalog/item/61caa864d34e0fd3e7b21a97",
+      "publication_date": "2021-12-17",
+      "source_crs": "EPSG:26912",
+      "source_resolution": [
+        1.0,
+        1.0
+      ],
+      "source_bounds": [
+        519993.99996953213,
+        4249994.0000013355,
+        530005.9999695321,
+        4260006.0000013355
+      ],
+      "source_tags": {
+        "AREA_OR_POINT": "Area"
+      }
+    },
+    {
+      "title": "USGS one meter x51y426 UT Southern QL1 2018",
+      "download_url": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/UT_Southern_QL1_2018/TIFF/USGS_one_meter_x51y426_UT_Southern_QL1_2018.tif",
+      "metadata_url": "https://www.sciencebase.gov/catalog/item/5eacf8ed82cefae35a24f808",
+      "publication_date": "2020-03-30",
+      "source_crs": "EPSG:26912",
+      "source_resolution": [
+        1.0,
+        1.0
+      ],
+      "source_bounds": [
+        509994.0,
+        4249994.0,
+        520006.0,
+        4260006.0
+      ],
+      "source_tags": {
+        "AREA_OR_POINT": "Area"
+      }
+    },
+    {
+      "title": "USGS one meter x52y426 UT Southern QL1 2018",
+      "download_url": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/UT_Southern_QL1_2018/TIFF/USGS_one_meter_x52y426_UT_Southern_QL1_2018.tif",
+      "metadata_url": "https://www.sciencebase.gov/catalog/item/5eacf97182cefae35a24fb42",
+      "publication_date": "2020-03-30",
+      "source_crs": "EPSG:26912",
+      "source_resolution": [
+        1.0,
+        1.0
+      ],
+      "source_bounds": [
+        519994.0,
+        4249994.0,
+        530006.0,
+        4260006.0
+      ],
+      "source_tags": {
+        "AREA_OR_POINT": "Area"
+      }
+    }
+  ],
+  "crs": "EPSG:26912",
+  "resolution_m": 1.0,
+  "bbox_wgs84": [
+    -110.786,
+    38.411,
+    -110.768,
+    38.425
+  ],
+  "sha256": "4686b0a210d40810f8e3e69db02c402162d806849bba4ef745face8c98fc23cc",
+  "vertical_units": "m",
+  "vertical_datum": "USGS 3DEP NAVD88; verify linked source metadata before GNSS altitude fusion",
+  "note": "Derived clipped raster. The catalog may update independently of acquisition."
+}

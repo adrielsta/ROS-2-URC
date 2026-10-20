@@ -1,0 +1,15 @@
+{
+  "kind": "offline slope-cost planning experiment, not a driving simulation",
+  "start_cell": [
+    700,
+    200
+  ],
+  "goal_cell": [
+    350,
+    750
+  ],
+  "resolution_m": 1.52,
+  "path_length_m": 1069.1959644196083,
+  "max_prior_slope_deg": 18.621087277227975,
+  "radius_assumption_m": 0.6
+}

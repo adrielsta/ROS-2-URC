@@ -14,6 +14,7 @@ from rclpy.qos import qos_profile_sensor_data
 from action_msgs.msg import GoalStatus
 from nav2_msgs.action import NavigateToPose
 from nav_msgs.msg import Odometry
+from lifecycle_msgs.srv import GetState
 from std_msgs.msg import Bool, String
 from std_srvs.srv import Trigger
 from tf2_ros import Buffer, TransformListener, TransformException
@@ -34,6 +35,10 @@ class Mission(Node):
         self.nav = ActionClient(self, NavigateToPose, '/navigate_to_pose')
         self.arm = self.create_client(Trigger, '/safety/arm_autonomy')
         self.stop_client = self.create_client(Trigger, '/safety/stop')
+        self.lifecycle = self.create_client(GetState, '/bt_navigator/get_state')
+        self.nav_active = False
+        self.lifecycle_future = None
+        self.create_timer(1.0, self.check_nav_state)
         self.create_service(Trigger, '/mission/start', self.start)
         self.create_service(Trigger, '/mission/cancel', self.cancel)
         self.status_pub = self.create_publisher(String, '/mission/status', 1)
@@ -61,14 +66,16 @@ class Mission(Node):
             status = json.loads(msg.data)
         except (ValueError, TypeError):
             return
-        if self.state in ('navigating', 'verifying') and status.get('mode') != 'autonomy':
+        if self.state == 'awaiting_autonomy' and status.get('mode') == 'autonomy':
+            self.send_goal()
+        elif self.state in ('navigating', 'verifying') and status.get('mode') != 'autonomy':
             self.abort('Supervisor disarmed: ' + str(status.get('reason')))
 
     def start(self, _, response):
         if self.state not in ('idle', 'complete', 'canceled', 'failed'):
             response.success, response.message = False, 'Mission already active'
             return response
-        if not self.nav.server_is_ready() or not self.arm.service_is_ready():
+        if not self.nav_active or not self.nav.server_is_ready() or not self.arm.service_is_ready():
             response.success, response.message = False, 'Nav2 or supervisor is not ready'
             return response
         self.epoch += 1
@@ -79,6 +86,20 @@ class Mission(Node):
         self.arm.call_async(Trigger.Request()).add_done_callback(lambda f: self.armed(f, epoch))
         response.success, response.message = True, 'Start accepted; watch /mission/status'
         return response
+
+    def check_nav_state(self):
+        if self.lifecycle_future is not None and not self.lifecycle_future.done():
+            return
+        self.nav_active = False
+        if self.lifecycle.service_is_ready():
+            self.lifecycle_future = self.lifecycle.call_async(GetState.Request())
+            self.lifecycle_future.add_done_callback(self.nav_state)
+
+    def nav_state(self, future):
+        try:
+            self.nav_active = future.result().current_state.id == 3
+        except Exception:
+            self.nav_active = False
 
     def armed(self, future, epoch):
         if epoch != self.epoch:
@@ -91,7 +112,10 @@ class Mission(Node):
             if not response.success:
                 self.abort(response.message)
                 return
-            self.send_goal()
+            # Observe the gate's new mode before navigation, so an older HOLD
+            # telemetry message cannot race the arm service response.
+            self.state, self.detail = 'awaiting_autonomy', 'Waiting for armed supervisor state'
+            self.deadline = time.monotonic() + 5.0
         except Exception as exc:
             self.abort(str(exc))
 
@@ -156,7 +180,7 @@ class Mission(Node):
 
     def tick(self):
         now = time.monotonic()
-        if self.state in ('arming', 'navigating', 'verifying') and now > self.deadline:
+        if self.state in ('arming', 'awaiting_autonomy', 'navigating', 'verifying') and now > self.deadline:
             self.abort('Mission step timed out')
         if self.state == 'verifying':
             try:

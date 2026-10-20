@@ -1,0 +1,27 @@
+{
+  "source_sha256": "4686b0a210d40810f8e3e69db02c402162d806849bba4ef745face8c98fc23cc",
+  "source_crs": "EPSG:26912",
+  "source_resolution_m": [
+    1.0,
+    1.0
+  ],
+  "output_spacing_m": 1.52,
+  "resampling": "bilinear; downsampling loses terrain detail, upsampling adds no detail",
+  "local_origin_projected_m": [
+    519467.0,
+    4252218.0
+  ],
+  "local_origin_wgs84": [
+    -110.7770018657602,
+    38.417998346066824
+  ],
+  "map_axes": "projected-grid east, north, up; grid north is not exactly true north",
+  "baseline_elevation_m": 1351.0631103515625,
+  "height_scale_m": 75.315673828125,
+  "height_quantization_m": 0.001149243516107805,
+  "grid_size": 1025,
+  "max_slope_deg_assumption": 20.0,
+  "driveable_fraction_prior_only": 0.9276116597263534,
+  "warning": "Slope-only prior. Unknown traction, rocks, erosion and negative obstacles. No real-rover certification.",
+  "world_note": "Terrain-only world. No rover is spawned; choose a safe start and configure a localized rover before navigation."
+}

@@ -74,8 +74,18 @@ Reset requires fresh sensors and a measured stop; it returns to HOLD and does **
 ```bash
 python3 tools/terrain.py catalog --output data/catalog.json
 python3 tools/terrain.py fetch-dem --catalog data/catalog.json
+python3 tools/terrain.py fetch-imagery --catalog data/catalog.json
+python3 tools/terrain.py fetch-satellite --catalog data/catalog.json
 python3 tools/terrain.py export --dem data/raw/urc_dem.tif
 ```
+
+An offline route experiment is also available after export:
+
+```bash
+python3 tools/route_preview.py --start 700 200 --goal 350 750
+```
+
+This is slope-cost planning on real elevation data, not a physics simulation or a proven driveable route.
 
 The default bounds come from rule 1.e.xiii: west/south/east/north = `-110.786 38.411 -110.768 38.425`. This rectangle is an approximate search envelope, **not a surveyed legal operating boundary**. See [terrain sources and limitations](docs/TERRAIN.md). Large raw/derived data stays outside Git; catalogs and code are versioned. To inspect the exported terrain only:
 

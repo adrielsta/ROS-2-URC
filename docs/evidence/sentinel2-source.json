@@ -1,0 +1,47 @@
+{
+  "item": "S2C_12SWH_20261008_0_L2A",
+  "acquired_at_utc": "2026-10-08T18:23:33.138000Z",
+  "scene_cloud_percent": 0.502094,
+  "retrieved_at_utc": "2026-10-20T22:43:19.174525+00:00",
+  "assets": {
+    "visual": {
+      "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/12/S/WH/2026/10/S2C_12SWH_20261008_0_L2A/TCI.tif",
+      "sha256": "ba1ac1694e0c7733578ff2da46789f9cc7edd9c21bd6581197c265d98637787e",
+      "native_pixel_size_m": [
+        10.0,
+        10.0
+      ]
+    },
+    "scl": {
+      "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/12/S/WH/2026/10/S2C_12SWH_20261008_0_L2A/SCL.tif",
+      "sha256": "832c8883e8c9fffbaceb3a2f849a98c29dd07e80ac01ce0dbdb506338ad579be",
+      "native_pixel_size_m": [
+        20.0,
+        20.0
+      ],
+      "aoi_flagged_fraction": 0.0,
+      "scl_class_counts": {
+        "5": 6162
+      }
+    }
+  },
+  "rejected_newer_candidates": [
+    {
+      "item": "S2A_12SWH_20261017_0_L2A",
+      "aoi_flagged_fraction": 0.6918208373904576,
+      "scl_class_counts": {
+        "0": 4263,
+        "5": 1899
+      }
+    },
+    {
+      "item": "S2C_12SWH_20261015_1_L2A",
+      "aoi_flagged_fraction": 0.6738072054527751,
+      "scl_class_counts": {
+        "0": 4152,
+        "5": 2010
+      }
+    }
+  ],
+  "note": "RGB at native 10m resolution for context/change review only; SCL flags require interpretation. No wheel-scale hazard claims."
+}

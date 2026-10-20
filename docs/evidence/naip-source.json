@@ -1,0 +1,29 @@
+{
+  "source_endpoint": "https://apps.geo.fpac.usda.gov/geo-imagery/rest/services/naip/conus_naip/ImageServer",
+  "source_tiles": [
+    {
+      "OBJECTID": 195156,
+      "Name": "m_3811034_se_12_060_20240706",
+      "Category": 1,
+      "year_ts": 2024,
+      "ST": "UT",
+      "QQNAME": "3811034SE060",
+      "QQDATE": 1720224000000,
+      "iDate_ts": 1749744257170
+    }
+  ],
+  "retrieved_at_utc": "2026-10-20T22:38:17.985202+00:00",
+  "crs": "EPSG:26912",
+  "resolution_m": [
+    0.5998093411495756,
+    0.5998624974297782
+  ],
+  "bounds": [
+    518679.6884914993,
+    4251439.601311512,
+    520254.78782135807,
+    4252996.84435484
+  ],
+  "sha256": "97ba33206d7c8a3debeae6ac7b267bf17828731a9a6bc7940b6e4b1ad7717d35",
+  "note": "NAIP aerial imagery. Resampled export, not new acquisition. Check actual coverage/nodata before use."
+}
