@@ -20,6 +20,10 @@ The first milestone is a repeatable chain: simulated sensors → Nav2 path plann
 
 **No field-ready autonomy, astronaut tracking/gestures, hammer pickup, arm control, final radio driver, complete base-station GUI, or validated outdoor localization.** IMU/GNSS are exposed in the simulator but not fused into the demo navigation solution. The flat demo uses wheel odometry and a fixed `map → odom` transform. The exported Utah world contains terrain only; it is not yet an end-to-end geolocated rover trial. See [readiness](docs/READINESS.md) before interpreting any result.
 
+## Start on your Windows PC
+
+Use Ubuntu 24.04 in WSL 2 for a local 3D Gazebo window. Follow the [Windows setup guide](docs/WINDOWS.md); `bash scripts/setup_ubuntu.sh` installs the native dependencies and builds the workspace. Then run `bash scripts/sim.sh gui:=true rviz:=true`, and start the mission in a second terminal. GitHub keeps the source synchronized; simulation runs on your PC.
+
 ## Start in the cloud
 
 Open **Code → Codespaces → Create codespace on main** in GitHub. The devcontainer installs ROS, Gazebo, Nav2 and the data tools. Codespaces runs on a cloud machine; its availability/usage quota belongs to your GitHub account. This repository does not create or purchase a machine automatically.
