@@ -14,8 +14,18 @@ def main():
     node.practice={}
     node.create_subscription(String,'/practice/status',lambda msg:setattr(node,'practice',json.loads(msg.data)),10)
     try:
-        node.until(lambda:node.rover.get('healthy') and node.speed==(0.,0.) and bool(node.practice),180,
-                   'Real Utah terrain sensors and simulator ground truth active; rover disarmed')
+        ready_since=None
+        def settled():
+            nonlocal ready_since
+            ready=(node.rover.get('healthy') and node.rover.get('measured_stopped')
+                   and node.speed==(0.,0.) and bool(node.practice))
+            if not ready:
+                ready_since=None
+                return False
+            if ready_since is None:ready_since=time.monotonic()
+            return time.monotonic()-ready_since>=1.0
+        node.until(settled,180,
+                   'Real Utah sensors active and rover measured stationary for one second')
         assert abs(node.practice['surface_clearance_m']-.28)<.20,node.practice
         deadline=time.monotonic()+60
         while True:

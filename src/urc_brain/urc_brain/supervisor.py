@@ -110,7 +110,8 @@ class Supervisor(Node):
             self.led.publish(String(data=color))
             self.status.publish(String(data=json.dumps({
                 'mode': self.gate.mode.value, 'reason': self.gate.reason,
-                'healthy': self.gate.healthy(time.monotonic()), 'led': color,
+                'healthy': self.gate.healthy(time.monotonic()),
+                'measured_stopped': self.gate.stopped, 'led': color,
             })))
 
 

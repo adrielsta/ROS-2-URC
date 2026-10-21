@@ -81,6 +81,9 @@ class Mission(Node):
         if not self.nav_active or not self.nav.server_is_ready() or not self.arm.service_is_ready():
             response.success, response.message = False, 'Nav2 or supervisor is not ready'
             return response
+        if not self.is_stopped or time.monotonic() - self.last_odom > 1.0:
+            response.success, response.message = False, 'Wait for fresh odometry and measured zero velocity'
+            return response
         self.epoch += 1
         self.index, self.state = 0, 'arming'
         self.started_sim = self.get_clock().now().nanoseconds / 1e9
