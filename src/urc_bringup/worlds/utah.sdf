@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.9">
+  <world name="urc_practice">
+    <physics name="physics" type="ignored">
+      <max_step_size>0.002</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <dart>
+        <collision_detector>bullet</collision_detector>
+      </dart>
+    </physics>
+    <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics" />
+    <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands" />
+    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster" />
+    <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+    <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu" />
+    <plugin filename="gz-sim-navsat-system" name="gz::sim::systems::NavSat" />
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <world_frame_orientation>ENU</world_frame_orientation>
+      <latitude_deg>38.42022185785987</latitude_deg>
+      <longitude_deg>-110.77929346673844</longitude_deg>
+      <elevation>1385.041015625</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <light type="directional" name="sun">
+      <pose>0 0 20 0 0 0</pose>
+      <diffuse>0.9 0.9 0.9 1</diffuse>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+    <model name="real_utah_terrain">
+      <static>true</static>
+      <link name="terrain">
+        <collision name="terrain">
+          <geometry>
+            <heightmap>
+              <uri>model://utah_site/height.png</uri>
+              <size>389.12 389.12 17.161376953125</size>
+              <pos>0 0 -6.7860107421875</pos>
+              <sampling>1</sampling>
+            </heightmap>
+          </geometry>
+        </collision>
+        <visual name="terrain">
+          <geometry>
+            <heightmap>
+              <uri>model://utah_site/height.png</uri>
+              <size>389.12 389.12 17.161376953125</size>
+              <pos>0 0 -6.7860107421875</pos>
+              <sampling>1</sampling>
+              <texture>
+                <size>389.12</size>
+                <diffuse>model://utah_site/aerial.jpg</diffuse>
+                <normal>model://utah_site/normal.png</normal>
+              </texture>
+              <use_terrain_paging>false</use_terrain_paging>
+            </heightmap>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+    <include>
+      <uri>model://urc_rover_utah</uri>
+      <name>urc_rover</name>
+      <pose>0 0 .55 0 0 0</pose>
+    </include>
+    <model name="checkpoint_0">
+      <static>true</static>
+      <pose>6.0 0.0 0.3299773157533313 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>1.0 1.0 .02</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>.1 .5 .8 1</ambient>
+            <diffuse>.1 .5 .8 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="checkpoint_1">
+      <static>true</static>
+      <pose>9.0 4.0 0.6847228164673634 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>1.0 1.0 .02</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>.1 .5 .8 1</ambient>
+            <diffuse>.1 .5 .8 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+  </world>
+</sdf>

@@ -1,0 +1,42 @@
+id: utah-route
+scope: "Autonomy route-finding practice, rules 1.e.xii\u2013xviii"
+budget_s: 2400
+frame: map
+targets:
+- x: -59.28
+  y: 66.08
+  yaw: 1.5707963267948966
+- x: -75.2
+  y: 98.8
+  yaw: 3.141592653589793
+checks:
+- id: target_1
+  xy:
+  - -59.28
+  - 66.88
+  radius_m: 1.0
+  latitude: 38.420825869760996
+  longitude: -110.77997071807903
+- id: target_2
+  xy:
+  - -76.0
+  - 98.8
+  radius_m: 1.0
+  latitude: 38.42111389817053
+  longitude: -110.78016138309394
+unimplemented:
+- GNSS/IMU fusion
+- ArUco detection/refinement
+- Penalty-bearing breadcrumb retreat
+- Astronaut assistance
+heartbeat_outage_after_first: false
+require_heartbeat_outage: true
+route_prior_evidence:
+- length_m: 125.76497536266999
+  max_slope_deg: 16.758
+- length_m: 181.8522076663197
+  max_slope_deg: 16.758
+practice_locations_not_official: true
+terrain_los_to_targets:
+- true
+- false

@@ -1,0 +1,10 @@
+image: ../models/utah_site/prior.png
+mode: scale
+resolution: 1.52
+origin:
+- -195.32
+- -195.32
+- 0
+negate: 0
+occupied_thresh: 0.99
+free_thresh: 0.01

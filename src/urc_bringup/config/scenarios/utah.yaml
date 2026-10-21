@@ -1,0 +1,37 @@
+id: utah
+scope: Short actual-terrain navigation check
+budget_s: 2400
+frame: map
+targets:
+- x: 6.0
+  y: 0.0
+  yaw: 0.0
+- x: 9.0
+  y: 4.0
+  yaw: 0.0
+checks:
+- id: target_1
+  xy:
+  - 6.0
+  - 0.0
+  radius_m: 0.75
+  latitude: 38.420221728400946
+  longitude: -110.77922473397835
+- id: target_2
+  xy:
+  - 9.0
+  - 4.0
+  radius_m: 0.75
+  latitude: 38.420257712401046
+  longitude: -110.77919025786004
+unimplemented:
+- Outdoor localization
+- Full hill route
+- Astronaut assistance
+heartbeat_outage_after_first: true
+require_heartbeat_outage: true
+route_prior_evidence: []
+practice_locations_not_official: true
+terrain_los_to_targets:
+- true
+- true

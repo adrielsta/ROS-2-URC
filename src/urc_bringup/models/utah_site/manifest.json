@@ -1,0 +1,37 @@
+{
+  "source_sha256": "4686b0a210d40810f8e3e69db02c402162d806849bba4ef745face8c98fc23cc",
+  "source_crs": "EPSG:26912",
+  "source_resolution_m": [
+    1.0,
+    1.0
+  ],
+  "output_spacing_m": 1.52,
+  "resampling": "bilinear; downsampling loses terrain detail, upsampling adds no detail",
+  "local_origin_projected_m": [
+    519266.36,
+    4252464.24
+  ],
+  "local_origin_wgs84": [
+    -110.77929346673844,
+    38.42022185785987
+  ],
+  "map_axes": "projected-grid east, north, up; grid north is not exactly true north",
+  "baseline_elevation_m": 1378.2550048828125,
+  "height_scale_m": 17.161376953125,
+  "height_quantization_m": 0.001149243516107805,
+  "grid_size": 257,
+  "max_slope_deg_assumption": 20.0,
+  "driveable_fraction_prior_only": 0.9276116597263534,
+  "warning": "Slope-only prior. Unknown traction, rocks, erosion and negative obstacles. No real-rover certification.",
+  "world_note": "Real-data practice patch with ideal simulator pose. Not an official competition course.",
+  "physical_size_m": 389.12,
+  "spawn_elevation_m": 1385.041015625,
+  "source_crop_center_row_col": [
+    350,
+    380
+  ],
+  "imagery_acquisition_date": "2024-07-06",
+  "imagery_source_sha256": "97ba33206d7c8a3debeae6ac7b267bf17828731a9a6bc7940b6e4b1ad7717d35",
+  "vertical_datum_note": "Retains source DEM elevations; no ellipsoidal GNSS altitude conversion.",
+  "geodesy_note": "Map axes follow EPSG:26912 grid east/north. Gazebo GPS is illustrative and not used for navigation."
+}

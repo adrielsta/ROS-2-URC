@@ -30,7 +30,8 @@ class Mission(Node):
             self.targets = validate_plan(yaml.safe_load(f))
         self.tolerance = self.declare_parameter('arrival_tolerance', 0.75).value
         self.timeout = self.declare_parameter('target_timeout', 180.0).value
-        if not 0 < self.tolerance <= 1.0 or self.timeout <= 0:
+        self.budget = self.declare_parameter('mission_budget', 2400.0).value
+        if not 0 < self.tolerance <= 1.0 or self.timeout <= 0 or self.budget <= 0:
             raise ValueError('Invalid arrival tolerance or target timeout')
         self.nav = ActionClient(self, NavigateToPose, '/navigate_to_pose')
         self.arm = self.create_client(Trigger, '/safety/arm_autonomy')
@@ -54,6 +55,7 @@ class Mission(Node):
         self.is_stopped = False
         self.deadline = math.inf
         self.verify_since = None
+        self.started_sim = None
         self.create_timer(0.1, self.tick)
 
     def odom(self, msg):
@@ -68,7 +70,7 @@ class Mission(Node):
             return
         if self.state == 'awaiting_autonomy' and status.get('mode') == 'autonomy':
             self.send_goal()
-        elif self.state in ('navigating', 'verifying') and status.get('mode') != 'autonomy':
+        elif self.state in ('navigating', 'verifying', 'arrival') and status.get('mode') != 'autonomy':
             self.abort('Supervisor disarmed: ' + str(status.get('reason')))
 
     def start(self, _, response):
@@ -80,6 +82,7 @@ class Mission(Node):
             return response
         self.epoch += 1
         self.index, self.state = 0, 'arming'
+        self.started_sim = self.get_clock().now().nanoseconds / 1e9
         self.deadline = time.monotonic() + 10.0
         self.arrival_pub.publish(Bool(data=False))
         epoch = self.epoch
@@ -180,6 +183,12 @@ class Mission(Node):
 
     def tick(self):
         now = time.monotonic()
+        sim_now = self.get_clock().now().nanoseconds / 1e9
+        elapsed = max(0.0, sim_now - self.started_sim) if self.started_sim is not None else 0.0
+        if self.state in ('arming', 'awaiting_autonomy', 'navigating', 'verifying', 'arrival') and elapsed >= self.budget:
+            self.abort('Mission simulation-time budget exceeded')
+        if self.state == 'arrival' and sim_now >= self.next_target_at:
+            self.send_goal()
         if self.state in ('arming', 'awaiting_autonomy', 'navigating', 'verifying') and now > self.deadline:
             self.abort('Mission step timed out')
         if self.state == 'verifying':
@@ -200,15 +209,17 @@ class Mission(Node):
                         if self.index == len(self.targets):
                             self.state, self.detail = 'complete', 'All demo targets reached and stopped'
                         else:
-                            self.send_goal()
+                            self.state, self.detail = 'arrival', 'Stopped arrival; indicating before next target'
+                            self.next_target_at = sim_now + 3.0
                 else:
                     self.verify_since = None
             except TransformException:
                 self.verify_since = None
-        self.arrival_pub.publish(Bool(data=self.state == 'complete'))
+        self.arrival_pub.publish(Bool(data=self.state in ('arrival', 'complete')))
         self.status_pub.publish(String(data=json.dumps({
             'state': self.state, 'detail': self.detail,
             'completed_targets': self.index, 'total_targets': len(self.targets),
+            'elapsed_sim_s': round(elapsed, 2), 'budget_sim_s': self.budget,
         })))
 
 

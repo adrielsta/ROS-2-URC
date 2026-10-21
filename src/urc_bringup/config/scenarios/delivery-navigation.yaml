@@ -1,0 +1,50 @@
+id: delivery-navigation
+scope: "Pickup/drop navigation checkpoints only, rules 1.c.i\u2013v"
+budget_s: 1800
+frame: map
+targets:
+- x: 12.0
+  y: -2.0
+  yaw: 0.0
+- x: 22.0
+  y: 6.0
+  yaw: 0.0
+- x: 6.0
+  y: 12.0
+  yaw: 0.0
+checks:
+- id: target_1
+  xy:
+  - 12.0
+  - -2.0
+  radius_m: 1.0
+  latitude: 38.420203574529324
+  longitude: -110.77915605609638
+- id: target_2
+  xy:
+  - 22.0
+  - 6.0
+  radius_m: 1.0
+  latitude: 38.42027545609647
+  longitude: -110.77904128190156
+- id: target_3
+  xy:
+  - 6.0
+  - 12.0
+  radius_m: 1.0
+  latitude: 38.42032987463458
+  longitude: -110.77922440481373
+unimplemented:
+- Official stage script and stage score gate
+- Grasping/carrying/delivering objects
+- Opening toolboxes
+- Reading signs
+- Search and real radio link
+heartbeat_outage_after_first: false
+require_heartbeat_outage: false
+route_prior_evidence: []
+practice_locations_not_official: true
+terrain_los_to_targets:
+- true
+- true
+- true

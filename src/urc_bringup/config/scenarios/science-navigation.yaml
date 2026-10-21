@@ -1,0 +1,51 @@
+id: science-navigation
+scope: "Two selected site visits and return only, rules 1.b.ii\u2013vii"
+budget_s: 1200
+frame: map
+targets:
+- x: 10.0
+  y: -4.0
+  yaw: 0.0
+- x: -8.0
+  y: -10.0
+  yaw: 0.0
+- x: 0.0
+  y: 0.0
+  yaw: 0.0
+checks:
+- id: target_1
+  xy:
+  - 10.0
+  - -4.0
+  radius_m: 1.0
+  latitude: 38.42018559332772
+  longitude: -110.77917902188246
+- id: target_2
+  xy:
+  - -8.0
+  - -10.0
+  radius_m: 1.0
+  latitude: 38.42013190854522
+  longitude: -110.77938538452246
+- id: target_3
+  xy:
+  - 0.0
+  - 0.0
+  radius_m: 1.0
+  latitude: 38.42022185785987
+  longitude: -110.77929346673844
+unimplemented:
+- Site selection reasoning
+- Panorama/close-up evidence
+- Two life detection capabilities including bioassay
+- At least 10cm-deep and 5g sample
+- Seal and remove cache
+- Judges debrief
+heartbeat_outage_after_first: false
+require_heartbeat_outage: false
+route_prior_evidence: []
+practice_locations_not_official: true
+terrain_los_to_targets:
+- true
+- true
+- true

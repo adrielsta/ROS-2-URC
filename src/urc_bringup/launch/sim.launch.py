@@ -12,13 +12,17 @@ from launch_ros.actions import Node
 def generate_launch_description():
     share = get_package_share_directory('urc_bringup')
     use_sim = {'use_sim_time': True}
-    params = os.path.join(share, 'config', 'nav2.yaml')
+    params = LaunchConfiguration('params')
     world = LaunchConfiguration('world')
     gui = LaunchConfiguration('gui')
     nodes = ['map_server', 'planner_server', 'controller_server', 'behavior_server', 'bt_navigator']
     actions = [
         DeclareLaunchArgument('gui', default_value='false'),
         DeclareLaunchArgument('rviz', default_value='false'),
+        DeclareLaunchArgument('params', default_value=os.path.join(share, 'config', 'nav2.yaml')),
+        DeclareLaunchArgument('bridge', default_value=os.path.join(share, 'config', 'bridge.yaml')),
+        DeclareLaunchArgument('target_timeout', default_value='180.0'),
+        DeclareLaunchArgument('mission_budget', default_value='2400.0'),
         DeclareLaunchArgument('world', default_value=os.path.join(share, 'worlds', 'training.sdf')),
         DeclareLaunchArgument('map', default_value=os.path.join(share, 'maps', 'training.yaml')),
         DeclareLaunchArgument('mission', default_value=os.path.join(share, 'config', 'mission.yaml')),
@@ -28,14 +32,17 @@ def generate_launch_description():
             launch_arguments={'gz_args': ('-r ' + ('' if gui.perform(context) == 'true' else '-s --headless-rendering ') +
                                            '"' + world.perform(context) + '"')}.items())]),
         Node(package='ros_gz_bridge', executable='parameter_bridge', name='bridge',
-             parameters=[{'config_file': os.path.join(share, 'config', 'bridge.yaml')}]),
+             parameters=[{'config_file': LaunchConfiguration('bridge')}]),
         # Gazebo wheel odometry starts at (0,0). Only valid for this flat demo!
         Node(package='tf2_ros', executable='static_transform_publisher', name='sim_map_origin',
              arguments=['--frame-id', 'map', '--child-frame-id', 'odom'], parameters=[use_sim]),
         Node(package='tf2_ros', executable='static_transform_publisher', name='lidar_frame',
              arguments=['--x', '0.2', '--z', '0.3', '--frame-id', 'base_link', '--child-frame-id', 'lidar_link'], parameters=[use_sim]),
         Node(package='urc_brain', executable='supervisor', parameters=[use_sim], output='screen'),
-        Node(package='urc_brain', executable='mission', parameters=[use_sim, {'mission_file': LaunchConfiguration('mission')}], output='screen'),
+        Node(package='urc_brain', executable='mission', parameters=[use_sim, {
+            'mission_file': LaunchConfiguration('mission'),
+            'target_timeout': LaunchConfiguration('target_timeout'),
+            'mission_budget': LaunchConfiguration('mission_budget')}], output='screen'),
     ]
     for package, executable, name in [
         ('nav2_map_server', 'map_server', 'map_server'),

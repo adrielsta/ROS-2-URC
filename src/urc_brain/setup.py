@@ -10,5 +10,7 @@ setup(
     entry_points={'console_scripts': [
         'supervisor = urc_brain.supervisor:main',
         'mission = urc_brain.mission:main',
+        'terrain_scan = urc_brain.terrain_scan:main',
+        'practice_referee = urc_brain.practice_referee:main',
     ]},
 )

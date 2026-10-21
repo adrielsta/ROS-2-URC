@@ -17,6 +17,8 @@ jobs:
       - run: python -m pytest -q
       - run: python -m compileall -q src tools
       - run: python tools/generate_training.py && git diff --exit-code src/urc_bringup
+      - run: python tools/generate_urc_scenarios.py && git diff --exit-code src/urc_bringup
+      - run: bash -n scripts/*.sh
   ros-simulation:
     runs-on: ubuntu-24.04
     timeout-minutes: 30
@@ -29,6 +31,9 @@ jobs:
         run: |
           mkdir -p artifacts
           docker run --rm --shm-size=1g -v "$PWD/artifacts:/workspaces/ROS-2-URC/artifacts" urc-brain bash scripts/integration.sh
+      - name: Drive on actual Utah terrain and lose C2 heartbeat
+        timeout-minutes: 12
+        run: docker run --rm --shm-size=1g -v "$PWD/artifacts:/workspaces/ROS-2-URC/artifacts" urc-brain bash scripts/integration_utah.sh
       - uses: actions/upload-artifact@v4
         if: always()
         with:

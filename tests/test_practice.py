@@ -1,0 +1,76 @@
+import json
+import math
+from pathlib import Path
+import xml.etree.ElementTree as ET
+import numpy as np
+import pytest
+import yaml
+from urc_brain.terrain_model import Terrain, rotate, stopped_arrival
+from urc_brain.mission_plan import validate_plan
+
+SHARE=Path(__file__).resolve().parents[1]/'src/urc_bringup'
+
+
+def test_bundled_coordinate_origin_and_height():
+    t=Terrain(SHARE/'models/utah_site')
+    assert abs(t.height(0,0))<.001
+    assert math.isnan(t.height(10000,0))
+    assert math.isnan(t.height(float('nan'),0))
+    # The chosen natural hill is above the start, and its far side is occluded.
+    assert t.height(-39*t.step,44*t.step)>5
+    assert not t.line_of_sight([0,0],[-50*t.step,65*t.step])
+
+
+def test_rotation_and_stopped_arrival_checks():
+    assert rotate([0,0,math.sqrt(.5),math.sqrt(.5)],[1,0,0])==pytest.approx([0,1,0])
+    assert rotate([math.sqrt(.5),0,0,math.sqrt(.5)],[0,1,0])==pytest.approx([0,0,1])
+    with pytest.raises(ValueError):rotate([0,0,0,0],[1,0,0])
+    assert stopped_arrival([.8,0],[0,0],0,0,'flashing_green',1)
+    assert not stopped_arrival([1.01,0],[0,0],0,0,'flashing_green',1)
+    assert not stopped_arrival([.8,0],[0,0],.1,0,'flashing_green',1)
+    assert not stopped_arrival([.8,0],[0,0],0,0,'red',1)
+
+
+def test_profiles_are_explicit_subsets_and_have_safe_start():
+    t=Terrain(SHARE/'models/utah_site')
+    files=list((SHARE/'config/scenarios').glob('*.yaml'))
+    assert len(files)==6
+    for file in files:
+        s=yaml.safe_load(file.read_text())
+        goals=validate_plan(s)
+        assert s['practice_locations_not_official']
+        assert s['unimplemented']
+        assert len(goals)==len(s['checks'])
+        for target in s['checks']:
+            assert math.isfinite(t.height(*target['xy']))
+            assert 38.411<target['latitude']<38.425
+            assert -110.786<target['longitude']<-110.768
+        ET.parse(SHARE/'worlds'/f'{s["id"]}.sdf')
+    s=yaml.safe_load((SHARE/'config/scenarios/utah-route.yaml').read_text())
+    assert s['budget_s']==2400
+    assert len(s['checks'])==2
+    assert all(x['radius_m']==1 for x in s['checks'])
+    assert s['terrain_los_to_targets'][1] is False
+    assert all(x['max_slope_deg']<=18 for x in s['route_prior_evidence'])
+
+
+def test_ideal_pose_does_not_conflict_with_encoder_tf():
+    model=ET.parse(SHARE/'models/urc_rover_utah/model.sdf').getroot()
+    plugins=model.findall('.//plugin')
+    assert len(plugins)==2
+    assert plugins[0].find('tf_topic').text!=plugins[1].find('tf_topic').text
+    assert plugins[1].find('dimensions').text=='3'
+    bridge=yaml.safe_load((SHARE/'config/utah_bridge.yaml').read_text())
+    assert sum(x['ros_topic_name']=='/tf' for x in bridge)==1
+    assert any(x['ros_topic_name']=='/scan_raw' for x in bridge)
+
+
+def test_tag_geometry_matches_rule_dimensions():
+    world=ET.parse(SHARE/'worlds/utah-route.sdf')
+    for model in world.findall('.//model'):
+        if not model.attrib['name'].startswith('target_'):continue
+        faces=[x for x in model.findall('link') if x.attrib['name'].startswith('face_')]
+        assert len(faces)==3
+        for face in faces:
+            assert face.find("visual[@name='white']/geometry/box/size").text=='0.004 0.2 0.2'
+            assert float(face.find('pose').text.split()[2])==1.1
