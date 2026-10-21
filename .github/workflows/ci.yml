@@ -24,15 +24,8 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
-      - uses: docker/setup-buildx-action@v4
       - name: Build Jazzy and Harmonic environment
-        uses: docker/build-push-action@v7
-        with:
-          context: .
-          load: true
-          tags: urc-brain
-          cache-from: type=gha,scope=urc-jazzy
-          cache-to: type=gha,scope=urc-jazzy,mode=max,ignore-error=true
+        run: docker build -t urc-brain .
       - name: Run real Gazebo and Nav2 integration test
         timeout-minutes: 9
         run: |

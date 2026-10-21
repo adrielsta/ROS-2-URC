@@ -9,11 +9,11 @@ targets:
 checks:
 - id: target_1
   xy:
-  - 12.0
+  - 14.5
   - 2.0
   radius_m: 3.0
-  latitude: 38.420239623274036
-  longitude: -110.77915594634098
+  latitude: 38.42023956930409
+  longitude: -110.77912730768413
 unimplemented:
 - Suit camera/microphone
 - Follow gesture/voice perception

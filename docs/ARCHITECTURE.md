@@ -17,6 +17,8 @@ flowchart TD
 
 The diagram is the target architecture. In v0.1, Gazebo replaces the real sensors, drive adapter and chassis. The demo uses simulated wheel odometry, a fixed map origin and 2D lidar; the full localization/perception box is not built.
 
+The Utah practice launch adds three simulation-only nodes: `simulation_frames` converts ideal Gazebo pose into navigation/body transforms, `terrain_scan` filters known DEM ground returns, and `practice_referee` measures stops and exercises the C2-heartbeat interface. These nodes isolate mission/navigation development while the real estimator and terrain perception remain unfinished. They are not a hardware launch configuration.
+
 ## Component decisions
 
 | Layer | Initial implementation | Next real-rover implementation |
@@ -38,14 +40,18 @@ Use SI units and ROS ENU/FLU conventions. WGS84 input order is longitude/latitud
 
 Real localization should publish `map → odom → base_link → sensor frames`, with one authority per transform. Local EKF publishes continuous `odom→base_link`; a separately configured global filter publishes `map→odom`. Sensor extrinsics must be measured. GNSS antenna lever arm, IMU heading convention, magnetic declination, UTM grid convergence, elevation datum, covariance and timestamp alignment must be resolved before outdoor navigation.
 
+On hills, the navigation controller also needs a gravity-aligned frame. Utah practice uses `map → odom → base_footprint → base_link → sensor frames`: the footprint carries planar x/y/yaw, while the body transform retains actual elevation, pitch and roll. `simulation_frames` owns both moving transforms; encoder TF is not bridged. A production estimator must provide equivalent consistent geometry without simulator truth.
+
 The terrain frame is UTM NAD83 zone 12, translated about the crop center. Grid north is slightly rotated from true north; it is not interchangeable with a raw GNSS local ENU frame. DEM vertical height is normally NAVD88 orthometric, while GNSS may report WGS84 ellipsoid height. Do not fuse these heights without a datum conversion. The flat training world has a reference geographic location for its sensor plugin only; its fictional obstacles are not geolocated Utah obstacles.
 
 ## Current ROS interfaces
 
 | Interface | Type | Producer / purpose |
 |---|---|---|
-| `/scan` | `sensor_msgs/LaserScan` | Gazebo → obstacle layers and freshness checks |
-| `/odom` | `nav_msgs/Odometry` | Gazebo wheel odometry → Nav2, supervisor |
+| `/scan` | `sensor_msgs/LaserScan` | Flat: Gazebo scan; Utah: known-DEM filtered scan → obstacle layers and freshness checks |
+| `/scan_raw` | `sensor_msgs/LaserScan` | Utah only: unfiltered simulated scan → terrain filter |
+| `/odom` | `nav_msgs/Odometry` | Flat: wheel odometry; Utah: ideal planar pose → Nav2, supervisor |
+| `/simulation/ground_truth` | `nav_msgs/Odometry` | Utah only: full 3D ideal pose → frame adapter and referee |
 | `/imu/data`, `/gps/fix` | `Imu`, `NavSatFix` | Exposed simulator signals; not fused in v0.1 |
 | `/camera/image_raw`, `/camera/camera_info` | `Image`, `CameraInfo` | Exposed simulator camera; no detector yet |
 | `/navigate_to_pose` | `nav2_msgs/action/NavigateToPose` | Mission → Nav2 |
@@ -57,6 +63,7 @@ The terrain frame is UTM NAD83 zone 12, translated about the crop center. Grid n
 | `/safety/arm_autonomy`, `/safety/arm_teleop`, `/safety/stop` | `Trigger` | Explicit mode controls |
 | `/safety/estop`, `/safety/reset_estop` | `Trigger` | Latch/reset software stop |
 | `/rover/status`, `/mission/status`, `/rover/led` | `std_msgs/String` | Prototype telemetry; replace JSON with versioned messages for hardware |
+| `/practice/status` | `std_msgs/String` | Utah navigation assessment and explicit unimplemented tasks; no official score |
 
 DDS topics are not access controls. Isolate the robot domain and permit only an authenticated, allowlisted C2 gateway on deployment. Do not expose command services or a bidirectional Foxglove bridge publicly. Don't send unrestricted DDS discovery, images or point clouds over the narrowband control radio.
 
@@ -68,4 +75,5 @@ DDS topics are not access controls. Isolate the robot domain and permit only an 
 - E-stop: latched. Reset requires fresh sensors and measured zero velocity, and returns to HOLD.
 - Mission cancel / rejected goal / failed navigation: request cancellation and stop the command gate. Epoch checks prevent a late action response from resurrecting a canceled goal.
 - Supervisor or host crash: the software cannot guarantee a stop. A real motor-controller watchdog and physical stop are mandatory. The Gazebo drive plugin is not proof of that hardware guarantee.
-- GNSS jumps, tilt, wheel slip, covariance growth, cliff detection: **not yet monitored**; prerequisites for field trials.
+- Utah referee: software stop for leaving the patch, falling below the expected surface or exceeding an assumed 35-degree tilt. This is a simulation check, not a validated physical rollover protector.
+- Real GNSS jumps, physical attitude limits, wheel slip, covariance growth and cliff detection: **not yet implemented**; prerequisites for field trials.

@@ -114,7 +114,7 @@ def main():
           ['Outdoor localization','Full hill route','Astronaut assistance']),
       'utah-route':('Autonomy route-finding practice, rules 1.e.xii–xviii',2400,[hill,far],1.0,
           ['GNSS/IMU fusion','ArUco detection/refinement','Penalty-bearing breadcrumb retreat','Astronaut assistance']),
-      'astronaut-approach':('Initial astronaut rendezvous only, rule 1.e.v',2400,[[12,2]],3.0,
+      'astronaut-approach':('Initial astronaut rendezvous only, rule 1.e.v',2400,[[14.5,2]],3.0,
           ['Suit camera/microphone','Follow gesture/voice perception','Stay while astronaut moves >20m','Fetch rock hammer','Come to moving astronaut','Give hammer']),
       'delivery-navigation':('Pickup/drop navigation checkpoints only, rules 1.c.i–v',1800,[[12,-2],[22,6],[6,12]],1.0,
           ['Official stage script and stage score gate','Grasping/carrying/delivering objects','Opening toolboxes','Reading signs','Search and real radio link']),
@@ -129,6 +129,7 @@ def main():
         checks=[];targets=[];fixtures='';route_evidence=[];previous=[0.,0.]
         for i,point in enumerate(points):
             pos=list(map(float,point));approach=pos[:];yaw=0.
+            if name=='astronaut-approach':approach=[pos[0]-2.5,pos[1]]
             if name=='utah-route':
                 start=(round(half-previous[1]/step),round(half+previous[0]/step))
                 goal=(round(half-pos[1]/step),round(half+pos[0]/step))
