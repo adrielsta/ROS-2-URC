@@ -52,8 +52,13 @@ def main():
     cost[[0,-1],:]=np.inf;cost[:,[0,-1]]=np.inf
     pixels=np.where(np.isfinite(cost),254-np.minimum(100,slope/18*100),0).astype('uint8')
     Image.fromarray(pixels).save(SITE/'prior.png')
-    (SHARE/'maps/utah.yaml').write_text(yaml.safe_dump({'image':'../models/utah_site/prior.png',
-        'mode':'scale','resolution':step,'origin':[-(half+.5)*step,-(half+.5)*step,0],
+    # Smac's path lattice must be finer than RPP's minimum lookahead.
+    # Nearest-neighbor subdivision preserves the coarse slope prior exactly;
+    # it adds controller waypoints, not terrain detail or new safe terrain.
+    subdivision=4
+    Image.fromarray(pixels).resize((len(pixels)*subdivision,)*2,Image.Resampling.NEAREST).save(SITE/'navigation.png')
+    (SHARE/'maps/utah.yaml').write_text(yaml.safe_dump({'image':'../models/utah_site/navigation.png',
+        'mode':'scale','resolution':step/subdivision,'origin':[-(half+.5)*step,-(half+.5)*step,0],
         'negate':0,'occupied_thresh':.99,'free_thresh':.01},sort_keys=False))
 
     model=ET.parse(SHARE/'models/urc_rover/model.sdf').getroot()
@@ -96,7 +101,7 @@ def main():
     local=nav['local_costmap']['local_costmap']['ros__parameters']
     local['plugins']=['static_layer','obstacle_layer','inflation_layer']
     local['static_layer']={'plugin':'nav2_costmap_2d::StaticLayer','map_subscribe_transient_local':True,'trinary_costmap':False}
-    nav['global_costmap']['global_costmap']['ros__parameters']['resolution']=step
+    nav['global_costmap']['global_costmap']['ros__parameters']['resolution']=step/subdivision
     nav['bt_navigator']['ros__parameters']['robot_base_frame']='base_footprint'
     nav['behavior_server']['ros__parameters']['robot_base_frame']='base_footprint'
     (SHARE/'config/utah_nav2.yaml').write_text(yaml.safe_dump(nav,sort_keys=False))

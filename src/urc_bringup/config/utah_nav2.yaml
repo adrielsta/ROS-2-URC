@@ -108,7 +108,7 @@ global_costmap:
       publish_frequency: 1.0
       global_frame: map
       robot_base_frame: base_footprint
-      resolution: 1.52
+      resolution: 0.38
       robot_radius: 0.55
       track_unknown_space: true
       plugins:

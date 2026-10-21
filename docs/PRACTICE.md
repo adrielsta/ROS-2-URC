@@ -53,6 +53,8 @@ The hill target is above the start and has approaches rejected by the 18-degree 
 
 The two route posts have three 20cm-square ArUco 4x4_50 faces, a one-cell white border, 2.5cm cells, and face centers 1.1m above the local ground. Detection is not implemented. Navigation uses selected approach waypoints offset 0.8m from the post; the referee checks actual simulator position against the post center, not merely the commanded waypoint.
 
+The navigation cost image subdivides each 1.52m source cell into 38cm cells using nearest-neighbor copying. This gives the path controller enough intermediate points for its 40cm minimum lookahead. It preserves all slope costs and blocked cells; it does not create finer terrain measurements.
+
 ## Honest simulation boundary
 
 - The rover is still the two-drive-wheel/caster placeholder, not your measured rover. The Utah model raises its fixed caster supports 2cm relative to the flat demo so they do not bridge small depressions and unload the driven axle. This is an explicit proxy-chassis assumption, not calibrated suspension. A hard slope may expose this limitation; a failed run is useful evidence, not a reason to secretly flatten the terrain.

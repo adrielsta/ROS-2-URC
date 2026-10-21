@@ -5,6 +5,7 @@ import xml.etree.ElementTree as ET
 import numpy as np
 import pytest
 import yaml
+from PIL import Image
 from urc_brain.terrain_model import Terrain, rotate, stopped_arrival, planar_rotation
 from urc_brain.mission_plan import validate_plan
 
@@ -96,3 +97,15 @@ def test_tag_geometry_matches_rule_dimensions():
         for face in faces:
             assert face.find("visual[@name='white']/geometry/box/size").text=='0.004 0.2 0.2'
             assert float(face.find('pose').text.split()[2])==1.1
+
+
+def test_navigation_grid_preserves_prior_and_fits_controller_lookahead():
+    coarse=np.asarray(Image.open(SHARE/'models/utah_site/prior.png'))
+    fine=np.asarray(Image.open(SHARE/'models/utah_site/navigation.png'))
+    assert fine.shape==(4*coarse.shape[0],4*coarse.shape[1])
+    assert np.array_equal(fine,np.repeat(np.repeat(coarse,4,axis=0),4,axis=1))
+    spec=yaml.safe_load((SHARE/'maps/utah.yaml').read_text())
+    nav=yaml.safe_load((SHARE/'config/utah_nav2.yaml').read_text())
+    lookahead=nav['controller_server']['ros__parameters']['FollowPath']['min_lookahead_dist']
+    assert math.sqrt(2)*spec['resolution']/2<lookahead
+    assert len(fine)*spec['resolution']==pytest.approx(len(coarse)*1.52)

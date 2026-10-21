@@ -1,6 +1,6 @@
-image: ../models/utah_site/prior.png
+image: ../models/utah_site/navigation.png
 mode: scale
-resolution: 1.52
+resolution: 0.38
 origin:
 - -195.32
 - -195.32
