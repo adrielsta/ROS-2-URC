@@ -4,6 +4,8 @@
 
 This figure uses real source data. Its route is an offline slope-cost experiment with illustrative start/end cells, **not a physics-tested route or a representation of competition target locations**.
 
+A separate, shorter trial on a bundled crop of this terrain subsequently passed actual Gazebo/Nav2 testing on October 21, 2026 UTC. It reached two measured stops and continued through a forced C2-heartbeat outage. See [its verification record](utah-verification.json) and [PC launch instructions](../PRACTICE.md). That result does not validate the long offline route pictured above or the full hill practice course.
+
 ## Retrieved data
 
 - USGS 3DEP query returned five candidate 1m tiles intersecting the approximate rule envelope. Not every candidate's valid-data footprint covers it. The successful crop used four contributing 2020/2018 source tiles; the 2022-project candidate had no contributing valid pixels in the crop. Source identities, actual CRS and checksums are retained in `dem-sources.json`.

@@ -2,6 +2,8 @@
 
 Rules checked against the supplied 2027 PDF and the official [Q&A](https://urc.marssociety.org/home/requirements-guidelines/qa), including the October 11 updates. The six profiles below are **navigation practice subsets**. They are not official courses, judge-certified scores, or six completed competition missions.
 
+**Verified short trial:** [Gazebo/Nav2 run 39524530901](https://github.com/adrielsta/ROS-2-URC/actions/runs/39524530901) completed `utah` in 46.99 simulation seconds, with stopped-arrival errors of 0.402m / 0.407m and a C2-heartbeat outage. All 37 unit tests and the flat baseline also passed. This verifies the short profile only; the longer hill route and other profiles remain configured practice scenarios. See [evidence](evidence/utah-verification.json).
+
 ## Run on your Windows / Ubuntu setup
 
 Stop the previous simulator with Ctrl+C in its launch terminal. Run only one rover simulation at a time in ROS domain 27.

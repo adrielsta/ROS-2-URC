@@ -4,7 +4,7 @@ ROS 2 autonomy foundation for [adrielsta](https://github.com/adrielsta)'s Univer
 
 The foundation connects simulated sensors → Nav2 path planning/control → supervised drive commands → verified arrival. A bundled real Utah patch now supports navigation practice with ideal simulator localization. Neither a successful simulation nor an overhead map proves a real rover can climb a slope.
 
-**Verified baseline:** [real Gazebo + Nav2 integration and unit checks passed](https://github.com/adrielsta/ROS-2-URC/actions/runs/39511218743) on October 20, 2026. See [readiness and exact scope](docs/READINESS.md) and the [Utah data preview](docs/evidence/README.md).
+**Verified simulations:** [37 unit tests and real Gazebo + Nav2 integration passed](https://github.com/adrielsta/ROS-2-URC/actions/runs/39524530901) on October 21, 2026 UTC. The short Utah trial reached and stopped at both targets with 0.402m / 0.407m errors and continued through a forced C2-heartbeat outage. The original flat-course checks also passed. See [readiness and exact scope](docs/READINESS.md), the [verification record](docs/evidence/utah-verification.json), and the [Utah data preview](docs/evidence/README.md).
 
 ## What is implemented
 

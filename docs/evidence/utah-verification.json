@@ -1,0 +1,61 @@
+{
+  "verified_on_utc": "2026-10-21",
+  "repository": "https://github.com/adrielsta/ROS-2-URC",
+  "code_commit": "b7358c80f8d17a94aaae3bbfbf774363f40a23c3",
+  "workflow_run_url": "https://github.com/adrielsta/ROS-2-URC/actions/runs/39524530901",
+  "unit_job": "passed",
+  "local_pytest_count": 37,
+  "ros_simulation_job": "passed",
+  "integration_assertions": [
+    "Disarmed stationary startup with less than 0.3m spawn drift",
+    "Both measured stopped arrivals on the actual Utah heightfield",
+    "Onboard navigation continues after forced C2-heartbeat dropout",
+    "Original flat-course navigation, stopped arrival and latched e-stop still pass"
+  ],
+  "short_utah_report": {
+    "scenario": "utah",
+    "scope": "Short actual-terrain navigation check",
+    "state": "complete",
+    "elapsed_sim_s": 46.99,
+    "budget_sim_s": 2400,
+    "completed_navigation_targets": 2,
+    "total_navigation_targets": 2,
+    "arrivals": {
+      "target_1": {
+        "distance_m": 0.402,
+        "elapsed_sim_s": 24.69,
+        "indication": "flashing_green"
+      },
+      "target_2": {
+        "distance_m": 0.407,
+        "elapsed_sim_s": 46.99,
+        "indication": "flashing_green"
+      }
+    },
+    "ideal_pose_xy_m": [
+      8.74,
+      3.69
+    ],
+    "surface_clearance_m": 0.283,
+    "max_tilt_deg": 10.29,
+    "c2_heartbeat_available": false,
+    "heartbeat_blackout_observed": true,
+    "navigation_checks_passed": true,
+    "failures": [],
+    "unimplemented_tasks": [
+      "Outdoor localization",
+      "Full hill route",
+      "Astronaut assistance"
+    ],
+    "official_score": null,
+    "localization": "ideal simulator pose, not a tested GNSS estimator",
+    "communications": "terrain line-of-sight / forced heartbeat dropout only, not full network or RF simulation"
+  },
+  "limits": [
+    "Ideal Gazebo localization and known-DEM scan filtering",
+    "Short trial only; full hill route and other navigation profiles not run by this test",
+    "Placeholder chassis with adjusted caster support height; no calibrated suspension or soil mechanics",
+    "Heartbeat fault only; not complete network loss or RF propagation",
+    "No complete astronaut, manipulation, science or official scoring implementation"
+  ]
+}

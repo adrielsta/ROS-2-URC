@@ -2,7 +2,9 @@
 
 This is a runnable development foundation, not a completed competition brain. The original flat baseline and the newer [Utah practice pack](PRACTICE.md) have separate validation scopes.
 
-**Verified October 20, 2026:** [GitHub Actions run 39511218743](https://github.com/adrielsta/ROS-2-URC/actions/runs/39511218743) passed both the unit job and the real Gazebo/Nav2 integration job at commit `44dc8c500664a21fc1df5bbfab6fe385acf36332`. The local test suite contains 29 passing tests. Integration verified disarmed startup with live simulated sensors, completion of both navigation targets, stopped arrival with the green LED state, and a latched software emergency stop that blocks re-arming. These checks apply to the small synthetic obstacle course, not the Utah heightfield or real hardware. See [verification record](evidence/verification.json).
+**Original flat baseline, October 20, 2026:** [GitHub Actions run 39511218743](https://github.com/adrielsta/ROS-2-URC/actions/runs/39511218743) passed both jobs at commit `44dc8c500664a21fc1df5bbfab6fe385acf36332`; the suite then contained 29 tests. Integration verified disarmed startup with live simulated sensors, completion of both navigation targets, stopped arrival with the green LED state, and a latched software emergency stop that blocks re-arming. These checks apply to the small synthetic obstacle course. See [original verification record](evidence/verification.json).
+
+**Short Utah trial verified October 21, 2026 UTC:** [run 39524530901](https://github.com/adrielsta/ROS-2-URC/actions/runs/39524530901) passed the 37-test unit job, original flat integration, and actual-heightfield integration at commit `b7358c80f8d17a94aaae3bbfbf774363f40a23c3`. The trial completed in 46.99 simulation seconds, with measured stopped-arrival errors of 0.402m and 0.407m, maximum observed body tilt of 10.29 degrees, and successful continuation after the C2 heartbeat dropped. The test also checks stationary disarmed startup with less than 0.3m spawn drift. See [complete report and limits](evidence/utah-verification.json). The full hill route and other navigation profiles have not been driven by this integration test.
 
 | Capability | Implemented | Verified evidence / remaining gate |
 |---|---|---|
@@ -12,7 +14,7 @@ This is a runnable development foundation, not a completed competition brain. Th
 | Small Gazebo/Nav2 route | Yes | Two-target completion, stopped arrival and latched e-stop passed in the linked run |
 | Utah live catalog | Yes | Timestamped catalog; per-source failures remain visible |
 | Georeferenced DEM conversion | Yes | Synthetic raster orientation/scale tests and [actual source-run evidence](evidence/README.md); surveyed coordinate checks remain |
-| Short real Utah driving trial | Implemented | Actual DEM, ideal simulator localization and ground filter; see the current integration run |
+| Short real Utah driving trial | Verified in simulation | Actual DEM, two measured stopped arrivals and forced heartbeat loss passed in the linked Utah run; ideal localization and known-DEM ground filter |
 | Hill/far-side route practice | Configured | Natural terrain, known safe-prior path, two 1m checks, geometric LOS heartbeat model; full course completion is not certified by the short test |
 | Other mission practice | Navigation only | Astronaut rendezvous, delivery checkpoints, two science-site visits/return, lander approach; no manipulation or bioassays |
 | GNSS/IMU/encoder fusion | No | Sensor drivers, extrinsics, covariance and dropout trials |
