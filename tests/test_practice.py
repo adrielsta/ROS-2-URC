@@ -53,6 +53,12 @@ def test_profiles_are_explicit_subsets_and_have_safe_start():
     assert all(x['radius_m']==1 for x in s['checks'])
     assert s['terrain_los_to_targets'][1] is False
     assert all(x['max_slope_deg']<=18 for x in s['route_prior_evidence'])
+    grid=yaml.safe_load((SHARE/'maps/utah.yaml').read_text())
+    origin=np.array(grid['origin'][:2]);resolution=grid['resolution']
+    for target,check in zip(s['targets'],s['checks']):
+        xy=np.array([target['x'],target['y']])
+        endpoint=origin+np.floor((xy-origin)/resolution)*resolution
+        assert np.linalg.norm(endpoint-np.array(check['xy']))+.12<check['radius_m']
     astronaut=yaml.safe_load((SHARE/'config/scenarios/astronaut-approach.yaml').read_text())
     fixture=ET.parse(SHARE/'worlds/astronaut-approach.sdf').find(".//model[@name='astronaut_placeholder']/pose")
     assert astronaut['checks'][0]['xy']==list(map(float,fixture.text.split()[:2]))
@@ -111,5 +117,8 @@ def test_navigation_grid_preserves_prior_and_fits_controller_lookahead():
     spec=yaml.safe_load((SHARE/'maps/utah.yaml').read_text())
     nav=yaml.safe_load((SHARE/'config/utah_nav2.yaml').read_text())
     lookahead=nav['controller_server']['ros__parameters']['FollowPath']['min_lookahead_dist']
-    assert math.sqrt(2)*spec['resolution']/2<lookahead
+    tolerance=nav['controller_server']['ros__parameters']['goal_checker']['xy_goal_tolerance']
+    # RPP deliberately retains the final two path poses, even after the
+    # nearer pose becomes the endpoint. A diagonal segment must fit too.
+    assert math.sqrt(2)*spec['resolution']+tolerance<lookahead
     assert len(fine)*spec['resolution']==pytest.approx(len(coarse)*1.52)

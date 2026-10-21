@@ -89,6 +89,11 @@ def main():
     nav=yaml.safe_load((SHARE/'config/nav2.yaml').read_text())
     nav['controller_server']['ros__parameters']['goal_checker']['xy_goal_tolerance']=.12
     nav['controller_server']['ros__parameters']['FollowPath']['desired_linear_vel']=.35
+    # Jazzy RPP retains two path poses at the goal. Keep the penultimate
+    # lattice point inside the lookahead, including the stopping tolerance,
+    # so it cannot select a point behind the rover during final alignment.
+    nav['controller_server']['ros__parameters']['FollowPath']['min_lookahead_dist']=.8
+    nav['controller_server']['ros__parameters']['FollowPath']['stateful']=True
     nav['controller_server']['ros__parameters']['FollowPath']['use_cost_regulated_linear_velocity_scaling']=False
     for layer_name in ('local_costmap','global_costmap'):
         cfg=nav[layer_name][layer_name]['ros__parameters']
@@ -135,7 +140,9 @@ def main():
                 goal=(round(half-pos[1]/step),round(half+pos[0]/step))
                 path=astar(inflated,start,goal)
                 a,b=path[-2:];direction=np.array([b[1]-a[1],a[0]-b[0]],dtype=float);direction/=np.linalg.norm(direction)
-                approach=(np.array(pos)-.8*direction).tolist();yaw=math.atan2(direction[1],direction[0])
+                # Two navigation cells give 0.76m standoff here; the small
+                # positive offset avoids rounding down at exact cell borders.
+                approach=(np.array(pos)-2*step/subdivision*direction+.01).tolist();yaw=math.atan2(direction[1],direction[0])
                 route_evidence.append({'length_m':sum(math.dist(a,b)*step for a,b in zip(path,path[1:])),
                     'max_slope_deg':max(float(slope[r,c]) for r,c in path)})
                 fixtures+=marker(i,*pos,terrain.height(*pos))

@@ -51,9 +51,9 @@ Bundling this small patch makes a normal Git pull enough to run the practice sce
 
 The hill target is above the start and has approaches rejected by the 18-degree slope prior. The far target is geometrically hidden by the natural terrain from a modeled 2m-high base antenna and 0.8m-high rover antenna. Those heights and the 18-degree cutoff are adjustable development assumptions, not URC requirements. The planned paths total about 308m; actual distance and completion depend on the controller and physics. Driving at 0.35m/s takes many minutes. This is intentionally more demanding than the short `utah` check.
 
-The two route posts have three 20cm-square ArUco 4x4_50 faces, a one-cell white border, 2.5cm cells, and face centers 1.1m above the local ground. Detection is not implemented. Navigation uses selected approach waypoints offset 0.8m from the post; the referee checks actual simulator position against the post center, not merely the commanded waypoint.
+The two route posts have three 20cm-square ArUco 4x4_50 faces, a one-cell white border, 2.5cm cells, and face centers 1.1m above the local ground. Detection is not implemented. Navigation uses selected approach waypoints with about 0.76m standoff, aligned to the navigation lattice with a 1cm rounding margin; the referee checks actual simulator position against the post center, not merely the commanded waypoint.
 
-The navigation cost image subdivides each 1.52m source cell into 38cm cells using nearest-neighbor copying. This gives the path controller enough intermediate points for its 40cm minimum lookahead. It preserves all slope costs and blocked cells; it does not create finer terrain measurements.
+The navigation cost image subdivides each 1.52m source cell into 38cm cells using nearest-neighbor copying. The controller's 80cm minimum lookahead covers a diagonal path segment plus the stopping tolerance, including Jazzy RPP's two retained poses at the goal. This preserves all slope costs and blocked cells; it does not create finer terrain measurements.
 
 ## Honest simulation boundary
 

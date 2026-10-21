@@ -3,11 +3,11 @@ scope: "Autonomy route-finding practice, rules 1.e.xii\u2013xviii"
 budget_s: 2400
 frame: map
 targets:
-- x: -59.28
-  y: 66.08
+- x: -59.27
+  y: 66.13
   yaw: 1.5707963267948966
-- x: -75.2
-  y: 98.8
+- x: -75.22999999999999
+  y: 98.81
   yaw: 3.141592653589793
 checks:
 - id: target_1
