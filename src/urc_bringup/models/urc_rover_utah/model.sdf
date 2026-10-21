@@ -168,7 +168,7 @@
       </axis>
     </joint>
     <link name="front_caster">
-      <pose>0.32 0 -0.21 0 0 0</pose>
+      <pose>0.32 0 -0.19 0 0 0</pose>
       <inertial>
         <mass>0.1</mass>
         <inertia>
@@ -205,7 +205,7 @@
       <child>front_caster</child>
     </joint>
     <link name="rear_caster">
-      <pose>-0.32 0 -0.21 0 0 0</pose>
+      <pose>-0.32 0 -0.19 0 0 0</pose>
       <inertial>
         <mass>0.1</mass>
         <inertia>

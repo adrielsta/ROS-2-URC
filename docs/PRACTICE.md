@@ -55,8 +55,8 @@ The two route posts have three 20cm-square ArUco 4x4_50 faces, a one-cell white 
 
 ## Honest simulation boundary
 
-- The rover is still the two-drive-wheel/caster placeholder, not your measured rover. A hard slope may expose this limitation; a failed run is useful evidence, not a reason to secretly flatten the terrain.
-- **Localization is ideal Gazebo ground truth.** Encoder, IMU and GPS messages exist, but a real outdoor estimator is not being tested. Map axes are EPSG:26912 grid east/north; Gazebo's illustrative GPS is not used as the geodetic authority.
+- The rover is still the two-drive-wheel/caster placeholder, not your measured rover. The Utah model raises its fixed caster supports 2cm relative to the flat demo so they do not bridge small depressions and unload the driven axle. This is an explicit proxy-chassis assumption, not calibrated suspension. A hard slope may expose this limitation; a failed run is useful evidence, not a reason to secretly flatten the terrain.
+- **Localization is ideal Gazebo ground truth.** Nav2 uses a level `base_footprint` frame; sensors retain the body's actual height and tilt through `base_link`. Encoder, IMU and GPS messages exist, but a real outdoor estimator is not being tested. Map axes are EPSG:26912 grid east/north; Gazebo's illustrative GPS is not used as the geodetic authority.
 - The scan filter uses the known DEM and ideal pose to remove ground returns. That isolates navigation testing. It is not a deployable perception algorithm for holes, changing terrain or map errors.
 - The 1.52m DEM omits small rocks, holes, loose soil and traction. Aerial imagery is visual texture; the robot does not currently understand it. The color photograph is not the collision surface.
 - The communications fault removes a modeled heartbeat. It does not model RF diffraction, multipath, throughput, video quality or a complete C2 network blackout. Autonomy remains onboard.

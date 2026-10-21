@@ -57,6 +57,12 @@ def main():
 
     model=ET.parse(SHARE/'models/urc_rover/model.sdf').getroot()
     base=model.find('model')
+    # Keep the driven axle below the two fixed, frictionless caster supports.
+    # Equal contact heights overconstrain this rigid proxy on uneven ground:
+    # the casters can bridge a shallow dip and unload both driven wheels.
+    for name in ('front_caster','rear_caster'):
+        pose=base.find(f"link[@name='{name}']/pose")
+        values=pose.text.split();values[2]='-0.19';pose.text=' '.join(values)
     # Keep encoder output separate; exactly one pose source drives navigation TF.
     drive=base.find('plugin')
     drive.find('tf_topic').text='/simulation/wheel_tf_unused'

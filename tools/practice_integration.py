@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Check actual Gazebo navigation on the bundled real Utah heightfield."""
 import json
+import math
 import time
 from pathlib import Path
 import rclpy
@@ -27,6 +28,7 @@ def main():
         node.until(settled,180,
                    'Real Utah sensors active and rover measured stationary for one second')
         assert abs(node.practice['surface_clearance_m']-.28)<.20,node.practice
+        assert math.hypot(*node.practice['ideal_pose_xy_m'])<.3,('Excessive disarmed spawn drift',node.practice)
         deadline=time.monotonic()+60
         while True:
             result=node.call('/mission/start')
