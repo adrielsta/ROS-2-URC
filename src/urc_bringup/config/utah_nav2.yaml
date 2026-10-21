@@ -66,7 +66,7 @@ local_costmap:
       update_frequency: 5.0
       publish_frequency: 2.0
       global_frame: odom
-      robot_base_frame: base_link
+      robot_base_frame: base_footprint
       rolling_window: true
       width: 8
       height: 8
@@ -107,7 +107,7 @@ global_costmap:
       update_frequency: 2.0
       publish_frequency: 1.0
       global_frame: map
-      robot_base_frame: base_link
+      robot_base_frame: base_footprint
       resolution: 1.52
       robot_radius: 0.55
       track_unknown_space: true
@@ -156,7 +156,7 @@ behavior_server:
       plugin: nav2_behaviors::Wait
     local_frame: odom
     global_frame: map
-    robot_base_frame: base_link
+    robot_base_frame: base_footprint
     transform_tolerance: 0.3
     enable_stamped_cmd_vel: false
     simulate_ahead_time: 2.0
@@ -166,7 +166,7 @@ behavior_server:
 bt_navigator:
   ros__parameters:
     global_frame: map
-    robot_base_frame: base_link
+    robot_base_frame: base_footprint
     odom_topic: /odom
     bt_loop_duration: 10
     default_server_timeout: 20

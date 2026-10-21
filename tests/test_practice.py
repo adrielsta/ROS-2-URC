@@ -5,7 +5,7 @@ import xml.etree.ElementTree as ET
 import numpy as np
 import pytest
 import yaml
-from urc_brain.terrain_model import Terrain, rotate, stopped_arrival
+from urc_brain.terrain_model import Terrain, rotate, stopped_arrival, planar_rotation
 from urc_brain.mission_plan import validate_plan
 
 SHARE=Path(__file__).resolve().parents[1]/'src/urc_bringup'
@@ -61,8 +61,30 @@ def test_ideal_pose_does_not_conflict_with_encoder_tf():
     assert plugins[0].find('tf_topic').text!=plugins[1].find('tf_topic').text
     assert plugins[1].find('dimensions').text=='3'
     bridge=yaml.safe_load((SHARE/'config/utah_bridge.yaml').read_text())
-    assert sum(x['ros_topic_name']=='/tf' for x in bridge)==1
+    assert sum(x['ros_topic_name']=='/tf' for x in bridge)==0
+    assert sum(x['ros_topic_name']=='/simulation/ground_truth' for x in bridge)==1
     assert any(x['ros_topic_name']=='/scan_raw' for x in bridge)
+
+
+def test_level_navigation_frame_preserves_tilted_body_rotation():
+    q=[.15,-.2,.3,.92]
+    q=np.array(q)/np.linalg.norm(q)
+    planar,tilt=planar_rotation(q)
+    for vector in np.eye(3):
+        assert rotate(planar,rotate(tilt,vector))==pytest.approx(rotate(q,vector))
+    assert rotate(planar,[0,0,1])==pytest.approx([0,0,1])
+
+
+def test_harmonic_heightfield_datum_and_sampling_alignment():
+    t=Terrain(SHARE/'models/utah_site')
+    world=ET.parse(SHARE/'worlds/utah.sdf')
+    model=world.find(".//model[@name='real_utah_terrain']")
+    assert float(model.find('pose').text.split()[2])==pytest.approx(t.meta['baseline_elevation_m']-t.meta['spawn_elevation_m'])
+    collision=model.find('.//collision/geometry/heightmap')
+    visual=model.find('.//visual/geometry/heightmap')
+    assert collision.find('pos').text=='0 0 0'
+    assert float(collision.find('size').text.split()[0])/t.meta['grid_size']==pytest.approx(t.step)
+    assert float(visual.find('size').text.split()[0])/(t.meta['grid_size']-1)==pytest.approx(t.step)
 
 
 def test_tag_geometry_matches_rule_dimensions():

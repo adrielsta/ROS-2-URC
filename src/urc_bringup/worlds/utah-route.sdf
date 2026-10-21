@@ -37,7 +37,7 @@
           <geometry>
             <heightmap>
               <uri>model://utah_site/height.png</uri>
-              <size>389.12 389.12 17.161376953125</size>
+              <size>390.64 390.64 17.161376953125</size>
               <pos>0 0 0</pos>
               <sampling>1</sampling>
             </heightmap>

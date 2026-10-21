@@ -25,7 +25,7 @@ class Referee(Node):
         self.pub = self.create_publisher(String,'/practice/status',10)
         self.heartbeat = self.create_publisher(Empty,'/c2/heartbeat',1)
         self.estop = self.create_client(Trigger,'/safety/estop')
-        self.create_subscription(Odometry,'/odom',self.odom_cb,qos_profile_sensor_data)
+        self.create_subscription(Odometry,'/simulation/ground_truth',self.odom_cb,qos_profile_sensor_data)
         self.create_subscription(String,'/mission/status',self.mission_cb,10)
         self.create_subscription(String,'/rover/status',self.rover_cb,10)
         self.pose = None

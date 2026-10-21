@@ -24,6 +24,7 @@ def setup(context):
                 'mission':scenario,'params':os.path.join(share,'config','utah_nav2.yaml'),
                 'bridge':os.path.join(share,'config','utah_bridge.yaml'),
                 'target_timeout':'7200.0','mission_budget':str(float(spec['budget_s']))}.items()),
+        Node(package='urc_brain',executable='simulation_frames',parameters=[{'use_sim_time':True}],output='screen'),
         Node(package='urc_brain',executable='terrain_scan',parameters=[common],output='screen'),
         Node(package='urc_brain',executable='practice_referee',parameters=[common,{
             'scenario_file':scenario,'report_file':os.path.abspath('artifacts/'+name+'-practice.json')}],output='screen')]

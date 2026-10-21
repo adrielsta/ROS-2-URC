@@ -67,9 +67,11 @@ def main():
     write_xml(rover/'model.config','<model><name>URC simulation truth base</name><version>0.2</version><sdf version="1.9">model.sdf</sdf><description>Placeholder chassis with ideal simulation pose; never a production localization configuration.</description></model>')
 
     bridge=yaml.safe_load((SHARE/'config/bridge.yaml').read_text())
+    bridge=[item for item in bridge if item['ros_topic_name']!='/tf']
     for item in bridge:
-        if item['ros_topic_name']=='/odom':item['gz_topic_name']='/simulation/ground_truth/odometry'
-        if item['ros_topic_name']=='/tf':item['gz_topic_name']='/simulation/ground_truth/tf'
+        if item['ros_topic_name']=='/odom':
+            item['gz_topic_name']='/simulation/ground_truth/odometry'
+            item['ros_topic_name']='/simulation/ground_truth'
         if item['ros_topic_name']=='/scan':item['ros_topic_name']='/scan_raw'
     (SHARE/'config/utah_bridge.yaml').write_text(yaml.safe_dump(bridge,sort_keys=False))
     nav=yaml.safe_load((SHARE/'config/nav2.yaml').read_text())
@@ -78,6 +80,7 @@ def main():
     nav['controller_server']['ros__parameters']['FollowPath']['use_cost_regulated_linear_velocity_scaling']=False
     for layer_name in ('local_costmap','global_costmap'):
         cfg=nav[layer_name][layer_name]['ros__parameters']
+        cfg['robot_base_frame']='base_footprint'
         cfg['obstacle_layer']['scan']['min_obstacle_height']=-100.0
         cfg['obstacle_layer']['scan']['max_obstacle_height']=100.0
         cfg['obstacle_layer']['min_obstacle_height']=-100.0
@@ -87,6 +90,8 @@ def main():
     local['plugins']=['static_layer','obstacle_layer','inflation_layer']
     local['static_layer']={'plugin':'nav2_costmap_2d::StaticLayer','map_subscribe_transient_local':True,'trinary_costmap':False}
     nav['global_costmap']['global_costmap']['ros__parameters']['resolution']=step
+    nav['bt_navigator']['ros__parameters']['robot_base_frame']='base_footprint'
+    nav['behavior_server']['ros__parameters']['robot_base_frame']='base_footprint'
     (SHARE/'config/utah_nav2.yaml').write_text(yaml.safe_dump(nav,sort_keys=False))
 
     # The route targets are natural hill / far-side locations selected from the
@@ -144,10 +149,14 @@ def main():
         coords=world.find('spherical_coordinates');coords.find('latitude_deg').text=str(m['local_origin_wgs84'][1]);coords.find('longitude_deg').text=str(m['local_origin_wgs84'][0]);coords.find('elevation').text=str(m['spawn_elevation_m'])
         shift=m['baseline_elevation_m']-m['spawn_elevation_m'];size=m['physical_size_m']
         shape=f'<uri>model://utah_site/height.png</uri><size>{size} {size} {m["height_scale_m"]}</size><pos>0 0 0</pos><sampling>1</sampling>'
+        # Harmonic DART divides horizontal size by N samples, while the
+        # renderer spans N-1 intervals. Compensate only the collision size.
+        collision_size=size*m['grid_size']/(m['grid_size']-1)
+        collision_shape=shape.replace(f'<size>{size} {size} ',f'<size>{collision_size} {collision_size} ')
         tex=f'<texture><size>{size}</size><diffuse>model://utah_site/aerial.jpg</diffuse><normal>model://utah_site/normal.png</normal></texture>'
         # Apply datum translation at the model frame. The DART heightfield
         # backend does not consistently apply the heightmap-specific <pos>.
-        world.append(ET.fromstring(f'<model name="real_utah_terrain"><static>true</static><pose>0 0 {shift} 0 0 0</pose><link name="terrain"><collision name="terrain"><geometry><heightmap>{shape}</heightmap></geometry></collision><visual name="terrain"><geometry><heightmap>{shape}{tex}<use_terrain_paging>false</use_terrain_paging></heightmap></geometry></visual></link></model>'))
+        world.append(ET.fromstring(f'<model name="real_utah_terrain"><static>true</static><pose>0 0 {shift} 0 0 0</pose><link name="terrain"><collision name="terrain"><geometry><heightmap>{collision_shape}</heightmap></geometry></collision><visual name="terrain"><geometry><heightmap>{shape}{tex}<use_terrain_paging>false</use_terrain_paging></heightmap></geometry></visual></link></model>'))
         world.append(ET.fromstring('<include><uri>model://urc_rover_utah</uri><name>urc_rover</name><pose>0 0 .55 0 0 0</pose></include>'))
         for fixture in ET.fromstring('<fixtures>'+fixtures+'</fixtures>'):world.append(fixture)
         write_xml(SHARE/f'worlds/{name}.sdf',ET.tostring(xml,encoding='unicode'))

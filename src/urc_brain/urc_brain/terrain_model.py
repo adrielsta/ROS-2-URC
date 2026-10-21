@@ -55,3 +55,14 @@ def stopped_arrival(xy, target_xy, speed, angular_speed, led, radius):
     return (all(math.isfinite(v) for v in values) and radius > 0 and
             math.dist(xy,target_xy) <= radius and abs(speed)<0.03 and
             abs(angular_speed)<0.05 and led=='flashing_green')
+
+
+def planar_rotation(quaternion):
+    q=np.asarray(quaternion,dtype=float)
+    norm=np.linalg.norm(q)
+    if not np.isfinite(norm) or norm<1e-9:raise ValueError('Invalid rotation quaternion')
+    x,y,z,w=q/norm
+    yaw=math.atan2(2*(w*z+x*y),1-2*(y*y+z*z))
+    a,b=math.sin(yaw/2),math.cos(yaw/2)
+    # conjugate(yaw) * full orientation
+    return [0.,0.,a,b],[b*x+a*y,b*y-a*x,b*z-a*w,b*w+a*z]

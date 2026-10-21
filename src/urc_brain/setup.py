@@ -11,6 +11,7 @@ setup(
         'supervisor = urc_brain.supervisor:main',
         'mission = urc_brain.mission:main',
         'terrain_scan = urc_brain.terrain_scan:main',
+        'simulation_frames = urc_brain.simulation_frames:main',
         'practice_referee = urc_brain.practice_referee:main',
     ]},
 )
