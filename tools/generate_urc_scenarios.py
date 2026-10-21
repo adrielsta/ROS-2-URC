@@ -39,7 +39,8 @@ def marker(tag,x,y,ground):
         for r in range(6):
             for c in range(6):
                 if bits[r][c]: continue
-                faces+=f'<visual name="cell_{r}_{c}"><pose>0.003 {(2.5-c)*.025} {(2.5-r)*.025} 0 0 0</pose><geometry><box><size>0.002 0.025 0.025</size></box></geometry><material><ambient>0 0 0 1</ambient><diffuse>0 0 0 1</diffuse></material></visual>'
+                # Viewed from outside (+local X), image-right is +local Y.
+                faces+=f'<visual name="cell_{r}_{c}"><pose>0.003 {(c-2.5)*.025} {(2.5-r)*.025} 0 0 0</pose><geometry><box><size>0.002 0.025 0.025</size></box></geometry><material><ambient>0 0 0 1</ambient><diffuse>0 0 0 1</diffuse></material></visual>'
         faces+='</link>'
     return f'<model name="target_{tag}"><static>true</static><pose>{x} {y} {ground} 0 0 0</pose><link name="post"><pose>0 0 .5 0 0 0</pose><collision name="post"><geometry><cylinder><radius>.025</radius><length>1</length></cylinder></geometry></collision><visual name="post"><geometry><cylinder><radius>.025</radius><length>1</length></cylinder></geometry><material><diffuse>.3 .3 .3 1</diffuse></material></visual></link>{faces}</model>'
 

@@ -105,66 +105,6 @@
           </material>
         </visual>
         <visual name="cell_0_0">
-          <pose>0.003 0.0625 0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_0_1">
-          <pose>0.003 0.037500000000000006 0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_0_2">
-          <pose>0.003 0.0125 0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_0_3">
-          <pose>0.003 -0.0125 0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_0_4">
-          <pose>0.003 -0.037500000000000006 0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_0_5">
           <pose>0.003 -0.0625 0.0625 0 0 0</pose>
           <geometry>
             <box>
@@ -176,31 +116,67 @@
             <diffuse>0 0 0 1</diffuse>
           </material>
         </visual>
+        <visual name="cell_0_1">
+          <pose>0.003 -0.037500000000000006 0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_0_2">
+          <pose>0.003 -0.0125 0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_0_3">
+          <pose>0.003 0.0125 0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_0_4">
+          <pose>0.003 0.037500000000000006 0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_0_5">
+          <pose>0.003 0.0625 0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
         <visual name="cell_1_0">
-          <pose>0.003 0.0625 0.037500000000000006 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_1_2">
-          <pose>0.003 0.0125 0.037500000000000006 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_1_5">
           <pose>0.003 -0.0625 0.037500000000000006 0 0 0</pose>
           <geometry>
             <box>
@@ -212,43 +188,31 @@
             <diffuse>0 0 0 1</diffuse>
           </material>
         </visual>
+        <visual name="cell_1_2">
+          <pose>0.003 -0.0125 0.037500000000000006 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_1_5">
+          <pose>0.003 0.0625 0.037500000000000006 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
         <visual name="cell_2_0">
-          <pose>0.003 0.0625 0.0125 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_2_1">
-          <pose>0.003 0.037500000000000006 0.0125 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_2_3">
-          <pose>0.003 -0.0125 0.0125 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_2_5">
           <pose>0.003 -0.0625 0.0125 0 0 0</pose>
           <geometry>
             <box>
@@ -260,43 +224,43 @@
             <diffuse>0 0 0 1</diffuse>
           </material>
         </visual>
+        <visual name="cell_2_1">
+          <pose>0.003 -0.037500000000000006 0.0125 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_2_3">
+          <pose>0.003 0.0125 0.0125 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_2_5">
+          <pose>0.003 0.0625 0.0125 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
         <visual name="cell_3_0">
-          <pose>0.003 0.0625 -0.0125 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_3_1">
-          <pose>0.003 0.037500000000000006 -0.0125 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_3_2">
-          <pose>0.003 0.0125 -0.0125 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_3_5">
           <pose>0.003 -0.0625 -0.0125 0 0 0</pose>
           <geometry>
             <box>
@@ -308,55 +272,43 @@
             <diffuse>0 0 0 1</diffuse>
           </material>
         </visual>
+        <visual name="cell_3_1">
+          <pose>0.003 -0.037500000000000006 -0.0125 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_3_2">
+          <pose>0.003 -0.0125 -0.0125 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_3_5">
+          <pose>0.003 0.0625 -0.0125 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
         <visual name="cell_4_0">
-          <pose>0.003 0.0625 -0.037500000000000006 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_4_1">
-          <pose>0.003 0.037500000000000006 -0.037500000000000006 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_4_2">
-          <pose>0.003 0.0125 -0.037500000000000006 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_4_4">
-          <pose>0.003 -0.037500000000000006 -0.037500000000000006 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_4_5">
           <pose>0.003 -0.0625 -0.037500000000000006 0 0 0</pose>
           <geometry>
             <box>
@@ -368,8 +320,56 @@
             <diffuse>0 0 0 1</diffuse>
           </material>
         </visual>
+        <visual name="cell_4_1">
+          <pose>0.003 -0.037500000000000006 -0.037500000000000006 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_4_2">
+          <pose>0.003 -0.0125 -0.037500000000000006 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_4_4">
+          <pose>0.003 0.037500000000000006 -0.037500000000000006 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_4_5">
+          <pose>0.003 0.0625 -0.037500000000000006 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
         <visual name="cell_5_0">
-          <pose>0.003 0.0625 -0.0625 0 0 0</pose>
+          <pose>0.003 -0.0625 -0.0625 0 0 0</pose>
           <geometry>
             <box>
               <size>0.002 0.025 0.025</size>
@@ -381,42 +381,6 @@
           </material>
         </visual>
         <visual name="cell_5_1">
-          <pose>0.003 0.037500000000000006 -0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_5_2">
-          <pose>0.003 0.0125 -0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_5_3">
-          <pose>0.003 -0.0125 -0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_5_4">
           <pose>0.003 -0.037500000000000006 -0.0625 0 0 0</pose>
           <geometry>
             <box>
@@ -428,8 +392,44 @@
             <diffuse>0 0 0 1</diffuse>
           </material>
         </visual>
+        <visual name="cell_5_2">
+          <pose>0.003 -0.0125 -0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_5_3">
+          <pose>0.003 0.0125 -0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_5_4">
+          <pose>0.003 0.037500000000000006 -0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
         <visual name="cell_5_5">
-          <pose>0.003 -0.0625 -0.0625 0 0 0</pose>
+          <pose>0.003 0.0625 -0.0625 0 0 0</pose>
           <geometry>
             <box>
               <size>0.002 0.025 0.025</size>
@@ -455,66 +455,6 @@
           </material>
         </visual>
         <visual name="cell_0_0">
-          <pose>0.003 0.0625 0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_0_1">
-          <pose>0.003 0.037500000000000006 0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_0_2">
-          <pose>0.003 0.0125 0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_0_3">
-          <pose>0.003 -0.0125 0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_0_4">
-          <pose>0.003 -0.037500000000000006 0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_0_5">
           <pose>0.003 -0.0625 0.0625 0 0 0</pose>
           <geometry>
             <box>
@@ -526,31 +466,67 @@
             <diffuse>0 0 0 1</diffuse>
           </material>
         </visual>
+        <visual name="cell_0_1">
+          <pose>0.003 -0.037500000000000006 0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_0_2">
+          <pose>0.003 -0.0125 0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_0_3">
+          <pose>0.003 0.0125 0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_0_4">
+          <pose>0.003 0.037500000000000006 0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_0_5">
+          <pose>0.003 0.0625 0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
         <visual name="cell_1_0">
-          <pose>0.003 0.0625 0.037500000000000006 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_1_2">
-          <pose>0.003 0.0125 0.037500000000000006 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_1_5">
           <pose>0.003 -0.0625 0.037500000000000006 0 0 0</pose>
           <geometry>
             <box>
@@ -562,43 +538,31 @@
             <diffuse>0 0 0 1</diffuse>
           </material>
         </visual>
+        <visual name="cell_1_2">
+          <pose>0.003 -0.0125 0.037500000000000006 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_1_5">
+          <pose>0.003 0.0625 0.037500000000000006 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
         <visual name="cell_2_0">
-          <pose>0.003 0.0625 0.0125 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_2_1">
-          <pose>0.003 0.037500000000000006 0.0125 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_2_3">
-          <pose>0.003 -0.0125 0.0125 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_2_5">
           <pose>0.003 -0.0625 0.0125 0 0 0</pose>
           <geometry>
             <box>
@@ -610,43 +574,43 @@
             <diffuse>0 0 0 1</diffuse>
           </material>
         </visual>
+        <visual name="cell_2_1">
+          <pose>0.003 -0.037500000000000006 0.0125 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_2_3">
+          <pose>0.003 0.0125 0.0125 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_2_5">
+          <pose>0.003 0.0625 0.0125 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
         <visual name="cell_3_0">
-          <pose>0.003 0.0625 -0.0125 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_3_1">
-          <pose>0.003 0.037500000000000006 -0.0125 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_3_2">
-          <pose>0.003 0.0125 -0.0125 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_3_5">
           <pose>0.003 -0.0625 -0.0125 0 0 0</pose>
           <geometry>
             <box>
@@ -658,55 +622,43 @@
             <diffuse>0 0 0 1</diffuse>
           </material>
         </visual>
+        <visual name="cell_3_1">
+          <pose>0.003 -0.037500000000000006 -0.0125 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_3_2">
+          <pose>0.003 -0.0125 -0.0125 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_3_5">
+          <pose>0.003 0.0625 -0.0125 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
         <visual name="cell_4_0">
-          <pose>0.003 0.0625 -0.037500000000000006 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_4_1">
-          <pose>0.003 0.037500000000000006 -0.037500000000000006 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_4_2">
-          <pose>0.003 0.0125 -0.037500000000000006 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_4_4">
-          <pose>0.003 -0.037500000000000006 -0.037500000000000006 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_4_5">
           <pose>0.003 -0.0625 -0.037500000000000006 0 0 0</pose>
           <geometry>
             <box>
@@ -718,8 +670,56 @@
             <diffuse>0 0 0 1</diffuse>
           </material>
         </visual>
+        <visual name="cell_4_1">
+          <pose>0.003 -0.037500000000000006 -0.037500000000000006 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_4_2">
+          <pose>0.003 -0.0125 -0.037500000000000006 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_4_4">
+          <pose>0.003 0.037500000000000006 -0.037500000000000006 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_4_5">
+          <pose>0.003 0.0625 -0.037500000000000006 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
         <visual name="cell_5_0">
-          <pose>0.003 0.0625 -0.0625 0 0 0</pose>
+          <pose>0.003 -0.0625 -0.0625 0 0 0</pose>
           <geometry>
             <box>
               <size>0.002 0.025 0.025</size>
@@ -731,42 +731,6 @@
           </material>
         </visual>
         <visual name="cell_5_1">
-          <pose>0.003 0.037500000000000006 -0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_5_2">
-          <pose>0.003 0.0125 -0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_5_3">
-          <pose>0.003 -0.0125 -0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_5_4">
           <pose>0.003 -0.037500000000000006 -0.0625 0 0 0</pose>
           <geometry>
             <box>
@@ -778,8 +742,44 @@
             <diffuse>0 0 0 1</diffuse>
           </material>
         </visual>
+        <visual name="cell_5_2">
+          <pose>0.003 -0.0125 -0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_5_3">
+          <pose>0.003 0.0125 -0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_5_4">
+          <pose>0.003 0.037500000000000006 -0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
         <visual name="cell_5_5">
-          <pose>0.003 -0.0625 -0.0625 0 0 0</pose>
+          <pose>0.003 0.0625 -0.0625 0 0 0</pose>
           <geometry>
             <box>
               <size>0.002 0.025 0.025</size>
@@ -805,66 +805,6 @@
           </material>
         </visual>
         <visual name="cell_0_0">
-          <pose>0.003 0.0625 0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_0_1">
-          <pose>0.003 0.037500000000000006 0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_0_2">
-          <pose>0.003 0.0125 0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_0_3">
-          <pose>0.003 -0.0125 0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_0_4">
-          <pose>0.003 -0.037500000000000006 0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_0_5">
           <pose>0.003 -0.0625 0.0625 0 0 0</pose>
           <geometry>
             <box>
@@ -876,31 +816,67 @@
             <diffuse>0 0 0 1</diffuse>
           </material>
         </visual>
+        <visual name="cell_0_1">
+          <pose>0.003 -0.037500000000000006 0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_0_2">
+          <pose>0.003 -0.0125 0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_0_3">
+          <pose>0.003 0.0125 0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_0_4">
+          <pose>0.003 0.037500000000000006 0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_0_5">
+          <pose>0.003 0.0625 0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
         <visual name="cell_1_0">
-          <pose>0.003 0.0625 0.037500000000000006 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_1_2">
-          <pose>0.003 0.0125 0.037500000000000006 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_1_5">
           <pose>0.003 -0.0625 0.037500000000000006 0 0 0</pose>
           <geometry>
             <box>
@@ -912,43 +888,31 @@
             <diffuse>0 0 0 1</diffuse>
           </material>
         </visual>
+        <visual name="cell_1_2">
+          <pose>0.003 -0.0125 0.037500000000000006 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_1_5">
+          <pose>0.003 0.0625 0.037500000000000006 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
         <visual name="cell_2_0">
-          <pose>0.003 0.0625 0.0125 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_2_1">
-          <pose>0.003 0.037500000000000006 0.0125 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_2_3">
-          <pose>0.003 -0.0125 0.0125 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_2_5">
           <pose>0.003 -0.0625 0.0125 0 0 0</pose>
           <geometry>
             <box>
@@ -960,43 +924,43 @@
             <diffuse>0 0 0 1</diffuse>
           </material>
         </visual>
+        <visual name="cell_2_1">
+          <pose>0.003 -0.037500000000000006 0.0125 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_2_3">
+          <pose>0.003 0.0125 0.0125 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_2_5">
+          <pose>0.003 0.0625 0.0125 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
         <visual name="cell_3_0">
-          <pose>0.003 0.0625 -0.0125 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_3_1">
-          <pose>0.003 0.037500000000000006 -0.0125 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_3_2">
-          <pose>0.003 0.0125 -0.0125 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_3_5">
           <pose>0.003 -0.0625 -0.0125 0 0 0</pose>
           <geometry>
             <box>
@@ -1008,55 +972,43 @@
             <diffuse>0 0 0 1</diffuse>
           </material>
         </visual>
+        <visual name="cell_3_1">
+          <pose>0.003 -0.037500000000000006 -0.0125 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_3_2">
+          <pose>0.003 -0.0125 -0.0125 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_3_5">
+          <pose>0.003 0.0625 -0.0125 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
         <visual name="cell_4_0">
-          <pose>0.003 0.0625 -0.037500000000000006 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_4_1">
-          <pose>0.003 0.037500000000000006 -0.037500000000000006 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_4_2">
-          <pose>0.003 0.0125 -0.037500000000000006 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_4_4">
-          <pose>0.003 -0.037500000000000006 -0.037500000000000006 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_4_5">
           <pose>0.003 -0.0625 -0.037500000000000006 0 0 0</pose>
           <geometry>
             <box>
@@ -1068,8 +1020,56 @@
             <diffuse>0 0 0 1</diffuse>
           </material>
         </visual>
+        <visual name="cell_4_1">
+          <pose>0.003 -0.037500000000000006 -0.037500000000000006 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_4_2">
+          <pose>0.003 -0.0125 -0.037500000000000006 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_4_4">
+          <pose>0.003 0.037500000000000006 -0.037500000000000006 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_4_5">
+          <pose>0.003 0.0625 -0.037500000000000006 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
         <visual name="cell_5_0">
-          <pose>0.003 0.0625 -0.0625 0 0 0</pose>
+          <pose>0.003 -0.0625 -0.0625 0 0 0</pose>
           <geometry>
             <box>
               <size>0.002 0.025 0.025</size>
@@ -1081,42 +1081,6 @@
           </material>
         </visual>
         <visual name="cell_5_1">
-          <pose>0.003 0.037500000000000006 -0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_5_2">
-          <pose>0.003 0.0125 -0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_5_3">
-          <pose>0.003 -0.0125 -0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_5_4">
           <pose>0.003 -0.037500000000000006 -0.0625 0 0 0</pose>
           <geometry>
             <box>
@@ -1128,8 +1092,44 @@
             <diffuse>0 0 0 1</diffuse>
           </material>
         </visual>
+        <visual name="cell_5_2">
+          <pose>0.003 -0.0125 -0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_5_3">
+          <pose>0.003 0.0125 -0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_5_4">
+          <pose>0.003 0.037500000000000006 -0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
         <visual name="cell_5_5">
-          <pose>0.003 -0.0625 -0.0625 0 0 0</pose>
+          <pose>0.003 0.0625 -0.0625 0 0 0</pose>
           <geometry>
             <box>
               <size>0.002 0.025 0.025</size>
@@ -1181,66 +1181,6 @@
           </material>
         </visual>
         <visual name="cell_0_0">
-          <pose>0.003 0.0625 0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_0_1">
-          <pose>0.003 0.037500000000000006 0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_0_2">
-          <pose>0.003 0.0125 0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_0_3">
-          <pose>0.003 -0.0125 0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_0_4">
-          <pose>0.003 -0.037500000000000006 0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_0_5">
           <pose>0.003 -0.0625 0.0625 0 0 0</pose>
           <geometry>
             <box>
@@ -1252,67 +1192,67 @@
             <diffuse>0 0 0 1</diffuse>
           </material>
         </visual>
+        <visual name="cell_0_1">
+          <pose>0.003 -0.037500000000000006 0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_0_2">
+          <pose>0.003 -0.0125 0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_0_3">
+          <pose>0.003 0.0125 0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_0_4">
+          <pose>0.003 0.037500000000000006 0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_0_5">
+          <pose>0.003 0.0625 0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
         <visual name="cell_1_0">
-          <pose>0.003 0.0625 0.037500000000000006 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_1_1">
-          <pose>0.003 0.037500000000000006 0.037500000000000006 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_1_2">
-          <pose>0.003 0.0125 0.037500000000000006 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_1_3">
-          <pose>0.003 -0.0125 0.037500000000000006 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_1_4">
-          <pose>0.003 -0.037500000000000006 0.037500000000000006 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_1_5">
           <pose>0.003 -0.0625 0.037500000000000006 0 0 0</pose>
           <geometry>
             <box>
@@ -1324,8 +1264,8 @@
             <diffuse>0 0 0 1</diffuse>
           </material>
         </visual>
-        <visual name="cell_2_0">
-          <pose>0.003 0.0625 0.0125 0 0 0</pose>
+        <visual name="cell_1_1">
+          <pose>0.003 -0.037500000000000006 0.037500000000000006 0 0 0</pose>
           <geometry>
             <box>
               <size>0.002 0.025 0.025</size>
@@ -1336,7 +1276,55 @@
             <diffuse>0 0 0 1</diffuse>
           </material>
         </visual>
-        <visual name="cell_2_5">
+        <visual name="cell_1_2">
+          <pose>0.003 -0.0125 0.037500000000000006 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_1_3">
+          <pose>0.003 0.0125 0.037500000000000006 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_1_4">
+          <pose>0.003 0.037500000000000006 0.037500000000000006 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_1_5">
+          <pose>0.003 0.0625 0.037500000000000006 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_2_0">
           <pose>0.003 -0.0625 0.0125 0 0 0</pose>
           <geometry>
             <box>
@@ -1348,43 +1336,19 @@
             <diffuse>0 0 0 1</diffuse>
           </material>
         </visual>
+        <visual name="cell_2_5">
+          <pose>0.003 0.0625 0.0125 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
         <visual name="cell_3_0">
-          <pose>0.003 0.0625 -0.0125 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_3_2">
-          <pose>0.003 0.0125 -0.0125 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_3_3">
-          <pose>0.003 -0.0125 -0.0125 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_3_5">
           <pose>0.003 -0.0625 -0.0125 0 0 0</pose>
           <geometry>
             <box>
@@ -1396,43 +1360,43 @@
             <diffuse>0 0 0 1</diffuse>
           </material>
         </visual>
+        <visual name="cell_3_2">
+          <pose>0.003 -0.0125 -0.0125 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_3_3">
+          <pose>0.003 0.0125 -0.0125 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_3_5">
+          <pose>0.003 0.0625 -0.0125 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
         <visual name="cell_4_0">
-          <pose>0.003 0.0625 -0.037500000000000006 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_4_2">
-          <pose>0.003 0.0125 -0.037500000000000006 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_4_4">
-          <pose>0.003 -0.037500000000000006 -0.037500000000000006 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_4_5">
           <pose>0.003 -0.0625 -0.037500000000000006 0 0 0</pose>
           <geometry>
             <box>
@@ -1444,8 +1408,44 @@
             <diffuse>0 0 0 1</diffuse>
           </material>
         </visual>
+        <visual name="cell_4_2">
+          <pose>0.003 -0.0125 -0.037500000000000006 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_4_4">
+          <pose>0.003 0.037500000000000006 -0.037500000000000006 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_4_5">
+          <pose>0.003 0.0625 -0.037500000000000006 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
         <visual name="cell_5_0">
-          <pose>0.003 0.0625 -0.0625 0 0 0</pose>
+          <pose>0.003 -0.0625 -0.0625 0 0 0</pose>
           <geometry>
             <box>
               <size>0.002 0.025 0.025</size>
@@ -1457,42 +1457,6 @@
           </material>
         </visual>
         <visual name="cell_5_1">
-          <pose>0.003 0.037500000000000006 -0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_5_2">
-          <pose>0.003 0.0125 -0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_5_3">
-          <pose>0.003 -0.0125 -0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_5_4">
           <pose>0.003 -0.037500000000000006 -0.0625 0 0 0</pose>
           <geometry>
             <box>
@@ -1504,8 +1468,44 @@
             <diffuse>0 0 0 1</diffuse>
           </material>
         </visual>
+        <visual name="cell_5_2">
+          <pose>0.003 -0.0125 -0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_5_3">
+          <pose>0.003 0.0125 -0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_5_4">
+          <pose>0.003 0.037500000000000006 -0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
         <visual name="cell_5_5">
-          <pose>0.003 -0.0625 -0.0625 0 0 0</pose>
+          <pose>0.003 0.0625 -0.0625 0 0 0</pose>
           <geometry>
             <box>
               <size>0.002 0.025 0.025</size>
@@ -1531,66 +1531,6 @@
           </material>
         </visual>
         <visual name="cell_0_0">
-          <pose>0.003 0.0625 0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_0_1">
-          <pose>0.003 0.037500000000000006 0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_0_2">
-          <pose>0.003 0.0125 0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_0_3">
-          <pose>0.003 -0.0125 0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_0_4">
-          <pose>0.003 -0.037500000000000006 0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_0_5">
           <pose>0.003 -0.0625 0.0625 0 0 0</pose>
           <geometry>
             <box>
@@ -1602,67 +1542,67 @@
             <diffuse>0 0 0 1</diffuse>
           </material>
         </visual>
+        <visual name="cell_0_1">
+          <pose>0.003 -0.037500000000000006 0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_0_2">
+          <pose>0.003 -0.0125 0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_0_3">
+          <pose>0.003 0.0125 0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_0_4">
+          <pose>0.003 0.037500000000000006 0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_0_5">
+          <pose>0.003 0.0625 0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
         <visual name="cell_1_0">
-          <pose>0.003 0.0625 0.037500000000000006 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_1_1">
-          <pose>0.003 0.037500000000000006 0.037500000000000006 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_1_2">
-          <pose>0.003 0.0125 0.037500000000000006 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_1_3">
-          <pose>0.003 -0.0125 0.037500000000000006 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_1_4">
-          <pose>0.003 -0.037500000000000006 0.037500000000000006 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_1_5">
           <pose>0.003 -0.0625 0.037500000000000006 0 0 0</pose>
           <geometry>
             <box>
@@ -1674,8 +1614,8 @@
             <diffuse>0 0 0 1</diffuse>
           </material>
         </visual>
-        <visual name="cell_2_0">
-          <pose>0.003 0.0625 0.0125 0 0 0</pose>
+        <visual name="cell_1_1">
+          <pose>0.003 -0.037500000000000006 0.037500000000000006 0 0 0</pose>
           <geometry>
             <box>
               <size>0.002 0.025 0.025</size>
@@ -1686,7 +1626,55 @@
             <diffuse>0 0 0 1</diffuse>
           </material>
         </visual>
-        <visual name="cell_2_5">
+        <visual name="cell_1_2">
+          <pose>0.003 -0.0125 0.037500000000000006 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_1_3">
+          <pose>0.003 0.0125 0.037500000000000006 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_1_4">
+          <pose>0.003 0.037500000000000006 0.037500000000000006 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_1_5">
+          <pose>0.003 0.0625 0.037500000000000006 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_2_0">
           <pose>0.003 -0.0625 0.0125 0 0 0</pose>
           <geometry>
             <box>
@@ -1698,43 +1686,19 @@
             <diffuse>0 0 0 1</diffuse>
           </material>
         </visual>
+        <visual name="cell_2_5">
+          <pose>0.003 0.0625 0.0125 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
         <visual name="cell_3_0">
-          <pose>0.003 0.0625 -0.0125 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_3_2">
-          <pose>0.003 0.0125 -0.0125 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_3_3">
-          <pose>0.003 -0.0125 -0.0125 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_3_5">
           <pose>0.003 -0.0625 -0.0125 0 0 0</pose>
           <geometry>
             <box>
@@ -1746,43 +1710,43 @@
             <diffuse>0 0 0 1</diffuse>
           </material>
         </visual>
+        <visual name="cell_3_2">
+          <pose>0.003 -0.0125 -0.0125 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_3_3">
+          <pose>0.003 0.0125 -0.0125 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_3_5">
+          <pose>0.003 0.0625 -0.0125 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
         <visual name="cell_4_0">
-          <pose>0.003 0.0625 -0.037500000000000006 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_4_2">
-          <pose>0.003 0.0125 -0.037500000000000006 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_4_4">
-          <pose>0.003 -0.037500000000000006 -0.037500000000000006 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_4_5">
           <pose>0.003 -0.0625 -0.037500000000000006 0 0 0</pose>
           <geometry>
             <box>
@@ -1794,8 +1758,44 @@
             <diffuse>0 0 0 1</diffuse>
           </material>
         </visual>
+        <visual name="cell_4_2">
+          <pose>0.003 -0.0125 -0.037500000000000006 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_4_4">
+          <pose>0.003 0.037500000000000006 -0.037500000000000006 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_4_5">
+          <pose>0.003 0.0625 -0.037500000000000006 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
         <visual name="cell_5_0">
-          <pose>0.003 0.0625 -0.0625 0 0 0</pose>
+          <pose>0.003 -0.0625 -0.0625 0 0 0</pose>
           <geometry>
             <box>
               <size>0.002 0.025 0.025</size>
@@ -1807,42 +1807,6 @@
           </material>
         </visual>
         <visual name="cell_5_1">
-          <pose>0.003 0.037500000000000006 -0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_5_2">
-          <pose>0.003 0.0125 -0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_5_3">
-          <pose>0.003 -0.0125 -0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_5_4">
           <pose>0.003 -0.037500000000000006 -0.0625 0 0 0</pose>
           <geometry>
             <box>
@@ -1854,8 +1818,44 @@
             <diffuse>0 0 0 1</diffuse>
           </material>
         </visual>
+        <visual name="cell_5_2">
+          <pose>0.003 -0.0125 -0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_5_3">
+          <pose>0.003 0.0125 -0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_5_4">
+          <pose>0.003 0.037500000000000006 -0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
         <visual name="cell_5_5">
-          <pose>0.003 -0.0625 -0.0625 0 0 0</pose>
+          <pose>0.003 0.0625 -0.0625 0 0 0</pose>
           <geometry>
             <box>
               <size>0.002 0.025 0.025</size>
@@ -1881,66 +1881,6 @@
           </material>
         </visual>
         <visual name="cell_0_0">
-          <pose>0.003 0.0625 0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_0_1">
-          <pose>0.003 0.037500000000000006 0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_0_2">
-          <pose>0.003 0.0125 0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_0_3">
-          <pose>0.003 -0.0125 0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_0_4">
-          <pose>0.003 -0.037500000000000006 0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_0_5">
           <pose>0.003 -0.0625 0.0625 0 0 0</pose>
           <geometry>
             <box>
@@ -1952,67 +1892,67 @@
             <diffuse>0 0 0 1</diffuse>
           </material>
         </visual>
+        <visual name="cell_0_1">
+          <pose>0.003 -0.037500000000000006 0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_0_2">
+          <pose>0.003 -0.0125 0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_0_3">
+          <pose>0.003 0.0125 0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_0_4">
+          <pose>0.003 0.037500000000000006 0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_0_5">
+          <pose>0.003 0.0625 0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
         <visual name="cell_1_0">
-          <pose>0.003 0.0625 0.037500000000000006 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_1_1">
-          <pose>0.003 0.037500000000000006 0.037500000000000006 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_1_2">
-          <pose>0.003 0.0125 0.037500000000000006 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_1_3">
-          <pose>0.003 -0.0125 0.037500000000000006 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_1_4">
-          <pose>0.003 -0.037500000000000006 0.037500000000000006 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_1_5">
           <pose>0.003 -0.0625 0.037500000000000006 0 0 0</pose>
           <geometry>
             <box>
@@ -2024,8 +1964,8 @@
             <diffuse>0 0 0 1</diffuse>
           </material>
         </visual>
-        <visual name="cell_2_0">
-          <pose>0.003 0.0625 0.0125 0 0 0</pose>
+        <visual name="cell_1_1">
+          <pose>0.003 -0.037500000000000006 0.037500000000000006 0 0 0</pose>
           <geometry>
             <box>
               <size>0.002 0.025 0.025</size>
@@ -2036,7 +1976,55 @@
             <diffuse>0 0 0 1</diffuse>
           </material>
         </visual>
-        <visual name="cell_2_5">
+        <visual name="cell_1_2">
+          <pose>0.003 -0.0125 0.037500000000000006 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_1_3">
+          <pose>0.003 0.0125 0.037500000000000006 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_1_4">
+          <pose>0.003 0.037500000000000006 0.037500000000000006 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_1_5">
+          <pose>0.003 0.0625 0.037500000000000006 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_2_0">
           <pose>0.003 -0.0625 0.0125 0 0 0</pose>
           <geometry>
             <box>
@@ -2048,43 +2036,19 @@
             <diffuse>0 0 0 1</diffuse>
           </material>
         </visual>
+        <visual name="cell_2_5">
+          <pose>0.003 0.0625 0.0125 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
         <visual name="cell_3_0">
-          <pose>0.003 0.0625 -0.0125 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_3_2">
-          <pose>0.003 0.0125 -0.0125 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_3_3">
-          <pose>0.003 -0.0125 -0.0125 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_3_5">
           <pose>0.003 -0.0625 -0.0125 0 0 0</pose>
           <geometry>
             <box>
@@ -2096,43 +2060,43 @@
             <diffuse>0 0 0 1</diffuse>
           </material>
         </visual>
+        <visual name="cell_3_2">
+          <pose>0.003 -0.0125 -0.0125 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_3_3">
+          <pose>0.003 0.0125 -0.0125 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_3_5">
+          <pose>0.003 0.0625 -0.0125 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
         <visual name="cell_4_0">
-          <pose>0.003 0.0625 -0.037500000000000006 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_4_2">
-          <pose>0.003 0.0125 -0.037500000000000006 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_4_4">
-          <pose>0.003 -0.037500000000000006 -0.037500000000000006 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_4_5">
           <pose>0.003 -0.0625 -0.037500000000000006 0 0 0</pose>
           <geometry>
             <box>
@@ -2144,8 +2108,44 @@
             <diffuse>0 0 0 1</diffuse>
           </material>
         </visual>
+        <visual name="cell_4_2">
+          <pose>0.003 -0.0125 -0.037500000000000006 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_4_4">
+          <pose>0.003 0.037500000000000006 -0.037500000000000006 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_4_5">
+          <pose>0.003 0.0625 -0.037500000000000006 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
         <visual name="cell_5_0">
-          <pose>0.003 0.0625 -0.0625 0 0 0</pose>
+          <pose>0.003 -0.0625 -0.0625 0 0 0</pose>
           <geometry>
             <box>
               <size>0.002 0.025 0.025</size>
@@ -2157,42 +2157,6 @@
           </material>
         </visual>
         <visual name="cell_5_1">
-          <pose>0.003 0.037500000000000006 -0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_5_2">
-          <pose>0.003 0.0125 -0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_5_3">
-          <pose>0.003 -0.0125 -0.0625 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.002 0.025 0.025</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <visual name="cell_5_4">
           <pose>0.003 -0.037500000000000006 -0.0625 0 0 0</pose>
           <geometry>
             <box>
@@ -2204,8 +2168,44 @@
             <diffuse>0 0 0 1</diffuse>
           </material>
         </visual>
+        <visual name="cell_5_2">
+          <pose>0.003 -0.0125 -0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_5_3">
+          <pose>0.003 0.0125 -0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+        <visual name="cell_5_4">
+          <pose>0.003 0.037500000000000006 -0.0625 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.002 0.025 0.025</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
         <visual name="cell_5_5">
-          <pose>0.003 -0.0625 -0.0625 0 0 0</pose>
+          <pose>0.003 0.0625 -0.0625 0 0 0</pose>
           <geometry>
             <box>
               <size>0.002 0.025 0.025</size>
