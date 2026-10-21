@@ -2,7 +2,7 @@
 
 ROS 2 autonomy foundation for [adrielsta](https://github.com/adrielsta)'s University Rover Challenge project. **Simulation development, not field-ready rover software.**
 
-The first milestone is a repeatable chain: simulated sensors → Nav2 path planning/control → supervised drive commands → verified arrival. Real Utah data is a separate, reproducible terrain pipeline. Neither a successful simulation nor an overhead map proves a real rover can climb a slope.
+The foundation connects simulated sensors → Nav2 path planning/control → supervised drive commands → verified arrival. A bundled real Utah patch now supports navigation practice with ideal simulator localization. Neither a successful simulation nor an overhead map proves a real rover can climb a slope.
 
 **Verified baseline:** [real Gazebo + Nav2 integration and unit checks passed](https://github.com/adrielsta/ROS-2-URC/actions/runs/39511218743) on October 20, 2026. See [readiness and exact scope](docs/READINESS.md) and the [Utah data preview](docs/evidence/README.md).
 
@@ -15,14 +15,25 @@ The first milestone is a repeatable chain: simulated sensors → Nav2 path plann
 - Autonomous mode does not require C2 heartbeat; teleoperation does. Sensor timeout disarms either mode.
 - USGS 3DEP / NAIP / recent Sentinel-2 catalog discovery for the actual 2027 route-finding envelope; DEM clipping, metric reprojection, provenance, Gazebo heightfield and slope-prior map export.
 - Unit tests and a GitHub Actions integration job that builds the ROS environment and runs actual Gazebo + Nav2.
+- Six [real-terrain practice profiles](docs/PRACTICE.md), including natural-hill/far-side targets, measured stop checks, and a C2-heartbeat outage model. Other mission profiles cover approach/travel only.
 
 ## What is not implemented yet
 
-**No field-ready autonomy, astronaut tracking/gestures, hammer pickup, arm control, final radio driver, complete base-station GUI, or validated outdoor localization.** IMU/GNSS are exposed in the simulator but not fused into the demo navigation solution. The flat demo uses wheel odometry and a fixed `map → odom` transform. The exported Utah world contains terrain only; it is not yet an end-to-end geolocated rover trial. See [readiness](docs/READINESS.md) before interpreting any result.
+**No field-ready autonomy, astronaut tracking/gestures, hammer pickup, arm control, final radio driver, complete base-station GUI, or validated outdoor localization.** IMU/GNSS are exposed but not fused. The flat demo uses wheel odometry and a fixed `map → odom` transform. The Utah practice pack uses ideal Gazebo pose and a known-DEM ground filter to isolate navigation tests. These are simulation-only shortcuts. See [readiness](docs/READINESS.md) before interpreting any result.
 
 ## Start on your Windows PC
 
 Use Ubuntu 24.04 in WSL 2 for a local 3D Gazebo window. Follow the [Windows setup guide](docs/WINDOWS.md); `bash scripts/setup_ubuntu.sh` installs the native dependencies and builds the workspace. Then run `bash scripts/sim.sh gui:=true rviz:=true`, and start the mission in a second terminal. GitHub keeps the source synchronized; simulation runs on your PC.
+
+After the first flat-course run, stop that simulator and try the real terrain:
+
+```bash
+git pull --ff-only
+bash scripts/build.sh
+bash scripts/practice.sh utah
+```
+
+In a second Ubuntu terminal in this repository, run `bash scripts/start_mission.sh`. The terrain patch is bundled; no extra map download is needed. See [practice missions](docs/PRACTICE.md) for the longer `utah-route` hill course and the explicit coverage of all four URC missions.
 
 ## Start in the cloud
 

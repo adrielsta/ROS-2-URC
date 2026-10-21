@@ -56,6 +56,7 @@ class Mission(Node):
         self.deadline = math.inf
         self.verify_since = None
         self.started_sim = None
+        self.finished_sim = None
         self.create_timer(0.1, self.tick)
 
     def odom(self, msg):
@@ -83,6 +84,7 @@ class Mission(Node):
         self.epoch += 1
         self.index, self.state = 0, 'arming'
         self.started_sim = self.get_clock().now().nanoseconds / 1e9
+        self.finished_sim = None
         self.deadline = time.monotonic() + 10.0
         self.arrival_pub.publish(Bool(data=False))
         epoch = self.epoch
@@ -169,6 +171,7 @@ class Mission(Node):
     def abort(self, reason, state='failed'):
         self.epoch += 1
         self.state, self.detail = state, reason
+        self.finished_sim = self.get_clock().now().nanoseconds / 1e9
         if self.goal_handle is not None:
             self.goal_handle.cancel_goal_async()
             self.goal_handle = None
@@ -184,7 +187,7 @@ class Mission(Node):
     def tick(self):
         now = time.monotonic()
         sim_now = self.get_clock().now().nanoseconds / 1e9
-        elapsed = max(0.0, sim_now - self.started_sim) if self.started_sim is not None else 0.0
+        elapsed = max(0.0, (self.finished_sim if self.finished_sim is not None else sim_now) - self.started_sim) if self.started_sim is not None else 0.0
         if self.state in ('arming', 'awaiting_autonomy', 'navigating', 'verifying', 'arrival') and elapsed >= self.budget:
             self.abort('Mission simulation-time budget exceeded')
         if self.state == 'arrival' and sim_now >= self.next_target_at:
@@ -207,7 +210,8 @@ class Mission(Node):
                     if now - self.verify_since >= 0.5:
                         self.index += 1
                         if self.index == len(self.targets):
-                            self.state, self.detail = 'complete', 'All demo targets reached and stopped'
+                            self.state, self.detail = 'complete', 'All navigation targets reached and stopped'
+                            self.finished_sim = sim_now
                         else:
                             self.state, self.detail = 'arrival', 'Stopped arrival; indicating before next target'
                             self.next_target_at = sim_now + 3.0

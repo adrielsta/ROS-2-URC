@@ -143,9 +143,11 @@ def main():
         physics=world.find('physics');physics.append(ET.fromstring('<dart><collision_detector>bullet</collision_detector></dart>'))
         coords=world.find('spherical_coordinates');coords.find('latitude_deg').text=str(m['local_origin_wgs84'][1]);coords.find('longitude_deg').text=str(m['local_origin_wgs84'][0]);coords.find('elevation').text=str(m['spawn_elevation_m'])
         shift=m['baseline_elevation_m']-m['spawn_elevation_m'];size=m['physical_size_m']
-        shape=f'<uri>model://utah_site/height.png</uri><size>{size} {size} {m["height_scale_m"]}</size><pos>0 0 {shift}</pos><sampling>1</sampling>'
+        shape=f'<uri>model://utah_site/height.png</uri><size>{size} {size} {m["height_scale_m"]}</size><pos>0 0 0</pos><sampling>1</sampling>'
         tex=f'<texture><size>{size}</size><diffuse>model://utah_site/aerial.jpg</diffuse><normal>model://utah_site/normal.png</normal></texture>'
-        world.append(ET.fromstring(f'<model name="real_utah_terrain"><static>true</static><link name="terrain"><collision name="terrain"><geometry><heightmap>{shape}</heightmap></geometry></collision><visual name="terrain"><geometry><heightmap>{shape}{tex}<use_terrain_paging>false</use_terrain_paging></heightmap></geometry></visual></link></model>'))
+        # Apply datum translation at the model frame. The DART heightfield
+        # backend does not consistently apply the heightmap-specific <pos>.
+        world.append(ET.fromstring(f'<model name="real_utah_terrain"><static>true</static><pose>0 0 {shift} 0 0 0</pose><link name="terrain"><collision name="terrain"><geometry><heightmap>{shape}</heightmap></geometry></collision><visual name="terrain"><geometry><heightmap>{shape}{tex}<use_terrain_paging>false</use_terrain_paging></heightmap></geometry></visual></link></model>'))
         world.append(ET.fromstring('<include><uri>model://urc_rover_utah</uri><name>urc_rover</name><pose>0 0 .55 0 0 0</pose></include>'))
         for fixture in ET.fromstring('<fixtures>'+fixtures+'</fixtures>'):world.append(fixture)
         write_xml(SHARE/f'worlds/{name}.sdf',ET.tostring(xml,encoding='unicode'))

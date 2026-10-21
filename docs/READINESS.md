@@ -1,6 +1,6 @@
 # Readiness and acceptance gates
 
-Version 0.1 is a runnable development foundation, not a completed competition brain.
+This is a runnable development foundation, not a completed competition brain. The original flat baseline and the newer [Utah practice pack](PRACTICE.md) have separate validation scopes.
 
 **Verified October 20, 2026:** [GitHub Actions run 39511218743](https://github.com/adrielsta/ROS-2-URC/actions/runs/39511218743) passed both the unit job and the real Gazebo/Nav2 integration job at commit `44dc8c500664a21fc1df5bbfab6fe385acf36332`. The local test suite contains 29 passing tests. Integration verified disarmed startup with live simulated sensors, completion of both navigation targets, stopped arrival with the green LED state, and a latched software emergency stop that blocks re-arming. These checks apply to the small synthetic obstacle course, not the Utah heightfield or real hardware. See [verification record](evidence/verification.json).
 
@@ -12,7 +12,9 @@ Version 0.1 is a runnable development foundation, not a completed competition br
 | Small Gazebo/Nav2 route | Yes | Two-target completion, stopped arrival and latched e-stop passed in the linked run |
 | Utah live catalog | Yes | Timestamped catalog; per-source failures remain visible |
 | Georeferenced DEM conversion | Yes | Synthetic raster orientation/scale tests and [actual source-run evidence](evidence/README.md); surveyed coordinate checks remain |
-| Full Utah driving trial | No | Spawn/model calibration, frame alignment, outdoor localization and collision-map validation |
+| Short real Utah driving trial | Implemented | Actual DEM, ideal simulator localization and ground filter; see the current integration run |
+| Hill/far-side route practice | Configured | Natural terrain, known safe-prior path, two 1m checks, geometric LOS heartbeat model; full course completion is not certified by the short test |
+| Other mission practice | Navigation only | Astronaut rendezvous, delivery checkpoints, two science-site visits/return, lander approach; no manipulation or bioassays |
 | GNSS/IMU/encoder fusion | No | Sensor drivers, extrinsics, covariance and dropout trials |
 | ArUco target refinement | No | Calibrated RGB/depth detector and measured target stop accuracy |
 | Astronaut Follow/Stay/Fetch/Come/Give | No | Separate perception, mission and arm integration |
@@ -35,6 +37,7 @@ Do not label software “500-point capable” based on a demo. The autonomy miss
 
 - Two drive wheels with passive casters are intentionally a placeholder; no suspension or terramechanics.
 - Fixed `map→odom` works only for the small synthetic map; drift is not globally corrected.
+- The Utah practice pack instead uses ideal simulation pose; this does not resolve the missing outdoor estimator. Its known-DEM scan filter is also simulation-only.
 - Software freshness uses reception times. It does not yet reject every replayed sensor timestamp or enforce covariance limits.
 - A 2D scan is insufficient for holes, drop-offs, overhangs and tilted rover perception.
 - The static slope map is a prior, not a 3D traversability estimator.

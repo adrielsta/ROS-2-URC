@@ -31,13 +31,14 @@
     </light>
     <model name="real_utah_terrain">
       <static>true</static>
+      <pose>0 0 -6.7860107421875 0 0 0</pose>
       <link name="terrain">
         <collision name="terrain">
           <geometry>
             <heightmap>
               <uri>model://utah_site/height.png</uri>
               <size>389.12 389.12 17.161376953125</size>
-              <pos>0 0 -6.7860107421875</pos>
+              <pos>0 0 0</pos>
               <sampling>1</sampling>
             </heightmap>
           </geometry>
@@ -47,7 +48,7 @@
             <heightmap>
               <uri>model://utah_site/height.png</uri>
               <size>389.12 389.12 17.161376953125</size>
-              <pos>0 0 -6.7860107421875</pos>
+              <pos>0 0 0</pos>
               <sampling>1</sampling>
               <texture>
                 <size>389.12</size>
